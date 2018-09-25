@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-09-17T10:31:14Z" product-name="slub_entityfacts">
+		<header/>
+		<body>
+			<trans-unit id="tx_slub_entityfacts_domain_model_entityfactslisting">
+				<source>Entity Facts listing</source>
+			</trans-unit>
+			<trans-unit id="tx_slub_entityfacts_domain_model_entityfactslisting.description">
+				<source>Plugin for showing DB Entity Facts</source>
+			</trans-unit>
+			<trans-unit id="tx_slubentityfacts_domain_model_entityfact">
+				<source>Entity Fact</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

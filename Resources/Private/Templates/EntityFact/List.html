@@ -1,0 +1,255 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<f:comment>
+<h1>EntityFact</h1>
+
+
+<f:form action="list" additionalAttributes="{role:'form'}">
+    <div class="form-inline">
+        <div class="form-group">
+            <f:form.textfield name="search" value="{search}" class="form-control" />
+            <f:form.submit name="submit" value="Search!" class="btn-xs btn-primary" />
+        </div>
+    </div>
+</f:form>
+
+</f:comment>
+<f:if condition="{settings.entityfacts.context}==1">
+	<f:then>
+		<p><a href="{apiAnswerDecode.context}">{apiAnswerDecode.context}</a></p>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.id}==1">
+	<f:then>
+		<p><a href="{apiAnswerDecode.id}">{apiAnswerDecode.id}</a></p>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.preferredName}==1">
+	<f:then>
+		<p>{apiAnswerDecode.preferredName}</p>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.forname}==1">
+	<f:then>
+		<p>{apiAnswerDecode.forname}</p>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.surname}==1">
+	<f:then>
+		<p>{apiAnswerDecode.surname}</p>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.describedBy}==1">
+	<f:then>
+		<table>
+		<f:for each="{apiAnswerDecode.describedBy}" as="describedBy">
+			<tr><td>{describedBy}</td></tr>
+		</f:for>
+		</table>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.type}==1">
+	<f:then>
+		<p>{apiAnswerDecode.type}</p>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.titleOfNobility}==1">
+	<f:then>
+		<table>
+		<f:for each="{apiAnswerDecode.titleOfNobility}" as="titleOfNobility">
+			<tr><td>{titleOfNobility}</td></tr>
+		</f:for>
+		</table>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.variantName}==1">
+	<f:then>
+		<table>
+		<f:for each="{apiAnswerDecode.variantName}" as="subInfo">
+			<tr><td>{subInfo}</td></tr>
+		</f:for>
+		</table>
+	</f:then>
+</f:if>
+<f:if condition="{settings.entityfacts.dateOfBirth}==1">
+	<f:then>
+		<p>{apiAnswerDecode.dateOfBirth}</p>
+	</f:then>
+</f:if>
+
+
+<f:if condition="{settings.entityfacts.dateOfDeath}==1">
+	<f:then>
+		<p>{apiAnswerDecode.dateOfDeath}</p>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.placeOfBirth}==1">
+	<f:then>
+		<table>
+		<f:for each="{apiAnswerDecode.placeOfBirth}" as="placeOfBirth">
+			<f:for each="{placeOfBirth}" as="place" key="placeKey">
+				<f:if condition="{placeKey}=='@id'">
+					<f:then>
+						<tr><td><a href="{place}">{place}</a></td></tr>
+					</f:then>
+					<f:else>
+						<tr><td>{place}</td></tr>
+					</f:else>
+				</f:if>
+			</f:for>
+		</f:for>
+		</table>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.placeOfDeath}==1">
+	<f:then>
+		<table>
+		<f:for each="{apiAnswerDecode.placeOfDeath}" as="placeOfDeath">
+			<f:for each="{placeOfDeath}" as="place" key="placeKey">
+				<f:if condition="{placeKey}=='@id'">
+					<f:then>
+						<tr><td><a href="{place}">{place}</a></td></tr>
+					</f:then>
+					<f:else>
+						<tr><td>{place}</td></tr>
+					</f:else>
+				</f:if>
+			</f:for>
+		</f:for>
+		</table>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.gender}==1">
+	<f:then>
+		<table>
+		<f:for each="{apiAnswerDecode.gender}" as="gender">
+			<tr><td>{gender}</td></tr>
+		</f:for>
+	</table>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.biographicalOrHistoricalInformation}==1">
+	<f:then>
+		<p>{apiAnswerDecode.biographicalOrHistoricalInformation}</p>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.relatedPerson}==1">
+	<f:then>
+		<table>
+		<f:for each="{apiAnswerDecode.relatedPerson}" as="relatedPerson">
+			<f:for each="{relatedPerson}" as="person">
+			<tr><td>{person}</td></tr>
+			</f:for>
+		</f:for>
+		</table>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.familialRelationship}==1">
+	<f:then>
+		<table>
+		<f:for each="{apiAnswerDecode.familialRelationship}" as="familialRelationship">
+			<f:for each="{familialRelationship}" as="person" key="personKey">
+				<f:if condition="{personKey}=='@id'">
+					<f:then>
+						<tr><td><a href={person}>{person}</a></td></tr>
+					</f:then>
+					<f:else>
+						<tr><td>{person}</td></tr>
+					</f:else>
+				</f:if>
+			</f:for>
+		</f:for>
+		</table>
+	</f:then>
+</f:if>
+
+<f:if condition="{settings.entityfacts.depiction}==1">
+	<f:then>
+		<table>
+	<f:comment><f:debug>{apiAnswerDecode.depiction}</f:debug></f:comment>
+		<f:for each="{apiAnswerDecode.depiction}" as="depiction" key="depictionKey">
+			<f:if condition="{depictionKey}=='thumbnail'">
+				<f:then>
+					<f:for each="{depiction}" as="thumbnail" key="thumbnailKey">
+						<tr><td>{depictionKey}:{thumbnailKey}:<a href="{thumbnail}">{thumbnail}</a></br>
+						<img src="{thumbnail}" /></td></tr>
+					</f:for>
+				</f:then>
+				<f:else>
+					<tr><td>{depictionKey}:<a href="{depiction}">{depiction}</a></td></tr>
+				</f:else>
+			</f:if>
+		</f:for>
+	</table>
+	</f:then>
+</f:if>
+
+
+<f:if condition="{settings.entityfacts.sameAs}==1">
+	<f:then>
+		<table>
+		<f:for each="{apiAnswerDecode.sameAs}" as="number">
+			<f:for each="{number}" as="subInfo" key="numberKey">
+				<f:if condition="{numberKey}=='collection'">
+					<f:then>
+						<f:for each="{subInfo}" as="collection" key="collectionKey">
+							<tr><td>{numberKey}:{collectionKey}:{collection}</td></tr>
+						</f:for>
+					</f:then>
+					<f:else>
+						<tr><td>{numberKey}:{subInfo}</td></tr>
+					</f:else>
+				</f:if>
+				
+			</f:for>
+		</f:for>
+		</table>
+	</f:then>
+</f:if>
+
+
+
+<f:comment>
+<!--div>
+	<table>
+		<f:for each="{apiAnswerDecode}" as="subInfo">
+			<tr><td>{subInfo}</td></tr>
+		</f:for>
+	</table>
+</div>
+</f:comment>
+
+<f:debug>{apiAnswerDecode}</f:debug>
+<f:comment>
+<f:debug>{settings.entityfacts.fields}</f:debug>
+<!--f:link.action action="new">New EntityFact</f:link.action-->
+</f:comment>
+</f:section>
+</html>
