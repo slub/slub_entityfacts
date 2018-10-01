@@ -7,7 +7,7 @@
 				</TCEforms>
 				<type>array</type>
 				<el>
-					<settings.entityfacts.personality>
+                    <settings.entityfacts.personality>
 						<TCEforms>
 							<label>Entity</label>
 							<config>
@@ -18,145 +18,63 @@
 							</config>
 						</TCEforms>
 					</settings.entityfacts.personality>
-					
-					
-					<settings.entityfacts.preferredName>
-						<TCEforms>
-							<label>Name</label>
-							<config>
-									<type>check</type>
-							</config>
-						</TCEforms>
-					</settings.entityfacts.preferredName>
-					<settings.entityfacts.gender>
-						<TCEforms>
-							<label>Geschlecht</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.gender>
-					<settings.entityfacts.variantName>
-						<TCEforms>
-							<label>Weiterer Name</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.variantName>	
-					<settings.entityfacts.dateOfBirth>
-						<TCEforms>
-							<label>Geburtsdatum</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.dateOfBirth>	
-					<settings.entityfacts.dateOfDeath>
-						<TCEforms>
-							<label>Sterbedatum</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.dateOfDeath>
-					<settings.entityfacts.placeOfBirth>
-						<TCEforms>
-							<label>Geburtsort</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.placeOfBirth>	
-					<settings.entityfacts.placeOfDeath>
-						<TCEforms>
-							<label>Sterbeort</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.placeOfDeath>	
-					<settings.entityfacts.depiction>
-						<TCEforms>
-							<label>Abbildung</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.depiction>
-					<settings.entityfacts.forename>
-						<TCEforms>
-							<label>Vorname</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.forename>
-					<settings.entityfacts.surname>
-						<TCEforms>
-							<label>Nachname</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.surname>
-					<settings.entityfacts.describedBy>
-						<TCEforms>
-							<label>Metainformationen</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.describedBy>
-					<settings.entityfacts.professionOrOccupation>
-						<TCEforms>
-							<label>Berufe</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.professionOrOccupation>
-					<settings.entityfacts.familialRelationship>
-						<TCEforms>
-							<label>Familiäre Beziehung</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.familialRelationship>
-					<settings.entityfacts.sameAs>
-						<TCEforms>
-							<label>Verlinkungen auf weiterführende Webseiten</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.sameAs>
-					<settings.entityfacts.context>
-						<TCEforms>
-							<label>URL der JSON-LD-Contextdatei</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.context>
-					<settings.entityfacts.id>
-						<TCEforms>
-							<label>URI der Entität</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.id>
-					<settings.entityfacts.type>
-						<TCEforms>
-							<label>Entität-Typ</label>
-							<config>
-								<type>check</type>
-							</config>	
-						</TCEforms>
-					</settings.entityfacts.type>		
-				</el>
+                    <settings.entityfacts.facts>
+                        <TCEforms>
+                            <label>Was soll angezeigt werden?</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectMultipleSideBySide</renderType>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">Name</numIndex>
+                                        <numIndex index="1">preferredName</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">Weiterer Name</numIndex>
+                                        <numIndex index="1">variantName</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">In Beziehung stehende Person</numIndex>
+                                        <numIndex index="1">relatedPerson</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">Biografisch/historische Angaben</numIndex>
+                                        <numIndex index="1">biographicalOrHistoricalInformation</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">Beginn des Bestehens</numIndex>
+                                        <numIndex index="1">dateOfEstablishment</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">Ende des Bestehens</numIndex>
+                                        <numIndex index="1">dateOfTermination</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">Geburtsdatum</numIndex>
+                                        <numIndex index="1">dateOfBirth</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">Sterbedatum</numIndex>
+                                        <numIndex index="1">dateOfDeath</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">Verlinkungen auf weiterführende Webseiten</numIndex>
+                                        <numIndex index="1">sameAs</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">Abbildung</numIndex>
+                                        <numIndex index="1">depiction</numIndex>
+                                    </numIndex>
+                                </items>    
+                                <maxitems>20</maxitems>
+                                <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
+                            </config>
+                        </TCEforms>
+                    </settings.entityfacts.facts> 
+
+
+
+                </el>
 			</ROOT>
 		</sDEF>
 	</sheets>

@@ -25,8 +25,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
         </div>
     </div>
 </f:form>
-
 </f:comment>
+
+<f:comment>
 <f:if condition="{settings.entityfacts.context}==1">
 	<f:then>
 		<p><a href="{apiAnswerDecode.context}">{apiAnswerDecode.context}</a></p>
@@ -233,23 +234,89 @@ Otherwise your changes will be overwritten the next time you save the extension 
 		</table>
 	</f:then>
 </f:if>
-
-
-
-<f:comment>
-<!--div>
-	<table>
-		<f:for each="{apiAnswerDecode}" as="subInfo">
-			<tr><td>{subInfo}</td></tr>
-		</f:for>
-	</table>
-</div>
 </f:comment>
+<style>
+    div.one {color: black;}
+    div.two {color: green;}
+    div.three {color: orange;}
+    div.four {color: #666699;}
+    div.five {color: red;}
+</style>
+<f:for each="{viewArray}" as="viewArrayValue" key="viewArrayValueKey">
+    
+    <div class="one">
+        <f:if condition="{viewArrayValueKey}=='relationship'">
+            <f:then>
+            <h1>relationship</h1>
+                <f:for each="{viewArrayValue}" as="relationship">
+                    <p>{relationship}</p>
+                </f:for>
+            </f:then>
+            <f:else>
+                <h1>{viewArrayValueKey}</h1>
+                <p>{viewArrayValue}</p>
+            </f:else>
+        </f:if>
+	</div>
+	<div class="two">
+        <f:if condition="{viewArrayValueKey}=='relatedPerson'">
+            <f:then>
+            <h1>relatedPerson</h1>
+                <f:for each="{viewArray.relatedPerson}" as="newRelatedPerson">
+                    <f:for each="{newRelatedPerson}" as="person">
+                        <p>{person}</p>
+                    </f:for>
+                </f:for>
+            </f:then>
+        </f:if>
+    </div>
+    <div class="three">
+    <f:if condition="{viewArrayValueKey}=='depiction'">
+        <f:then>
+        <h1>depiction</h1>
+            <f:for each="{viewArray.depiction}" as="depiction" key="depictionKey">
+                <f:if condition="{depictionKey}=='thumbnail'">
+                    <f:then>
+                        <f:for each="{depiction}" as="thumbnail" key="thumbnailKey">
+                            <p>{depictionKey}:{thumbnailKey}:<a href="{thumbnail}">{thumbnail}</a></br>
+                            <img src="{thumbnail}" /></p>
+                        </f:for>
+                    </f:then>
+                    <f:else>
+                        <p>{depictionKey}:<a href="{depiction}">{depiction}</a></p>
+                    </f:else>
+                </f:if>
+            </f:for>
+        </f:then>
+    </f:if>
+    </div>
+    <div class="four">
+        <f:if condition="{viewArrayValueKey}=='sameAs'">
+            <f:then>
+                <f:for each="{viewArray.sameAs}" as="number">
+                    <f:for each="{number}" as="subInfo" key="numberKey">
+                        <f:if condition="{numberKey}=='collection'">
+                            <f:then>
+                                <f:for each="{subInfo}" as="collection" key="collectionKey">
+                                    {numberKey}:{collectionKey}:{collection}
+                                    <f:if condition="{numberKey}=='@id'">
+                                        <f:then>
+                                            <a href="{collection}">{collection}</a>
+                                        </f:then>
+                                    </f:if>
+                                </f:for>
+                            </f:then>
+                            <f:else>
+                                <p>{numberKey}:{subInfo}</p>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </f:for>
+            </f:then>
+        </f:if>
+    </div>
+</f:for>
 
-<f:debug>{apiAnswerDecode}</f:debug>
-<f:comment>
-<f:debug>{settings.entityfacts.fields}</f:debug>
-<!--f:link.action action="new">New EntityFact</f:link.action-->
-</f:comment>
+<f:debug>{viewArray}</f:debug>
 </f:section>
 </html>
