@@ -1,0 +1,32 @@
+{
+  "name": "slub/slub-template",
+  "type": "typo3-cms-extension",
+  "description": "Show DNB entity facts in configurable plugin.",
+  "homepage": "https://github.com/slub/slub_entityfacts",
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "slub_entityfacts"
+  ],
+  "authors": [
+    {
+      "name": "Sebastian Semsker",
+      "email": "sebastian.semsker@slub-dresden.de",
+      "role": "Developer"
+    },
+    {
+      "name": "Alexander Bigga",
+      "email": "alexander.bigga@slub-dresden.de",
+      "role": "Developer"
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "require": {
+    "typo3/cms-core": "~7.6.23"
+  },
+  "autoload": {
+    "psr-4": {
+      "Slub\\SlubEntityfacts\\": "Classes/"
+    }
+  }
+}
