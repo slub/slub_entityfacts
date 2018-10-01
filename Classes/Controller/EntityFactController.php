@@ -42,6 +42,15 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 		$apiAnswerDecode['id'] = $apiAnswerDecode['@id'];
 		$apiAnswerDecode['type'] = $apiAnswerDecode['@type'];
 		
+        $multiSelectArray = explode(",",($this->settings['entityfacts']['facts']));
+        
+        foreach ($multiSelectArray as $item) {
+            $viewArray[$item] = $apiAnswerDecode[$item];
+        }
+		//print_r($viewArray);
+		
+		$this->view->assign('viewArray', $viewArray);
+		$this->view->assign('multiSelectArray', $multiSelectArray);
         $this->view->assign('apiAnswerDecode', $apiAnswerDecode);
     }
 
