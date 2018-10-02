@@ -1,5 +1,5 @@
 {
-  "name": "slub/slub-template",
+  "name": "slub/slub-entityfacts",
   "type": "typo3-cms-extension",
   "description": "Show DNB entity facts in configurable plugin.",
   "homepage": "https://github.com/slub/slub_entityfacts",

@@ -11,7 +11,7 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'slubentityfacts',
+    'title' => 'SLUB Entity Facts',
     'description' => 'Plugin for showing DB Entity Facts',
     'category' => 'plugin',
     'author' => 'Sebastian Semsker',
