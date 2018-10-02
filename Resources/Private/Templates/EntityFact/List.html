@@ -13,228 +13,7 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<f:comment>
-<h1>EntityFact</h1>
 
-
-<f:form action="list" additionalAttributes="{role:'form'}">
-    <div class="form-inline">
-        <div class="form-group">
-            <f:form.textfield name="search" value="{search}" class="form-control" />
-            <f:form.submit name="submit" value="Search!" class="btn-xs btn-primary" />
-        </div>
-    </div>
-</f:form>
-</f:comment>
-
-<f:comment>
-<f:if condition="{settings.entityfacts.context}==1">
-	<f:then>
-		<p><a href="{apiAnswerDecode.context}">{apiAnswerDecode.context}</a></p>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.id}==1">
-	<f:then>
-		<p><a href="{apiAnswerDecode.id}">{apiAnswerDecode.id}</a></p>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.preferredName}==1">
-	<f:then>
-		<p>{apiAnswerDecode.preferredName}</p>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.forname}==1">
-	<f:then>
-		<p>{apiAnswerDecode.forname}</p>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.surname}==1">
-	<f:then>
-		<p>{apiAnswerDecode.surname}</p>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.describedBy}==1">
-	<f:then>
-		<table>
-		<f:for each="{apiAnswerDecode.describedBy}" as="describedBy">
-			<tr><td>{describedBy}</td></tr>
-		</f:for>
-		</table>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.type}==1">
-	<f:then>
-		<p>{apiAnswerDecode.type}</p>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.titleOfNobility}==1">
-	<f:then>
-		<table>
-		<f:for each="{apiAnswerDecode.titleOfNobility}" as="titleOfNobility">
-			<tr><td>{titleOfNobility}</td></tr>
-		</f:for>
-		</table>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.variantName}==1">
-	<f:then>
-		<table>
-		<f:for each="{apiAnswerDecode.variantName}" as="subInfo">
-			<tr><td>{subInfo}</td></tr>
-		</f:for>
-		</table>
-	</f:then>
-</f:if>
-<f:if condition="{settings.entityfacts.dateOfBirth}==1">
-	<f:then>
-		<p>{apiAnswerDecode.dateOfBirth}</p>
-	</f:then>
-</f:if>
-
-
-<f:if condition="{settings.entityfacts.dateOfDeath}==1">
-	<f:then>
-		<p>{apiAnswerDecode.dateOfDeath}</p>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.placeOfBirth}==1">
-	<f:then>
-		<table>
-		<f:for each="{apiAnswerDecode.placeOfBirth}" as="placeOfBirth">
-			<f:for each="{placeOfBirth}" as="place" key="placeKey">
-				<f:if condition="{placeKey}=='@id'">
-					<f:then>
-						<tr><td><a href="{place}">{place}</a></td></tr>
-					</f:then>
-					<f:else>
-						<tr><td>{place}</td></tr>
-					</f:else>
-				</f:if>
-			</f:for>
-		</f:for>
-		</table>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.placeOfDeath}==1">
-	<f:then>
-		<table>
-		<f:for each="{apiAnswerDecode.placeOfDeath}" as="placeOfDeath">
-			<f:for each="{placeOfDeath}" as="place" key="placeKey">
-				<f:if condition="{placeKey}=='@id'">
-					<f:then>
-						<tr><td><a href="{place}">{place}</a></td></tr>
-					</f:then>
-					<f:else>
-						<tr><td>{place}</td></tr>
-					</f:else>
-				</f:if>
-			</f:for>
-		</f:for>
-		</table>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.gender}==1">
-	<f:then>
-		<table>
-		<f:for each="{apiAnswerDecode.gender}" as="gender">
-			<tr><td>{gender}</td></tr>
-		</f:for>
-	</table>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.biographicalOrHistoricalInformation}==1">
-	<f:then>
-		<p>{apiAnswerDecode.biographicalOrHistoricalInformation}</p>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.relatedPerson}==1">
-	<f:then>
-		<table>
-		<f:for each="{apiAnswerDecode.relatedPerson}" as="relatedPerson">
-			<f:for each="{relatedPerson}" as="person">
-			<tr><td>{person}</td></tr>
-			</f:for>
-		</f:for>
-		</table>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.familialRelationship}==1">
-	<f:then>
-		<table>
-		<f:for each="{apiAnswerDecode.familialRelationship}" as="familialRelationship">
-			<f:for each="{familialRelationship}" as="person" key="personKey">
-				<f:if condition="{personKey}=='@id'">
-					<f:then>
-						<tr><td><a href={person}>{person}</a></td></tr>
-					</f:then>
-					<f:else>
-						<tr><td>{person}</td></tr>
-					</f:else>
-				</f:if>
-			</f:for>
-		</f:for>
-		</table>
-	</f:then>
-</f:if>
-
-<f:if condition="{settings.entityfacts.depiction}==1">
-	<f:then>
-		<table>
-	<f:comment><f:debug>{apiAnswerDecode.depiction}</f:debug></f:comment>
-		<f:for each="{apiAnswerDecode.depiction}" as="depiction" key="depictionKey">
-			<f:if condition="{depictionKey}=='thumbnail'">
-				<f:then>
-					<f:for each="{depiction}" as="thumbnail" key="thumbnailKey">
-						<tr><td>{depictionKey}:{thumbnailKey}:<a href="{thumbnail}">{thumbnail}</a></br>
-						<img src="{thumbnail}" /></td></tr>
-					</f:for>
-				</f:then>
-				<f:else>
-					<tr><td>{depictionKey}:<a href="{depiction}">{depiction}</a></td></tr>
-				</f:else>
-			</f:if>
-		</f:for>
-	</table>
-	</f:then>
-</f:if>
-
-
-<f:if condition="{settings.entityfacts.sameAs}==1">
-	<f:then>
-		<table>
-		<f:for each="{apiAnswerDecode.sameAs}" as="number">
-			<f:for each="{number}" as="subInfo" key="numberKey">
-				<f:if condition="{numberKey}=='collection'">
-					<f:then>
-						<f:for each="{subInfo}" as="collection" key="collectionKey">
-							<tr><td>{numberKey}:{collectionKey}:{collection}</td></tr>
-						</f:for>
-					</f:then>
-					<f:else>
-						<tr><td>{numberKey}:{subInfo}</td></tr>
-					</f:else>
-				</f:if>
-				
-			</f:for>
-		</f:for>
-		</table>
-	</f:then>
-</f:if>
-</f:comment>
 <style>
     div.one {color: black;}
     div.two {color: green;}
@@ -243,78 +22,87 @@ Otherwise your changes will be overwritten the next time you save the extension 
     div.five {color: red;}
 </style>
 <f:for each="{viewArray}" as="viewArrayValue" key="viewArrayValueKey">
-    
-    <div class="one">
-        <f:if condition="{viewArrayValueKey}=='relationship'">
-            <f:then>
-            <h1>relationship</h1>
-                <f:for each="{viewArrayValue}" as="relationship">
-                    <p>{relationship}</p>
+    <f:switch expression="{viewArrayValueKey}">
+        <f:case value="relationship">
+            <div class="one">
+                <h1>relationship</h1>
+                    <f:for each="{viewArrayValue}" as="relationship">
+                        <p>{relationship}</p>
+                    </f:for>
+            </div>
+        </f:case>
+        
+        <f:case value="sameAs">
+			<div class="four">
+				<h1>sameAs</h1>
+				<f:for each="{viewArray.sameAs}" as="number">
+						<f:for each="{number}" as="subInfo" key="numberKey">
+							<f:if condition="{numberKey}=='collection'">
+								<f:then>
+									<f:for each="{subInfo}" as="collection" key="collectionKey">
+										<f:if condition="{collectionKey}=='icon'">
+											<f:then>
+												
+												<img src="{collection}" />
+												
+											</f:then>
+											<f:else>{collection}<br></f:else>
+										</f:if>
+									</f:for>
+								</f:then>
+								<f:else>
+									<p>{numberKey}:<a href="{subInfo}">{subInfo}</a></p>
+								</f:else>
+							</f:if>
+						</f:for>
+					</f:for>	
+			</div>
+		</f:case>
+        
+        <f:case value="depiction">
+            <div class="three">
+                <h1>depiction</h1>
+                <f:for each="{viewArray.depiction}" as="depiction" key="depictionKey">
+                    <f:if condition="{depictionKey}=='thumbnail'">
+                        <f:then>
+                            <f:for each="{depiction}" as="thumbnail" key="thumbnailKey">
+                                <p>{depictionKey}:{thumbnailKey}:<a href="{thumbnail}">{thumbnail}</a><br>
+                                <img src="{thumbnail}" /></p>
+                            </f:for>
+                        </f:then>
+                        <f:else>
+                            <p>{depictionKey}:<a href="{depiction}">{depiction}</a></p>
+                        </f:else>
+                    </f:if>
                 </f:for>
-            </f:then>
-            <f:else>
-                <h1>{viewArrayValueKey}</h1>
-                <p>{viewArrayValue}</p>
-            </f:else>
-        </f:if>
-	</div>
-	<div class="two">
-        <f:if condition="{viewArrayValueKey}=='relatedPerson'">
-            <f:then>
-            <h1>relatedPerson</h1>
+            </div>
+        </f:case>
+        
+		<f:case value="relatedPerson">
+			<div class="two">
+                <h1>relatedPerson</h1>
                 <f:for each="{viewArray.relatedPerson}" as="newRelatedPerson">
-                    <f:for each="{newRelatedPerson}" as="person">
-                        <p>{person}</p>
+                    <p>
+					<f:for each="{newRelatedPerson}" as="person" key="personKey">
+						<f:if condition="{personKey}!='@id'">
+							<f:then>
+								{person}
+							</f:then>
+							<f:else><a href="{person}">{person}</a><br></f:else>
+						</f:if>
                     </f:for>
+                    </p>
                 </f:for>
-            </f:then>
-        </f:if>
-    </div>
-    <div class="three">
-    <f:if condition="{viewArrayValueKey}=='depiction'">
-        <f:then>
-        <h1>depiction</h1>
-            <f:for each="{viewArray.depiction}" as="depiction" key="depictionKey">
-                <f:if condition="{depictionKey}=='thumbnail'">
-                    <f:then>
-                        <f:for each="{depiction}" as="thumbnail" key="thumbnailKey">
-                            <p>{depictionKey}:{thumbnailKey}:<a href="{thumbnail}">{thumbnail}</a></br>
-                            <img src="{thumbnail}" /></p>
-                        </f:for>
-                    </f:then>
-                    <f:else>
-                        <p>{depictionKey}:<a href="{depiction}">{depiction}</a></p>
-                    </f:else>
-                </f:if>
-            </f:for>
-        </f:then>
-    </f:if>
-    </div>
-    <div class="four">
-        <f:if condition="{viewArrayValueKey}=='sameAs'">
-            <f:then>
-                <f:for each="{viewArray.sameAs}" as="number">
-                    <f:for each="{number}" as="subInfo" key="numberKey">
-                        <f:if condition="{numberKey}=='collection'">
-                            <f:then>
-                                <f:for each="{subInfo}" as="collection" key="collectionKey">
-                                    {numberKey}:{collectionKey}:{collection}
-                                    <f:if condition="{numberKey}=='@id'">
-                                        <f:then>
-                                            <a href="{collection}">{collection}</a>
-                                        </f:then>
-                                    </f:if>
-                                </f:for>
-                            </f:then>
-                            <f:else>
-                                <p>{numberKey}:{subInfo}</p>
-                            </f:else>
-                        </f:if>
-                    </f:for>
-                </f:for>
-            </f:then>
-        </f:if>
-    </div>
+            </div>
+		</f:case>
+        
+        <f:case default="TRUE">
+            <h1>{viewArrayValueKey}</h1>
+            <p>{viewArrayValue}</p>
+        </f:case>
+        
+    </f:switch>
+        
 </f:for>
 
 <f:debug>{viewArray}</f:debug>

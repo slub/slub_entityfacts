@@ -18,9 +18,31 @@
 							</config>
 						</TCEforms>
 					</settings.entityfacts.personality>
+                    <settings.entityfacts.selection>
+                        <label>Auswahl des Entitätstyps</label>
+                        <onChange>reload</onChange>
+                            <config>
+                            <type>radio</type>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                <numIndex index="0">Persönlichkeit</numIndex>
+                                <numIndex index="1">personality</numIndex>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                <numIndex index="0">Körperschaft</numIndex>
+                                <numIndex index="1">corporation</numIndex>
+                                </numIndex>
+                                <numIndex index="3" type="array">
+                                <numIndex index="0">Geografikum</numIndex>
+                                <numIndex index="1">geographical</numIndex>
+                                </numIndex>
+                            </items>
+                            </config>
+                    </settings.entityfacts.selection>
                     <settings.entityfacts.facts>
                         <TCEforms>
                             <label>Was soll angezeigt werden?</label>
+                            <displayCond>FIELD:settings.entityfacts.selection:=:personality</displayCond>
                             <config>
                                 <type>select</type>
                                 <renderType>selectMultipleSideBySide</renderType>
