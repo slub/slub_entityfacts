@@ -9,40 +9,41 @@
 				<el>
                     <settings.entityfacts.personality>
 						<TCEforms>
-							<label>Entity</label>
+							<label>Hier bitte den GND-Identifier für eine Persönlichkeit, eine Körperschaft oder ein Geografikum eingeben:</label>
 							<config>
 								<type>input</type>
 								<size>9</size>
-								<eval>int</eval>
 								<default>118607626</default>
 							</config>
 						</TCEforms>
 					</settings.entityfacts.personality>
                     <settings.entityfacts.selection>
+                        <TCEforms>
                         <label>Auswahl des Entitätstyps</label>
                         <onChange>reload</onChange>
                             <config>
-                            <type>radio</type>
-                            <items type="array">
-                                <numIndex index="0" type="array">
-                                <numIndex index="0">Persönlichkeit</numIndex>
-                                <numIndex index="1">personality</numIndex>
-                                </numIndex>
-                                <numIndex index="1" type="array">
-                                <numIndex index="0">Körperschaft</numIndex>
-                                <numIndex index="1">corporation</numIndex>
-                                </numIndex>
-                                <numIndex index="3" type="array">
-                                <numIndex index="0">Geografikum</numIndex>
-                                <numIndex index="1">geographical</numIndex>
-                                </numIndex>
-                            </items>
+                                <type>radio</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                    <numIndex index="0">Persönlichkeit</numIndex>
+                                    <numIndex index="1">person</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                    <numIndex index="0">Körperschaft</numIndex>
+                                    <numIndex index="1">organisation</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                    <numIndex index="0">Geografikum</numIndex>
+                                    <numIndex index="1">place</numIndex>
+                                    </numIndex>
+                                </items>
                             </config>
+                        </TCEforms>
                     </settings.entityfacts.selection>
-                    <settings.entityfacts.facts>
+                    <settings.entityfacts.personfacts>
                         <TCEforms>
-                            <label>Was soll angezeigt werden?</label>
-                            <displayCond>FIELD:settings.entityfacts.selection:=:personality</displayCond>
+                            <label>Welche Daten zur Person sollen angezeigt werden?</label>
+                            <displayCond>FIELD:settings.entityfacts.selection:=:person</displayCond>
                             <config>
                                 <type>select</type>
                                 <renderType>selectMultipleSideBySide</renderType>
@@ -87,14 +88,349 @@
                                         <numIndex index="0">Abbildung</numIndex>
                                         <numIndex index="1">depiction</numIndex>
                                     </numIndex>
-                                </items>    
-                                <maxitems>20</maxitems>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">URL der JSON-LD-Contextdatei</numIndex>
+                                        <numIndex index="1">context</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">URI der Entität</numIndex>
+                                        <numIndex index="1">id</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">Entität-Typ</numIndex>
+                                        <numIndex index="1">type</numIndex>
+                                    </numIndex>
+                                    <numIndex index="13" type="array">
+                                        <numIndex index="0">Metainformationen zur Entity Facts-Beschreibung</numIndex>
+                                        <numIndex index="1">describedBy</numIndex>
+                                    </numIndex>
+                                    <numIndex index="14" type="array">
+                                        <numIndex index="0">Generierungsdatum</numIndex>
+                                        <numIndex index="1">valid</numIndex>
+                                    </numIndex>
+                                    <numIndex index="15" type="array">
+                                        <numIndex index="0">Lizenz</numIndex>
+                                        <numIndex index="1">license</numIndex>
+                                    </numIndex>
+                                    <numIndex index="16" type="array">
+                                        <numIndex index="0">In Beziehung stehende Person</numIndex>
+                                        <numIndex index="1">relatedPerson</numIndex>
+                                    </numIndex>
+                                    <numIndex index="17" type="array">
+                                        <numIndex index="0">In Beziehung stehende Orte</numIndex>
+                                        <numIndex index="1">associatedPlace</numIndex>
+                                    </numIndex>
+                                    <numIndex index="18" type="array">
+                                        <numIndex index="0">Adelstitel</numIndex>
+                                        <numIndex index="1">titleOfNobility</numIndex>
+                                    </numIndex>
+                                    <numIndex index="19" type="array">
+                                        <numIndex index="0">Akademischer Titel</numIndex>
+                                        <numIndex index="1">academicDegree</numIndex>
+                                    </numIndex>
+                                    <numIndex index="20" type="array">
+                                        <numIndex index="0">Pseudonyme</numIndex>
+                                        <numIndex index="1">pseudonym</numIndex>
+                                    </numIndex>
+                                    <numIndex index="21" type="array">
+                                        <numIndex index="0">Wirklicher Name (bei Pseudonymen)</numIndex>
+                                        <numIndex index="1">realIdentity</numIndex>
+                                    </numIndex>
+                                    <numIndex index="22" type="array">
+                                        <numIndex index="0">Wirkungsdaten</numIndex>
+                                        <numIndex index="1">periodOfActivity</numIndex>
+                                    </numIndex>
+                                    <numIndex index="23" type="array">
+                                        <numIndex index="0">Geschlecht</numIndex>
+                                        <numIndex index="1">gender</numIndex>
+                                    </numIndex>
+                                    <numIndex index="24" type="array">
+                                        <numIndex index="0">Wirkungsorte</numIndex>
+                                        <numIndex index="1">placeOfActivity</numIndex>
+                                    </numIndex>
+                                    <numIndex index="25" type="array">
+                                        <numIndex index="0">Berufe</numIndex>
+                                        <numIndex index="1">professionOrOccupation</numIndex>
+                                    </numIndex>
+                                    <numIndex index="26" type="array">
+                                        <numIndex index="0">Familiäre Beziehung</numIndex>
+                                        <numIndex index="1">familialRelationship</numIndex>
+                                    </numIndex>
+                                    <numIndex index="27" type="array">
+                                        <numIndex index="0">Affiliation</numIndex>
+                                        <numIndex index="1">affiliation</numIndex>
+                                    </numIndex>
+                                    <numIndex index="28" type="array">
+                                        <numIndex index="0">Themen</numIndex>
+                                        <numIndex index="1">topic</numIndex>
+                                    </numIndex>
+                                    <numIndex index="29" type="array">
+                                        <numIndex index="0">In Beziehung stehende Organisationen</numIndex>
+                                        <numIndex index="1">relatedOrganisation</numIndex>
+                                    </numIndex>
+                                    <numIndex index="30" type="array">
+                                        <numIndex index="0">In Beziehung stehendes Schlagwort</numIndex>
+                                        <numIndex index="1">relatedSubject</numIndex>
+                                    </numIndex>
+                                    <numIndex index="31" type="array">
+                                        <numIndex index="0">Vorname</numIndex>
+                                        <numIndex index="1">forename</numIndex>
+                                    </numIndex>
+                                    <numIndex index="32" type="array">
+                                        <numIndex index="0">Nachname</numIndex>
+                                        <numIndex index="1">surname</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>40</maxitems>
                                 <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
                             </config>
                         </TCEforms>
-                    </settings.entityfacts.facts> 
-
-
+                    </settings.entityfacts.personfacts> 
+                    <settings.entityfacts.organisationfacts>
+                        <TCEforms>
+                            <label>Welche Daten zur Körperschaft sollen angezeigt werden?</label>
+                            <displayCond>FIELD:settings.entityfacts.selection:=:organisation</displayCond>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectMultipleSideBySide</renderType>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">Name</numIndex>
+                                        <numIndex index="1">preferredName</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">Weiterer Name</numIndex>
+                                        <numIndex index="1">variantName</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">Geografische Lage</numIndex>
+                                        <numIndex index="1">location</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">Architekt</numIndex>
+                                        <numIndex index="1">architect</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">Gründer (Person)</numIndex>
+                                        <numIndex index="1">founder</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">Produktionsdatum (Zeitraum)</numIndex>
+                                        <numIndex index="1">dateOfProduction</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">Orte (Sitz)</numIndex>
+                                        <numIndex index="1">placeOfBusiness</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">In Beziehung stehende Organisationen</numIndex>
+                                        <numIndex index="1">relatedOrganisation</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">Affiliation</numIndex>
+                                        <numIndex index="1">affiliation</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">Themen</numIndex>
+                                        <numIndex index="1">topic</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">In Beziehung stehende Orte</numIndex>
+                                        <numIndex index="1">associatedPlace</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">URL der JSON-LD-Contextdatei</numIndex>
+                                        <numIndex index="1">context</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">URI der Entität</numIndex>
+                                        <numIndex index="1">id</numIndex>
+                                    </numIndex>
+                                    <numIndex index="13" type="array">
+                                        <numIndex index="0">Entität-Typ</numIndex>
+                                        <numIndex index="1">type</numIndex>
+                                    </numIndex>
+                                    <numIndex index="14" type="array">
+                                        <numIndex index="0">Metainformationen zur Entity Facts-Beschreibung</numIndex>
+                                        <numIndex index="1">describedBy</numIndex>
+                                    </numIndex>
+                                    <numIndex index="15" type="array">
+                                        <numIndex index="0">Generierungsdatum</numIndex>
+                                        <numIndex index="1">valid</numIndex>
+                                    </numIndex>
+                                    <numIndex index="16" type="array">
+                                        <numIndex index="0">Lizenz</numIndex>
+                                        <numIndex index="1">license</numIndex>
+                                    </numIndex>
+                                    
+                                    <numIndex index="18" type="array">
+                                        <numIndex index="0">Beginn des Bestehens</numIndex>
+                                        <numIndex index="1">dateOfEstablishment</numIndex>
+                                    </numIndex>
+                                    <numIndex index="19" type="array">
+                                        <numIndex index="0">Ende des Bestehens</numIndex>
+                                        <numIndex index="1">dateOfTermination</numIndex>
+                                    </numIndex>
+                                    <numIndex index="20" type="array">
+                                        <numIndex index="0">Vorgänger</numIndex>
+                                        <numIndex index="1">predecessor</numIndex>
+                                    </numIndex>
+                                    <numIndex index="21" type="array">
+                                        <numIndex index="0">Nachfolger</numIndex>
+                                        <numIndex index="1">successor</numIndex>
+                                    </numIndex>
+                                    <numIndex index="22" type="array">
+                                        <numIndex index="0">Oberbegriff (Instantiell)</numIndex>
+                                        <numIndex index="1">isA</numIndex>
+                                    </numIndex>
+                                </items>    
+                                <maxitems>40</maxitems>
+                                <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
+                            </config>
+                        </TCEforms>
+                    </settings.entityfacts.organisationfacts>
+                    <settings.entityfacts.placefacts>
+                        <TCEforms>
+                            <label>Welche Daten zum Geografikum sollen angezeigt werden?</label>
+                            <displayCond>FIELD:settings.entityfacts.selection:=:place</displayCond>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectMultipleSideBySide</renderType>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">Name</numIndex>
+                                        <numIndex index="1">preferredName</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">Weiterer Name</numIndex>
+                                        <numIndex index="1">variantName</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">Geografische Lage</numIndex>
+                                        <numIndex index="1">location</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">Architekt</numIndex>
+                                        <numIndex index="1">architect</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">Produktionsdatum (Zeitraum)</numIndex>
+                                        <numIndex index="1">dateOfProduction</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">In Beziehung stehende Organisationen</numIndex>
+                                        <numIndex index="1">relatedOrganisation</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                        <numIndex index="0">Affiliation</numIndex>
+                                        <numIndex index="1">affiliation</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                        <numIndex index="0">Themen</numIndex>
+                                        <numIndex index="1">topic</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">In Beziehung stehende Orte</numIndex>
+                                        <numIndex index="1">associatedPlace</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                        <numIndex index="0">URL der JSON-LD-Contextdatei</numIndex>
+                                        <numIndex index="1">context</numIndex>
+                                    </numIndex>
+                                    <numIndex index="10" type="array">
+                                        <numIndex index="0">URI der Entität</numIndex>
+                                        <numIndex index="1">id</numIndex>
+                                    </numIndex>
+                                    <numIndex index="11" type="array">
+                                        <numIndex index="0">Entität-Typ</numIndex>
+                                        <numIndex index="1">type</numIndex>
+                                    </numIndex>
+                                    <numIndex index="12" type="array">
+                                        <numIndex index="0">Metainformationen zur Entity Facts-Beschreibung</numIndex>
+                                        <numIndex index="1">describedBy</numIndex>
+                                    </numIndex>
+                                    <numIndex index="13" type="array">
+                                        <numIndex index="0">Generierungsdatum</numIndex>
+                                        <numIndex index="1">valid</numIndex>
+                                    </numIndex>
+                                    <numIndex index="14" type="array">
+                                        <numIndex index="0">Lizenz</numIndex>
+                                        <numIndex index="1">license</numIndex>
+                                    </numIndex>
+                                    <numIndex index="15" type="array">
+                                        <numIndex index="0">Verlinkungen auf weiterführende Webseiten</numIndex>
+                                        <numIndex index="1">sameAs</numIndex>
+                                    </numIndex>
+                                </items>    
+                                <maxitems>40</maxitems>
+                                <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
+                            </config>
+                        </TCEforms>
+                    </settings.entityfacts.placefacts>
+                    <settings.entityfacts.sameAs>
+                        <TCEforms>
+                        <label>Verlinkungen auf weiterführende Webseiten einbinden</label>
+                        <onChange>reload</onChange>
+                            <config>
+                                <type>check</type>
+                                <default>0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.entityfacts.sameAs>
+                    <settings.entityfacts.sameAsSelected>
+                        <TCEforms>
+                        <label>Auswahl der weiterführenden Links</label>
+                        <displayCond>FIELD:settings.entityfacts.sameAs:=:1</displayCond>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectMultipleSideBySide</renderType>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                    <numIndex index="0">Gemeinsame Normdatei (GND) im Katalog der Deutschen Nationalbibliothek</numIndex>
+                                    <numIndex index="1">DNB</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                    <numIndex index="0">Wikipedia (Deutsch)</numIndex>
+                                    <numIndex index="1">dewiki</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                    <numIndex index="0">Wikipedia (English)</numIndex>
+                                    <numIndex index="1">enwiki</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                    <numIndex index="0">Wikisource</numIndex>
+                                    <numIndex index="1">WIKISOURCE</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4" type="array">
+                                    <numIndex index="0">Kalliope Verbundkatalog</numIndex>
+                                    <numIndex index="1">DE-611</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                    <numIndex index="0">Bibliothèque nationale de France</numIndex>
+                                    <numIndex index="1">BNF</numIndex>
+                                    </numIndex>
+                                    <numIndex index="6" type="array">
+                                    <numIndex index="0">NACO Authority File</numIndex>
+                                    <numIndex index="1">LC</numIndex>
+                                    </numIndex>
+                                    <numIndex index="7" type="array">
+                                    <numIndex index="0">Virtual International Authority File (VIAF)</numIndex>
+                                    <numIndex index="1">VIAF</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                    <numIndex index="0">International Standard Name Identifier (ISNI)</numIndex>
+                                    <numIndex index="1">ISNI</numIndex>
+                                    </numIndex>
+                                    <numIndex index="9" type="array">
+                                    <numIndex index="0">Wikidata</numIndex>
+                                    <numIndex index="1">WIKIDATA</numIndex>
+                                    </numIndex>
+                                </items>
+                                <maxitems>40</maxitems>
+                                <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
+                            </config>
+                        </TCEforms>
+                    </settings.entityfacts.sameAsSelected>
 
                 </el>
 			</ROOT>

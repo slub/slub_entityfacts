@@ -26,7 +26,12 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
     {
         //$entityFacts = $this->entityFactRepository->findAll();
         //$this->view->assign('entityFacts', $entityFacts);
-        $search = $this->settings['entityfacts']['personality'];
+        
+        //Get the nine chars long entity facts id from Flexform that the user wants to call
+        $search = $this->settings['entityfacts']['personality'];    
+        
+        //Get the selected entity type from Flexform
+        $selection = $this->settings['entityfacts']['selection'];       
         
         $arguments = $this->request->getArguments();
         //print_r($arguments);
@@ -38,19 +43,42 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 		$apiAnswer = file_get_contents('http://hub.culturegraph.org/entityfacts/'.$search);
 		$apiAnswerDecode = json_decode ($apiAnswer, true);
 		
-		$apiAnswerDecode['context'] = $apiAnswerDecode['@context'];
+		//Workaround to get rid of the'@'
+		$apiAnswerDecode['context'] = $apiAnswerDecode['@context'];       
 		$apiAnswerDecode['id'] = $apiAnswerDecode['@id'];
 		$apiAnswerDecode['type'] = $apiAnswerDecode['@type'];
 		
-        $multiSelectArray = explode(",",($this->settings['entityfacts']['facts']));
+		//write the user sorted selection given by Flexform into helper array
+        $multiSelectArray1 = explode(",",($this->settings['entityfacts'][$selection.'facts'])); 
         
-        foreach ($multiSelectArray as $item) {
+        //write the user sorted selection given by Flexform into another helper array (special customer request to select specific entities from sameAs)
+        $multiSelectArray2 = explode(",",($this->settings['entityfacts']['sameAsSelected']));       
+        
+        $sameAsArray = [];
+        
+        //Fill new array with original infos to have an easier use in Fluid
+        foreach ($multiSelectArray1 as $item) {                         
             $viewArray[$item] = $apiAnswerDecode[$item];
         }
-		//print_r($viewArray);
+        
+        
+        
+        foreach ($multiSelectArray2 as $item) {  
+            foreach ($apiAnswerDecode['sameAs'] as $sameAs) {
+            
+                if ($sameAs['collection']['abbr'] == $item) {
+                    $sameAsArray[ $sameAs['collection']['abbr'] ] = $sameAs;
+                }
+            }
+            
+        }
+        
+		//print_r($apiAnswerDecode['sameAs']);
 		
+		
+		$this->view->assign('sameAsArray', $sameAsArray);
 		$this->view->assign('viewArray', $viewArray);
-		$this->view->assign('multiSelectArray', $multiSelectArray);
+		//$this->view->assign('multiSelectArray', $multiSelectArray);
         $this->view->assign('apiAnswerDecode', $apiAnswerDecode);
     }
 
