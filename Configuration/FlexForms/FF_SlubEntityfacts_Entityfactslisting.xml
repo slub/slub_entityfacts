@@ -64,14 +64,6 @@
                                         <numIndex index="0">Biografisch/historische Angaben</numIndex>
                                         <numIndex index="1">biographicalOrHistoricalInformation</numIndex>
                                     </numIndex>
-                                    <numIndex index="4" type="array">
-                                        <numIndex index="0">Beginn des Bestehens</numIndex>
-                                        <numIndex index="1">dateOfEstablishment</numIndex>
-                                    </numIndex>
-                                    <numIndex index="5" type="array">
-                                        <numIndex index="0">Ende des Bestehens</numIndex>
-                                        <numIndex index="1">dateOfTermination</numIndex>
-                                    </numIndex>
                                     <numIndex index="6" type="array">
                                         <numIndex index="0">Geburtsdatum</numIndex>
                                         <numIndex index="1">dateOfBirth</numIndex>

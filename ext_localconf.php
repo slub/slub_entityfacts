@@ -9,7 +9,7 @@ call_user_func(
             'Slub.SlubEntityfacts',
             'Entityfactslisting',
             [
-                'EntityFact' => 'list'
+                'EntityFact' => 'show'
             ],
             // non-cacheable actions
             [

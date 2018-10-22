@@ -17,16 +17,16 @@ namespace Slub\SlubEntityfacts\Controller;
  */
 class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
+    
     /**
-     * action list
+     * action show
      *
      * @return void
      */
-    public function listAction()
+    public function showAction()
     {
         //$entityFacts = $this->entityFactRepository->findAll();
-        //$this->view->assign('entityFacts', $entityFacts);
-        
+                
         //Get the nine chars long entity facts id from Flexform that the user wants to call
         $search = $this->settings['entityfacts']['personality'];    
         
@@ -40,13 +40,20 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             $search = $arguments['search'];
         } 
         
+        //Call the API and write the decoded JSON to the array
 		$apiAnswer = file_get_contents('http://hub.culturegraph.org/entityfacts/'.$search);
-		$apiAnswerDecode = json_decode ($apiAnswer, true);
+		
+		//Replace @id for easier calling of informations (no value with "@id" expected)
+		$apiAnswerClean = str_replace('"@id"', '"atid"', $apiAnswer);
+		
+		$apiAnswerDecode = json_decode ($apiAnswerClean, true);
+		
 		
 		//Workaround to get rid of the'@'
 		$apiAnswerDecode['context'] = $apiAnswerDecode['@context'];       
-		$apiAnswerDecode['id'] = $apiAnswerDecode['@id'];
+		//$apiAnswerDecode['id'] = $apiAnswerDecode['@id'];
 		$apiAnswerDecode['type'] = $apiAnswerDecode['@type'];
+		
 		
 		//write the user sorted selection given by Flexform into helper array
         $multiSelectArray1 = explode(",",($this->settings['entityfacts'][$selection.'facts'])); 
@@ -62,7 +69,7 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         }
         
         
-        
+        //Same function like the first array but with additional customisation
         foreach ($multiSelectArray2 as $item) {  
             foreach ($apiAnswerDecode['sameAs'] as $sameAs) {
             
@@ -73,23 +80,11 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             
         }
         
-		//print_r($apiAnswerDecode['sameAs']);
-		
 		
 		$this->view->assign('sameAsArray', $sameAsArray);
 		$this->view->assign('viewArray', $viewArray);
 		//$this->view->assign('multiSelectArray', $multiSelectArray);
         $this->view->assign('apiAnswerDecode', $apiAnswerDecode);
-    }
-
-    /**
-     * action show
-     *
-     * @param \Slub\SlubEntityfacts\Domain\Model\EntityFact $entityFact
-     * @return void
-     */
-    public function showAction(\Slub\SlubEntityfacts\Domain\Model\EntityFact $entityFact)
-    {
-        $this->view->assign('entityFact', $entityFact);
+        //$this->view->assign('entityFact', $entityFact);
     }
 }

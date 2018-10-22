@@ -13,11 +13,233 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>Single View for EntityFact</h1>
 
-<f:flashMessages />
-<f:render partial="EntityFact/Properties" arguments="{entityFact:entityFact}" />
-<f:link.action action="list">Back to list</f:link.action><br />
-<f:link.action action="new">New EntityFact</f:link.action>
+<style>
+    div.one {color: black;}
+    div.two {color: green;}
+    div.three {color: orange;}
+    div.four {color: #666699;}
+    div.five {color: red;}
+</style>
+<f:for each="{viewArray}" as="viewArrayValue" key="viewArrayValueKey">
+    <f:switch expression="{viewArrayValueKey}">
+        <f:case value="relationship">
+            <div class="one">
+                <h1>Beziehungen</h1>
+                    <f:for each="{viewArrayValue}" as="relationship">
+                        <p>{relationship}</p>
+                    </f:for>
+            </div>
+        </f:case>
+        
+        <f:case value="context">
+            <div class="one">
+                <h1>{viewArrayValueKey}</h1>
+                <p><a href="{viewArray.context}">{viewArray.context}</a></p>
+            </div>
+        </f:case>
+        
+        <f:case value="id">
+            <div class="one">
+                <h1>{viewArrayValueKey}</h1>
+                <p><a href="{viewArray.id}">{viewArray.id}</a></p>
+            </div>
+        </f:case>
+        
+        
+        
+        <f:case value="depiction">
+            <div class="three">
+                <h1>Abbildung</h1>
+                <f:for each="{viewArray.depiction}" as="depiction" key="depictionKey">
+                    <f:if condition="{depictionKey}=='thumbnail'">
+                        <f:then>
+                            <f:for each="{depiction}" as="thumbnail" key="thumbnailKey">
+                                <p>{depictionKey}:{thumbnailKey}:<a href="{thumbnail}">{thumbnail}</a><br>
+                                <img src="{thumbnail}" /></p>
+                            </f:for>
+                        </f:then>
+                        <f:else>
+                            <p>{depictionKey}:<a href="{depiction}">{depiction}</a></p>
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </div>
+        </f:case>
+        
+		<f:case value="relatedPerson">
+			<div class="two">
+                <h1>Beziehungen zu Personen</h1>
+                <f:for each="{viewArray.relatedPerson}" as="newRelatedPerson">
+                    
+					<f:for each="{newRelatedPerson}" as="person" key="personKey">
+						<f:if condition="{personKey}!='atid'">
+							<f:then>
+								{person}
+							</f:then>
+							<f:else><a href="{person}">{person}</a><br></f:else>
+						</f:if>
+                    </f:for>
+                    
+                </f:for>
+            </div>
+		</f:case>
+		
+		<f:case value="variantName">
+            <div class="three">
+                <h1>Andere Namen</h1>
+                    <f:for each="{viewArrayValue}" as="variantName">
+                        <p>{variantName}</p>
+                    </f:for>
+            </div>
+        </f:case>
+        
+        <f:case value="placeOfBusiness">
+            <div class="two">
+                <h1>Wirkungsort</h1>
+                    <f:for each="{viewArrayValue}" as="placeOfBusiness">
+                        <f:for each="{placeOfBusiness}" as="placeOfBusinessArray" key="placeOfBusinessArrayKey">
+                            <f:if condition="{placeOfBusinessArrayKey}=='@id'">
+                                <f:then>
+                                    <p><a href="{placeOfBusinessArray}">{placeOfBusinessArray}</a></p>
+                                </f:then>
+                                <f:else>
+                                    <p>{placeOfBusinessArray}</p>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </f:for>
+            </div>
+        </f:case>
+        
+        <f:case value="predecessor">
+            <div class="four">
+                <h1>Vorgänger</h1>
+                    <f:for each="{viewArrayValue}" as="predecessor">
+                        <f:for each="{predecessor}" as="predecessorArray" key="predecessorArrayKey">
+                            <f:if condition="{predecessorArrayKey}=='@id'">
+                                <f:then>
+                                    <p><a href="{predecessorArray}">{predecessorArray}</a></p>
+                                </f:then>
+                                <f:else>
+                                    <p>{predecessorArray}</p>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </f:for>
+            </div>
+        </f:case>
+        
+        <f:case value="isA">
+            <div class="four">
+                <h1>Oberbegriff</h1>
+                    <f:for each="{viewArrayValue}" as="isA">
+                        <f:for each="{isA}" as="isAArray" key="isAArrayKey">
+                            <f:if condition="{isAArrayKey}=='@id'">
+                                <f:then>
+                                    <p><a href="{isAArray}">{isAArray}</a></p>
+                                </f:then>
+                                <f:else>
+                                    <p>{isAArray}</p>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </f:for>
+            </div>
+        </f:case>
+        
+        <f:case value="dateOfEstablishment">
+            <div class="three">
+                <h1>Beginn des Bestehens</h1>
+                    <f:for each="{viewArrayValue}" as="dateOfEstablishment">
+                        <p>{dateOfEstablishment}</p>
+                    </f:for>
+            </div>
+        </f:case>
+        
+        <f:case value="describedBy">
+            <div class="three">
+                <h1>Metainformationen</h1>
+                    <f:for each="{viewArrayValue}" as="describedBy" key="describedByKey">
+                        <f:if condition="{describedByKey}!='valid'">
+                            <f:then>
+                                <p><a href="{describedBy}">{describedBy}</a></p>
+                            </f:then>
+                            <f:else>
+                                <p>{describedBy}</p>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+            </div>
+        </f:case>
+        
+        <f:case value="associatedPlace">
+            <div class="four">
+                <h1>Geografischer Bezug</h1>
+                    <f:for each="{viewArrayValue}" as="associatedPlace">
+                        <f:for each="{associatedPlace}" as="associatedPlaceArray" key="associatedPlaceArrayKey">
+                            <f:if condition="{associatedPlaceArrayKey}=='@id'">
+                                <f:then>
+                                    <p><a href="{associatedPlaceArray}">{associatedPlaceArray}</a></p>
+                                </f:then>
+                                <f:else>
+                                    <p>{associatedPlaceArray}</p>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </f:for>
+            </div>
+        </f:case>
+               
+        <f:case value="forename">
+			<f:if condition="{viewArrayValue}==NULL">
+				<f:then>
+					<h1>Vorname</h1>
+					<p>Kein Inhalt vorhanden. Bitte aus der Auswahl entfernen.</p>
+				</f:then>
+				<f:else>
+					<h1>Vorname</h1>
+					<p>{viewArrayValue}</p>
+				</f:else>
+			</f:if>
+        </f:case>
+        		 
+        <f:case default="TRUE">
+            <h1>{viewArrayValueKey}</h1>
+            <p>{viewArrayValue}</p>
+        </f:case>
+        
+    </f:switch>
+        
+</f:for>
+
+<f:if condition="{settings.entityfacts.sameAs}=='1'">
+    <f:then>
+        <div class="four">
+            <h1>sameAs</h1>
+            <f:for each="{sameAsArray}" as="item">
+                <f:for each="{item}" as="subInfo" key="subInfoKey">
+                
+                    <f:if condition="{subInfoKey}=='collection'">
+                        <f:then>
+                            <f:for each="{subInfo}" as="collection" key="collectionKey">
+                                <f:if condition="{collectionKey}=='icon'">
+                                    <f:then>
+                                        <img src="{collection}" /><br>
+                                    </f:then>
+                                        <f:else>{collection}<br></f:else>
+                                </f:if>
+                            </f:for>
+                        </f:then>
+                        <f:else>
+                            <a href="{subInfo}">{subInfo}</a>
+                        </f:else>
+                    </f:if>
+                </f:for>
+            </f:for>	
+        </div>
+	</f:then>
+</f:if>
+
 </f:section>
 </html>
