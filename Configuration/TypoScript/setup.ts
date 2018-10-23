@@ -1,4 +1,3 @@
-
 plugin.tx_slubentityfacts_entityfactslisting {
   view {
     templateRootPaths.0 = EXT:slub_entityfacts/Resources/Private/Templates/
@@ -52,3 +51,5 @@ plugin.tx_slubentityfacts._CSS_DEFAULT_STYLE (
         color:green;
     }
 )
+
+
