@@ -1,22 +1,22 @@
 <T3DataStructure>
-	<sheets>
-		<sDEF>
-			<ROOT>
-				<TCEforms>
-					<sheetTitle>EntityFacts Config</sheetTitle>
-				</TCEforms>
-				<type>array</type>
-				<el>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>EntityFacts Config</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
                     <settings.entityfacts.personality>
-						<TCEforms>
-							<label>Hier bitte den GND-Identifier für eine Persönlichkeit, eine Körperschaft oder ein Geografikum eingeben:</label>
-							<config>
-								<type>input</type>
-								<size>9</size>
-								<default>118607626</default>
-							</config>
-						</TCEforms>
-					</settings.entityfacts.personality>
+                        <TCEforms>
+                            <label>Hier bitte den GND-Identifier für eine Persönlichkeit, eine Körperschaft oder ein Geografikum eingeben:</label>
+                            <config>
+                                <type>input</type>
+                                <size>9</size>
+                                <default>118607626</default>
+                            </config>
+                        </TCEforms>
+                    </settings.entityfacts.personality>
                     <settings.entityfacts.selection>
                         <TCEforms>
                         <label>Auswahl des Entitätstyps</label>
@@ -71,10 +71,6 @@
                                     <numIndex index="7" type="array">
                                         <numIndex index="0">Sterbedatum</numIndex>
                                         <numIndex index="1">dateOfDeath</numIndex>
-                                    </numIndex>
-                                    <numIndex index="8" type="array">
-                                        <numIndex index="0">Verlinkungen auf weiterführende Webseiten</numIndex>
-                                        <numIndex index="1">sameAs</numIndex>
                                     </numIndex>
                                     <numIndex index="9" type="array">
                                         <numIndex index="0">Abbildung</numIndex>
@@ -349,10 +345,6 @@
                                         <numIndex index="0">Lizenz</numIndex>
                                         <numIndex index="1">license</numIndex>
                                     </numIndex>
-                                    <numIndex index="15" type="array">
-                                        <numIndex index="0">Verlinkungen auf weiterführende Webseiten</numIndex>
-                                        <numIndex index="1">sameAs</numIndex>
-                                    </numIndex>
                                 </items>    
                                 <maxitems>40</maxitems>
                                 <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
@@ -425,7 +417,7 @@
                     </settings.entityfacts.sameAsSelected>
 
                 </el>
-			</ROOT>
-		</sDEF>
-	</sheets>
+            </ROOT>
+        </sDEF>
+    </sheets>
 </T3DataStructure>  
