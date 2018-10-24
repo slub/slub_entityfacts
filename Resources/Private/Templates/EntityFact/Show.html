@@ -22,191 +22,189 @@ Otherwise your changes will be overwritten the next time you save the extension 
     div.five {color: red;}
 </style>
 <f:for each="{viewArray}" as="viewArrayValue" key="viewArrayValueKey">
-    <f:switch expression="{viewArrayValueKey}">
-        <f:case value="relationship">
-            <div class="one">
-                <h1><f:translate id="slubentityfacts.relationship" /></h1>
-                    <f:for each="{viewArrayValue}" as="relationship">
-                        <p>{relationship}</p>
-                    </f:for>
-            </div>
-        </f:case>
-        
-        <f:case value="context">
-            <div class="one">
-                <h1><f:translate id="slubentityfacts.context" /></h1>
-                <p><a href="{viewArray.context}">{viewArray.context}</a></p>
-            </div>
-        </f:case>
-        
-        <f:case value="id">
-            <div class="one">
-                <h1>{viewArrayValueKey}</h1>
-                <p><a href="{viewArray.id}">{viewArray.id}</a></p>
-            </div>
-        </f:case>
-        
-        
-        
-        <f:case value="depiction">
-            <div class="three">
-                <h1><f:translate id="slubentityfacts.depiction" /></h1>
-                <f:for each="{viewArray.depiction}" as="depiction" key="depictionKey">
-                    <f:if condition="{depictionKey}=='thumbnail'">
-                        <f:then>
-                            <f:for each="{depiction}" as="thumbnail" key="thumbnailKey">
-                                <p>{depictionKey}:{thumbnailKey}:<a href="{thumbnail}">{thumbnail}</a><br>
-                                <img src="{thumbnail}" /></p>
+    <f:if condition="{viewArrayValue}">
+        <f:then>
+            <f:switch expression="{viewArrayValueKey}">
+                <f:case value="relationship">
+                    <div class="one">
+                        <h1><f:translate id="slubentityfacts.relationship" /></h1>
+                            <f:for each="{viewArrayValue}" as="relationship">
+                                <p>{relationship}</p>
                             </f:for>
-                        </f:then>
-                        <f:else>
-                            <p>{depictionKey}:<a href="{depiction}">{depiction}</a></p>
-                        </f:else>
-                    </f:if>
-                </f:for>
-            </div>
-        </f:case>
-        
-        <f:case value="relatedPerson">
-            <div class="two">
-                <h1><f:translate id="slubentityfacts.relatedPerson" /></h1>
-                <f:for each="{viewArray.relatedPerson}" as="newRelatedPerson">
-                    
-                    <f:for each="{newRelatedPerson}" as="person" key="personKey">
-                        <f:if condition="{personKey}!='atid'">
-                            <f:then>
-                                {person}
-                            </f:then>
-                            <f:else><a href="{person}">{person}</a><br></f:else>
-                        </f:if>
-                    </f:for>
-                    
-                </f:for>
-            </div>
-        </f:case>
-        
-        <f:case value="variantName">
-            <div class="three">
-                <h1><f:translate id="slubentityfacts.variantName" /></h1>
-                    <f:for each="{viewArrayValue}" as="variantName">
-                        <p>{variantName}</p>
-                    </f:for>
-            </div>
-        </f:case>
-        
-        <f:case value="placeOfBusiness">
-            <div class="two">
-                <h1><f:translate id="slubentityfacts.placeOfBusiness" /></h1>
-                    <f:for each="{viewArrayValue}" as="placeOfBusiness">
-                        <f:for each="{placeOfBusiness}" as="placeOfBusinessArray" key="placeOfBusinessArrayKey">
-                            <f:if condition="{placeOfBusinessArrayKey}=='@id'">
+                    </div>
+                </f:case>
+                
+                <f:case value="context">
+                    <div class="one">
+                        <h1><f:translate id="slubentityfacts.context" /></h1>
+                        <p><a href="{viewArray.context}">{viewArray.context}</a></p>
+                    </div>
+                </f:case>
+                
+                <f:case value="id">
+                    <div class="one">
+                        <h1>{viewArrayValueKey}</h1>
+                        <p><a href="{viewArray.id}">{viewArray.id}</a></p>
+                    </div>
+                </f:case>
+                
+                <f:case value="depiction">
+                    <div class="three">
+                        <h1><f:translate id="slubentityfacts.depiction" /></h1>
+                        <f:for each="{viewArray.depiction}" as="depiction" key="depictionKey">
+                            <f:if condition="{depictionKey}=='thumbnail'">
                                 <f:then>
-                                    <p><a href="{placeOfBusinessArray}">{placeOfBusinessArray}</a></p>
+                                    <f:for each="{depiction}" as="thumbnail" key="thumbnailKey">
+                                        <p>{depictionKey}:{thumbnailKey}:<a href="{thumbnail}">{thumbnail}</a><br>
+                                        <img src="{thumbnail}" /></p>
+                                    </f:for>
                                 </f:then>
                                 <f:else>
-                                    <p>{placeOfBusinessArray}</p>
+                                    <p>{depictionKey}:<a href="{depiction}">{depiction}</a></p>
                                 </f:else>
                             </f:if>
                         </f:for>
-                    </f:for>
-            </div>
-        </f:case>
-        
-        <f:case value="predecessor">
-            <div class="four">
-                <h1><f:translate id="slubentityfacts.predecessor" /></h1>
-                    <f:for each="{viewArrayValue}" as="predecessor">
-                        <f:for each="{predecessor}" as="predecessorArray" key="predecessorArrayKey">
-                            <f:if condition="{predecessorArrayKey}=='@id'">
-                                <f:then>
-                                    <p><a href="{predecessorArray}">{predecessorArray}</a></p>
-                                </f:then>
-                                <f:else>
-                                    <p>{predecessorArray}</p>
-                                </f:else>
-                            </f:if>
+                    </div>
+                </f:case>
+                
+                <f:case value="relatedPerson">
+                    <div class="two">
+                        <h1><f:translate id="slubentityfacts.relatedPerson" /></h1>
+                        <f:for each="{viewArray.relatedPerson}" as="newRelatedPerson">
+                            
+                            <f:for each="{newRelatedPerson}" as="person" key="personKey">
+                                <f:if condition="{personKey}!='atid'">
+                                    <f:then>
+                                        {person}
+                                    </f:then>
+                                    <f:else><a href="{person}">{person}</a><br></f:else>
+                                </f:if>
+                            </f:for>
+                            
                         </f:for>
-                    </f:for>
-            </div>
-        </f:case>
-        
-        <f:case value="isA">
-            <div class="four">
-                <h1><f:translate id="slubentityfacts.isA" /></h1>
-                    <f:for each="{viewArrayValue}" as="isA">
-                        <f:for each="{isA}" as="isAArray" key="isAArrayKey">
-                            <f:if condition="{isAArrayKey}=='@id'">
-                                <f:then>
-                                    <p><a href="{isAArray}">{isAArray}</a></p>
-                                </f:then>
-                                <f:else>
-                                    <p>{isAArray}</p>
-                                </f:else>
-                            </f:if>
-                        </f:for>
-                    </f:for>
-            </div>
-        </f:case>
-        
-        <f:case value="dateOfEstablishment">
-            <div class="three">
-                <h1><f:translate id="slubentityfacts.dateOfEstablishment" /></h1>
-                    <f:for each="{viewArrayValue}" as="dateOfEstablishment">
-                        <p>{dateOfEstablishment}</p>
-                    </f:for>
-            </div>
-        </f:case>
-        
-        <f:case value="describedBy">
-            <div class="three">
-                <h1><f:translate id="slubentityfacts.describedBy" /></h1>
-                    <f:for each="{viewArrayValue}" as="describedBy" key="describedByKey">
-                        <f:if condition="{describedByKey}!='valid'">
-                            <f:then>
-                                <p><a href="{describedBy}">{describedBy}</a></p>
-                            </f:then>
-                            <f:else>
-                                <p>{describedBy}</p>
-                            </f:else>
-                        </f:if>
-                    </f:for>
-            </div>
-        </f:case>
-        
-        <f:case value="associatedPlace">
-            <div class="four">
-                <h1><f:translate id="slubentityfacts.associatedPlace" /></h1>
-                    <f:for each="{viewArrayValue}" as="associatedPlace">
-                        <f:for each="{associatedPlace}" as="associatedPlaceArray" key="associatedPlaceArrayKey">
-                            <f:if condition="{associatedPlaceArrayKey}=='@id'">
-                                <f:then>
-                                    <p><a href="{associatedPlaceArray}">{associatedPlaceArray}</a></p>
-                                </f:then>
-                                <f:else>
-                                    <p>{associatedPlaceArray}</p>
-                                </f:else>
-                            </f:if>
-                        </f:for>
-                    </f:for>
-            </div>
-        </f:case>
-           
-                         
-        <f:case default="TRUE">
-            <f:if condition="{viewArrayValue}==NULL">
-                <f:then>
-                    <h1><f:translate id="slubentityfacts.{viewArrayValueKey}" /></h1>
-                    <p><f:translate id="slubentityfacts.noContent" /></p>
-                </f:then>
-                <f:else>
+                    </div>
+                </f:case>
+                
+                <f:case value="variantName">
+                    <div class="three">
+                        <h1><f:translate id="slubentityfacts.variantName" /></h1>
+                            <f:for each="{viewArrayValue}" as="variantName">
+                                <p>{variantName}</p>
+                            </f:for>
+                    </div>
+                </f:case>
+                
+                <f:case value="placeOfBusiness">
+                    <div class="two">
+                        <h1><f:translate id="slubentityfacts.placeOfBusiness" /></h1>
+                            <f:for each="{viewArrayValue}" as="placeOfBusiness">
+                                <f:for each="{placeOfBusiness}" as="placeOfBusinessArray" key="placeOfBusinessArrayKey">
+                                    <f:if condition="{placeOfBusinessArrayKey}=='@id'">
+                                        <f:then>
+                                            <p><a href="{placeOfBusinessArray}">{placeOfBusinessArray}</a></p>
+                                        </f:then>
+                                        <f:else>
+                                            <p>{placeOfBusinessArray}</p>
+                                        </f:else>
+                                    </f:if>
+                                </f:for>
+                            </f:for>
+                    </div>
+                </f:case>
+                
+                <f:case value="predecessor">
+                    <div class="four">
+                        <h1><f:translate id="slubentityfacts.predecessor" /></h1>
+                            <f:for each="{viewArrayValue}" as="predecessor">
+                                <f:for each="{predecessor}" as="predecessorArray" key="predecessorArrayKey">
+                                    <f:if condition="{predecessorArrayKey}=='@id'">
+                                        <f:then>
+                                            <p><a href="{predecessorArray}">{predecessorArray}</a></p>
+                                        </f:then>
+                                        <f:else>
+                                            <p>{predecessorArray}</p>
+                                        </f:else>
+                                    </f:if>
+                                </f:for>
+                            </f:for>
+                    </div>
+                </f:case>
+                
+                <f:case value="isA">
+                    <div class="four">
+                        <h1><f:translate id="slubentityfacts.isA" /></h1>
+                            <f:for each="{viewArrayValue}" as="isA">
+                                <f:for each="{isA}" as="isAArray" key="isAArrayKey">
+                                    <f:if condition="{isAArrayKey}=='@id'">
+                                        <f:then>
+                                            <p><a href="{isAArray}">{isAArray}</a></p>
+                                        </f:then>
+                                        <f:else>
+                                            <p>{isAArray}</p>
+                                        </f:else>
+                                    </f:if>
+                                </f:for>
+                            </f:for>
+                    </div>
+                </f:case>
+                
+                <f:case value="dateOfEstablishment">
+                    <div class="three">
+                        <h1><f:translate id="slubentityfacts.dateOfEstablishment" /></h1>
+                            <f:for each="{viewArrayValue}" as="dateOfEstablishment">
+                                <p>{dateOfEstablishment}</p>
+                            </f:for>
+                    </div>
+                </f:case>
+                
+                <f:case value="describedBy">
+                    <div class="three">
+                        <h1><f:translate id="slubentityfacts.describedBy" /></h1>
+                            <f:for each="{viewArrayValue}" as="describedBy" key="describedByKey">
+                                <f:if condition="{describedByKey}!='valid'">
+                                    <f:then>
+                                        <p><a href="{describedBy}">{describedBy}</a></p>
+                                    </f:then>
+                                    <f:else>
+                                        <p>{describedBy}</p>
+                                    </f:else>
+                                </f:if>
+                            </f:for>
+                    </div>
+                </f:case>
+                
+                <f:case value="associatedPlace">
+                    <div class="four">
+                        <h1><f:translate id="slubentityfacts.associatedPlace" /></h1>
+                            <f:for each="{viewArrayValue}" as="associatedPlace">
+                                <f:for each="{associatedPlace}" as="associatedPlaceArray" key="associatedPlaceArrayKey">
+                                    <f:if condition="{associatedPlaceArrayKey}=='@id'">
+                                        <f:then>
+                                            <p><a href="{associatedPlaceArray}">{associatedPlaceArray}</a></p>
+                                        </f:then>
+                                        <f:else>
+                                            <p>{associatedPlaceArray}</p>
+                                        </f:else>
+                                    </f:if>
+                                </f:for>
+                            </f:for>
+                    </div>
+                </f:case>
+                   
+                                 
+                <f:case default="TRUE">
                     <h1><f:translate id="slubentityfacts.{viewArrayValueKey}" /></h1>
                     <p>{viewArrayValue}</p>
-                </f:else>
-            </f:if>
-        </f:case>
-        
-    </f:switch>
-        
+                </f:case>
+                
+            </f:switch>
+        </f:then>
+        <f:else>
+            <h1><f:translate id="slubentityfacts.{viewArrayValueKey}" /></h1>
+            <p><f:translate id="slubentityfacts.noContent" /></p>
+            <f:debug>{viewArrayValue}</f:debug>
+        </f:else>
+    </f:if>    
 </f:for>
 
 <f:if condition="{settings.entityfacts.sameAs}=='1'">
@@ -219,6 +217,6 @@ Otherwise your changes will be overwritten the next time you save the extension 
         </div>
     </f:then>
 </f:if>
-
+<f:debug>{viewArray}</f:debug>
 </f:section>
 </html>
