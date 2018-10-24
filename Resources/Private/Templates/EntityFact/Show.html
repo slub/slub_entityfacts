@@ -43,7 +43,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
                 
                 <f:case value="id">
                     <div class="one">
-                        <h1>{viewArrayValueKey}</h1>
+                        <h1><f:translate id="slubentityfacts.id" /></h1>
                         <p><a href="{viewArray.id}">{viewArray.id}</a></p>
                     </div>
                 </f:case>
@@ -177,16 +177,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
                     <div class="four">
                         <h1><f:translate id="slubentityfacts.associatedPlace" /></h1>
                             <f:for each="{viewArrayValue}" as="associatedPlace">
-                                <f:for each="{associatedPlace}" as="associatedPlaceArray" key="associatedPlaceArrayKey">
-                                    <f:if condition="{associatedPlaceArrayKey}=='@id'">
-                                        <f:then>
-                                            <p><a href="{associatedPlaceArray}">{associatedPlaceArray}</a></p>
-                                        </f:then>
-                                        <f:else>
-                                            <p>{associatedPlaceArray}</p>
-                                        </f:else>
-                                    </f:if>
-                                </f:for>
+                               <p><a href="{associatedPlace.atid}">{associatedPlace.preferredName}</a></p>
                             </f:for>
                     </div>
                 </f:case>
@@ -202,7 +193,6 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <f:else>
             <h1><f:translate id="slubentityfacts.{viewArrayValueKey}" /></h1>
             <p><f:translate id="slubentityfacts.noContent" /></p>
-            <f:debug>{viewArrayValue}</f:debug>
         </f:else>
     </f:if>    
 </f:for>
@@ -217,6 +207,6 @@ Otherwise your changes will be overwritten the next time you save the extension 
         </div>
     </f:then>
 </f:if>
-<f:debug>{viewArray}</f:debug>
+
 </f:section>
 </html>

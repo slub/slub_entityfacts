@@ -1,116 +1,119 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-09-17T10:31:14Z" product-name="slub_entityfacts">
-		<header/>
-		<body>
-			<trans-unit id="tx_slub_entityfacts_domain_model_entityfactslisting">
-				<source>Entity Facts listing</source>
-			</trans-unit>
-			<trans-unit id="tx_slub_entityfacts_domain_model_entityfactslisting.description">
-				<source>Plugin for showing DB Entity Facts</source>
-			</trans-unit>
-			<trans-unit id="tx_slubentityfacts_domain_model_entityfact">
-				<source>Entity Fact</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.relationship">
-				<source>Relationship</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.depiction">
-				<source>Depiction</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.relatedPerson">
-				<source>Related Person</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.variantName">
-				<source>Variant Name</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.placeOfBusiness">
-				<source>Place of Business</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.predecessor">
-				<source>Predecessor</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.isA">
-				<source>is A</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.dateOfEstablishment">
-				<source>Date Of Establishment</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.describedBy">
-				<source>Described By</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.associatedPlace">
-				<source>Associated Place</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.forename">
-				<source>Forename</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.surname">
-				<source>Surname</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.noContent">
-				<source>No Content. Please remove from selection.</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.preferredName">
-				<source>Preferred Name</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.dateOfBirth">
-				<source>Date of Birth</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.dateOfDeath">
-				<source>Date of Death</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.biographicalOrHistoricalInformation">
-				<source>Biographical Or Historical Information</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.placeOfActivity">
-				<source>Place Of Activity</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.professionOrOccupation">
-				<source>Profession</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.sameAs">
-				<source>Same As</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.location">
-				<source>Location</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.architect">
-				<source>Architect</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.dateOfProduction">
-				<source>Date Of Production</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.relatedOrganisation">
-				<source>Related Organisation</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.topic">
-				<source>Topic</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.type">
-				<source>Type</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.valid">
-				<source>Valid</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.license">
-				<source>License</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.dateOfTermination">
-				<source>Date Of Termination</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.successor">
-				<source>Successor</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.founder">
-				<source>Founder</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.affiliation">
-				<source>Affiliation</source>
-			</trans-unit>
-			<trans-unit id="slubentityfacts.context">
-				<source>URL of the JSON-LD-Contextfile</source>
-			</trans-unit>
-		</body>
-	</file>
+    <file source-language="en" datatype="plaintext" original="messages" date="2018-09-17T10:31:14Z" product-name="slub_entityfacts">
+        <header/>
+        <body>
+            <trans-unit id="tx_slub_entityfacts_domain_model_entityfactslisting">
+                <source>Entity Facts listing</source>
+            </trans-unit>
+            <trans-unit id="tx_slub_entityfacts_domain_model_entityfactslisting.description">
+                <source>Plugin for showing DB Entity Facts</source>
+            </trans-unit>
+            <trans-unit id="tx_slubentityfacts_domain_model_entityfact">
+                <source>Entity Fact</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.relationship">
+                <source>Relationship</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.depiction">
+                <source>Depiction</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.relatedPerson">
+                <source>Related Person</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.variantName">
+                <source>Variant Name</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.placeOfBusiness">
+                <source>Place of Business</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.predecessor">
+                <source>Predecessor</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.isA">
+                <source>is A</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.dateOfEstablishment">
+                <source>Date Of Establishment</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.describedBy">
+                <source>Described By</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.associatedPlace">
+                <source>Associated Place</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.forename">
+                <source>Forename</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.surname">
+                <source>Surname</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.noContent">
+                <source>No Content. Please remove from selection.</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.preferredName">
+                <source>Preferred Name</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.dateOfBirth">
+                <source>Date of Birth</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.dateOfDeath">
+                <source>Date of Death</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.biographicalOrHistoricalInformation">
+                <source>Biographical Or Historical Information</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.placeOfActivity">
+                <source>Place Of Activity</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.professionOrOccupation">
+                <source>Profession</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.sameAs">
+                <source>Same As</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.location">
+                <source>Location</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.architect">
+                <source>Architect</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.dateOfProduction">
+                <source>Date Of Production</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.relatedOrganisation">
+                <source>Related Organisation</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.topic">
+                <source>Topic</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.type">
+                <source>Type</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.valid">
+                <source>Valid</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.license">
+                <source>License</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.dateOfTermination">
+                <source>Date Of Termination</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.successor">
+                <source>Successor</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.founder">
+                <source>Founder</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.affiliation">
+                <source>Affiliation</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.context">
+                <source>URL of the JSON-LD-Contextfile</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.id">
+                <source>ID</source>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>
