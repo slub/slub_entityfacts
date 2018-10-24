@@ -67,25 +67,25 @@ Otherwise your changes will be overwritten the next time you save the extension 
             </div>
         </f:case>
         
-		<f:case value="relatedPerson">
-			<div class="two">
+        <f:case value="relatedPerson">
+            <div class="two">
                 <h1><f:translate id="slubentityfacts.relatedPerson" /></h1>
                 <f:for each="{viewArray.relatedPerson}" as="newRelatedPerson">
                     
-					<f:for each="{newRelatedPerson}" as="person" key="personKey">
-						<f:if condition="{personKey}!='atid'">
-							<f:then>
-								{person}
-							</f:then>
-							<f:else><a href="{person}">{person}</a><br></f:else>
-						</f:if>
+                    <f:for each="{newRelatedPerson}" as="person" key="personKey">
+                        <f:if condition="{personKey}!='atid'">
+                            <f:then>
+                                {person}
+                            </f:then>
+                            <f:else><a href="{person}">{person}</a><br></f:else>
+                        </f:if>
                     </f:for>
                     
                 </f:for>
             </div>
-		</f:case>
-		
-		<f:case value="variantName">
+        </f:case>
+        
+        <f:case value="variantName">
             <div class="three">
                 <h1><f:translate id="slubentityfacts.variantName" /></h1>
                     <f:for each="{viewArrayValue}" as="variantName">
@@ -191,18 +191,18 @@ Otherwise your changes will be overwritten the next time you save the extension 
             </div>
         </f:case>
            
-                		 
+                         
         <f:case default="TRUE">
             <f:if condition="{viewArrayValue}==NULL">
-				<f:then>
-					<h1><f:translate id="slubentityfacts.{viewArrayValueKey}" /></h1>
-					<p><f:translate id="slubentityfacts.noContent" /></p>
-				</f:then>
-				<f:else>
-					<h1><f:translate id="slubentityfacts.{viewArrayValueKey}" /></h1>
-					<p>{viewArrayValue}</p>
-				</f:else>
-			</f:if>
+                <f:then>
+                    <h1><f:translate id="slubentityfacts.{viewArrayValueKey}" /></h1>
+                    <p><f:translate id="slubentityfacts.noContent" /></p>
+                </f:then>
+                <f:else>
+                    <h1><f:translate id="slubentityfacts.{viewArrayValueKey}" /></h1>
+                    <p>{viewArrayValue}</p>
+                </f:else>
+            </f:if>
         </f:case>
         
     </f:switch>
@@ -212,29 +212,12 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:if condition="{settings.entityfacts.sameAs}=='1'">
     <f:then>
         <div class="four">
-            <h1>sameAs</h1>
+            <h1><f:translate id="slubentityfacts.sameAs" /></h1>
             <f:for each="{sameAsArray}" as="item">
-                <f:for each="{item}" as="subInfo" key="subInfoKey">
-                
-                    <f:if condition="{subInfoKey}=='collection'">
-                        <f:then>
-                            <f:for each="{subInfo}" as="collection" key="collectionKey">
-                                <f:if condition="{collectionKey}=='icon'">
-                                    <f:then>
-                                        <img src="{collection}" /><br>
-                                    </f:then>
-                                        <f:else>{collection}<br></f:else>
-                                </f:if>
-                            </f:for>
-                        </f:then>
-                        <f:else>
-                            <a href="{subInfo}">{subInfo}</a>
-                        </f:else>
-                    </f:if>
-                </f:for>
-            </f:for>	
+                <p><a href={item.atid}><img src="{item.collection.icon}" width="16" /> {item.atid}</a></p>
+            </f:for>    
         </div>
-	</f:then>
+    </f:then>
 </f:if>
 
 </f:section>
