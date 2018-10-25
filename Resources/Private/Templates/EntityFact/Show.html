@@ -13,54 +13,55 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-
+<!--Styles just for testing, remove before release-->
 <style>
     div.one {color: black;}
-    div.two {color: green;}
-    div.three {color: orange;}
+    div.fact {color: green;}
+    div.default {color: orange;}
     div.four {color: #666699;}
     div.five {color: red;}
 </style>
+
 <f:for each="{viewArray}" as="viewArrayValue" key="viewArrayValueKey">
     <f:if condition="{viewArrayValue}">
         <f:then>
             <f:switch expression="{viewArrayValueKey}">
                 <f:case value="relationship">
-                    <div class="one">
-                        <h1><f:translate id="slubentityfacts.relationship" /></h1>
+                    <div class="fact relationship">
+                        <p class="headline"><f:translate id="slubentityfacts.relationship" /></p>
                             <f:for each="{viewArrayValue}" as="relationship">
-                                <p>{relationship}</p>
+                                <p class="content">{relationship}</p>
                             </f:for>
                     </div>
                 </f:case>
                 
                 <f:case value="context">
-                    <div class="one">
-                        <h1><f:translate id="slubentityfacts.context" /></h1>
-                        <p><a href="{viewArray.context}">{viewArray.context}</a></p>
+                    <div class="fact context">
+                        <p class="headline"><f:translate id="slubentityfacts.context" /></p>
+                        <p class="content"><a href="{viewArray.context}">{viewArray.context}</a></p>
                     </div>
                 </f:case>
                 
                 <f:case value="id">
-                    <div class="one">
-                        <h1><f:translate id="slubentityfacts.id" /></h1>
-                        <p><a href="{viewArray.id}">{viewArray.id}</a></p>
+                    <div class="fact id">
+                        <p class="headline"><f:translate id="slubentityfacts.id" /></p>
+                        <p class="content"><a href="{viewArray.id}">{viewArray.id}</a></p>
                     </div>
                 </f:case>
                 
                 <f:case value="depiction">
-                    <div class="three">
-                        <h1><f:translate id="slubentityfacts.depiction" /></h1>
+                    <div class="fact depiction">
+                        <p class="headline"><f:translate id="slubentityfacts.depiction" /></p>
                         <f:for each="{viewArray.depiction}" as="depiction" key="depictionKey">
                             <f:if condition="{depictionKey}=='thumbnail'">
                                 <f:then>
                                     <f:for each="{depiction}" as="thumbnail" key="thumbnailKey">
-                                        <p>{depictionKey}:{thumbnailKey}:<a href="{thumbnail}">{thumbnail}</a><br>
+                                        <p class="content">{depictionKey}:{thumbnailKey}:<a href="{thumbnail}">{thumbnail}</a><br>
                                         <img src="{thumbnail}" /></p>
                                     </f:for>
                                 </f:then>
                                 <f:else>
-                                    <p>{depictionKey}:<a href="{depiction}">{depiction}</a></p>
+                                    <p class="content">{depictionKey}:<a href="{depiction}">{depiction}</a></p>
                                 </f:else>
                             </f:if>
                         </f:for>
@@ -68,16 +69,18 @@ Otherwise your changes will be overwritten the next time you save the extension 
                 </f:case>
                 
                 <f:case value="relatedPerson">
-                    <div class="two">
-                        <h1><f:translate id="slubentityfacts.relatedPerson" /></h1>
+                    <div class="fact relatedPerson">
+                        <p class="headline"><f:translate id="slubentityfacts.relatedPerson" /></p>
                         <f:for each="{viewArray.relatedPerson}" as="newRelatedPerson">
                             
                             <f:for each="{newRelatedPerson}" as="person" key="personKey">
                                 <f:if condition="{personKey}!='atid'">
                                     <f:then>
-                                        {person}
+                                        <p class="content">{person}</p>
                                     </f:then>
-                                    <f:else><a href="{person}">{person}</a><br></f:else>
+                                    <f:else>
+                                        <p class="content"><a href="{person}">{person}</a><br></p>
+                                    </f:else>
                                 </f:if>
                             </f:for>
                             
@@ -86,25 +89,25 @@ Otherwise your changes will be overwritten the next time you save the extension 
                 </f:case>
                 
                 <f:case value="variantName">
-                    <div class="three">
-                        <h1><f:translate id="slubentityfacts.variantName" /></h1>
+                    <div class="fact variantName">
+                        <p class="headline"><f:translate id="slubentityfacts.variantName" /></p>
                             <f:for each="{viewArrayValue}" as="variantName">
-                                <p>{variantName}</p>
+                                <p class="content">{variantName}</p>
                             </f:for>
                     </div>
                 </f:case>
                 
                 <f:case value="placeOfBusiness">
-                    <div class="two">
-                        <h1><f:translate id="slubentityfacts.placeOfBusiness" /></h1>
+                    <div class="fact placeOfBusiness">
+                        <p class="headline"><f:translate id="slubentityfacts.placeOfBusiness" /></p>
                             <f:for each="{viewArrayValue}" as="placeOfBusiness">
                                 <f:for each="{placeOfBusiness}" as="placeOfBusinessArray" key="placeOfBusinessArrayKey">
                                     <f:if condition="{placeOfBusinessArrayKey}=='@id'">
                                         <f:then>
-                                            <p><a href="{placeOfBusinessArray}">{placeOfBusinessArray}</a></p>
+                                            <p class="content"><a href="{placeOfBusinessArray}">{placeOfBusinessArray}</a></p>
                                         </f:then>
                                         <f:else>
-                                            <p>{placeOfBusinessArray}</p>
+                                            <p class="content">{placeOfBusinessArray}</p>
                                         </f:else>
                                     </f:if>
                                 </f:for>
@@ -113,16 +116,16 @@ Otherwise your changes will be overwritten the next time you save the extension 
                 </f:case>
                 
                 <f:case value="predecessor">
-                    <div class="four">
-                        <h1><f:translate id="slubentityfacts.predecessor" /></h1>
+                    <div class="fact predecessor">
+                        <p class="headline"><f:translate id="slubentityfacts.predecessor" /></p>
                             <f:for each="{viewArrayValue}" as="predecessor">
                                 <f:for each="{predecessor}" as="predecessorArray" key="predecessorArrayKey">
                                     <f:if condition="{predecessorArrayKey}=='@id'">
                                         <f:then>
-                                            <p><a href="{predecessorArray}">{predecessorArray}</a></p>
+                                            <p class="content"><a href="{predecessorArray}">{predecessorArray}</a></p>
                                         </f:then>
                                         <f:else>
-                                            <p>{predecessorArray}</p>
+                                            <p class="content">{predecessorArray}</p>
                                         </f:else>
                                     </f:if>
                                 </f:for>
@@ -131,16 +134,16 @@ Otherwise your changes will be overwritten the next time you save the extension 
                 </f:case>
                 
                 <f:case value="isA">
-                    <div class="four">
-                        <h1><f:translate id="slubentityfacts.isA" /></h1>
+                    <div class="fact isA">
+                        <p class="headline"><f:translate id="slubentityfacts.isA" /></p>
                             <f:for each="{viewArrayValue}" as="isA">
                                 <f:for each="{isA}" as="isAArray" key="isAArrayKey">
                                     <f:if condition="{isAArrayKey}=='@id'">
                                         <f:then>
-                                            <p><a href="{isAArray}">{isAArray}</a></p>
+                                            <p class="content"><a href="{isAArray}">{isAArray}</a></p>
                                         </f:then>
                                         <f:else>
-                                            <p>{isAArray}</p>
+                                            <p class="content">{isAArray}</p>
                                         </f:else>
                                     </f:if>
                                 </f:for>
@@ -149,24 +152,24 @@ Otherwise your changes will be overwritten the next time you save the extension 
                 </f:case>
                 
                 <f:case value="dateOfEstablishment">
-                    <div class="three">
-                        <h1><f:translate id="slubentityfacts.dateOfEstablishment" /></h1>
+                    <div class="fact dateOfEstablishment">
+                        <p class="headline"><f:translate id="slubentityfacts.dateOfEstablishment" /></p>
                             <f:for each="{viewArrayValue}" as="dateOfEstablishment">
-                                <p>{dateOfEstablishment}</p>
+                                <p class="content">{dateOfEstablishment}</p>
                             </f:for>
                     </div>
                 </f:case>
                 
                 <f:case value="describedBy">
-                    <div class="three">
-                        <h1><f:translate id="slubentityfacts.describedBy" /></h1>
+                    <div class="fact describedBy">
+                        <p class="headline"><f:translate id="slubentityfacts.describedBy" /></p>
                             <f:for each="{viewArrayValue}" as="describedBy" key="describedByKey">
                                 <f:if condition="{describedByKey}!='valid'">
                                     <f:then>
-                                        <p><a href="{describedBy}">{describedBy}</a></p>
+                                        <p class="content"><a href="{describedBy}">{describedBy}</a></p>
                                     </f:then>
                                     <f:else>
-                                        <p>{describedBy}</p>
+                                        <p class="content">{describedBy}</p>
                                     </f:else>
                                 </f:if>
                             </f:for>
@@ -174,35 +177,37 @@ Otherwise your changes will be overwritten the next time you save the extension 
                 </f:case>
                 
                 <f:case value="associatedPlace">
-                    <div class="four">
-                        <h1><f:translate id="slubentityfacts.associatedPlace" /></h1>
+                    <div class="fact associatedPlace">
+                        <p class="headline"><f:translate id="slubentityfacts.associatedPlace" /></p>
                             <f:for each="{viewArrayValue}" as="associatedPlace">
-                               <p><a href="{associatedPlace.atid}">{associatedPlace.preferredName}</a></p>
+                               <p class="content"><a href="{associatedPlace.atid}">{associatedPlace.preferredName}</a></p>
                             </f:for>
                     </div>
                 </f:case>
                    
                                  
                 <f:case default="TRUE">
-                    <h1><f:translate id="slubentityfacts.{viewArrayValueKey}" /></h1>
-                    <p>{viewArrayValue}</p>
+                    <div class="fact default">
+                        <p class="headline"><f:translate id="slubentityfacts.{viewArrayValueKey}" /></p>
+                        <p>{viewArrayValue}</p>
+                    </div>
                 </f:case>
                 
             </f:switch>
         </f:then>
         <f:else>
-            <h1><f:translate id="slubentityfacts.{viewArrayValueKey}" /></h1>
-            <p><f:translate id="slubentityfacts.noContent" /></p>
+            <p class="headline"><f:translate id="slubentityfacts.{viewArrayValueKey}" /></p>
+            <p class="content"><f:translate id="slubentityfacts.noContent" /></p>
         </f:else>
     </f:if>    
 </f:for>
 
 <f:if condition="{settings.entityfacts.sameAs}=='1'">
     <f:then>
-        <div class="four">
-            <h1><f:translate id="slubentityfacts.sameAs" /></h1>
+        <div class="fact sameAs">
+            <p class="headline"><f:translate id="slubentityfacts.sameAs" /></p>
             <f:for each="{sameAsArray}" as="item">
-                <p><a href={item.atid}><img src="{item.collection.icon}" width="16" /> {item.atid}</a></p>
+                <p class="content"><a href={item.atid}><img src="{item.collection.icon}" width="16" /> {item.atid}</a></p>
             </f:for>    
         </div>
     </f:then>
