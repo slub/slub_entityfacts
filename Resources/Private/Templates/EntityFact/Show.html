@@ -52,19 +52,10 @@ Otherwise your changes will be overwritten the next time you save the extension 
                 <f:case value="depiction">
                     <div class="fact depiction">
                         <p class="headline"><f:translate id="slubentityfacts.depiction" /></p>
-                        <f:for each="{viewArray.depiction}" as="depiction" key="depictionKey">
-                            <f:if condition="{depictionKey}=='thumbnail'">
-                                <f:then>
-                                    <f:for each="{depiction}" as="thumbnail" key="thumbnailKey">
-                                        <p class="content">{depictionKey}:{thumbnailKey}:<a href="{thumbnail}">{thumbnail}</a><br>
-                                        <img src="{thumbnail}" /></p>
-                                    </f:for>
-                                </f:then>
-                                <f:else>
-                                    <p class="content">{depictionKey}:<a href="{depiction}">{depiction}</a></p>
-                                </f:else>
-                            </f:if>
-                        </f:for>
+                        <p class="content">
+                            <a href="{viewArray.depiction.url}">
+                            <img src="{viewArray.depiction.thumbnail.atid}" /></a>
+                        </p>
                     </div>
                 </f:case>
                 
