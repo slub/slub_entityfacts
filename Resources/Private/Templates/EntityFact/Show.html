@@ -62,19 +62,10 @@ Otherwise your changes will be overwritten the next time you save the extension 
                 <f:case value="relatedPerson">
                     <div class="fact relatedPerson">
                         <p class="headline"><f:translate id="slubentityfacts.relatedPerson" /></p>
-                        <f:for each="{viewArray.relatedPerson}" as="newRelatedPerson">
-                            
-                            <f:for each="{newRelatedPerson}" as="person" key="personKey">
-                                <f:if condition="{personKey}!='atid'">
-                                    <f:then>
-                                        <p class="content">{person}</p>
-                                    </f:then>
-                                    <f:else>
-                                        <p class="content"><a href="{person}">{person}</a><br></p>
-                                    </f:else>
-                                </f:if>
-                            </f:for>
-                            
+                        <f:for each="{viewArray.relatedPerson}" as="newRelatedPerson" key="newRelatedPersonKey">
+                            <p class="content">
+                                <a href="{newRelatedPerson.atid}">{newRelatedPerson.preferredName} ({newRelatedPerson.relationship})</a>
+                            </p>
                         </f:for>
                     </div>
                 </f:case>
