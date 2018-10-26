@@ -49,6 +49,13 @@ Otherwise your changes will be overwritten the next time you save the extension 
                     </div>
                 </f:case>
                 
+                <f:case value="type">
+                    <div class="fact type">
+                        <p class="headline"><f:translate id="slubentityfacts.type" /></p>
+                        <p class="content"><f:translate id="slubentityfacts.type.{viewArray.type}" /></a></p>
+                    </div>
+                </f:case>
+                
                 <f:case value="depiction">
                     <div class="fact depiction">
                         <p class="headline"><f:translate id="slubentityfacts.depiction" /></p>
@@ -166,8 +173,59 @@ Otherwise your changes will be overwritten the next time you save the extension 
                             </f:for>
                     </div>
                 </f:case>
-                   
-                                 
+                
+                <f:case value="gender">
+                    <div class="fact gender">
+                        <p class="headline"><f:translate id="slubentityfacts.gender" /></p>
+                        <p class="content"><a href="{viewArray.gender.atid}">{viewArray.gender.label}</a></p>
+                    </div>
+                </f:case>
+                
+                <f:case value="familialRelationship">
+                    <div class="fact familialRelationship">
+                        <p class="headline"><f:translate id="slubentityfacts.familialRelationship" /></p>
+                        <f:for each="{viewArray.familialRelationship}" as="member">
+                            <p class="content"><a href="{member.atid}">{member.preferredName} ({member.relationship})</a></p>
+                        </f:for>
+                    </div>
+                </f:case>
+                
+                <f:case value="professionOrOccupation">
+                    <div class="fact professionOrOccupation">
+                        <p class="headline"><f:translate id="slubentityfacts.professionOrOccupation" /></p>
+                        <f:for each="{viewArray.professionOrOccupation}" as="profession">
+                            <p class="content"><a href="{profession.atid}">{profession.preferredName}</a></p>
+                        </f:for>
+                    </div>
+                </f:case>
+                
+                <f:case value="affiliation">
+                    <div class="fact affiliation">
+                        <p class="headline"><f:translate id="slubentityfacts.affiliation" /></p>
+                        <f:for each="{viewArray.affiliation}" as="number">
+                            <p class="content"><a href="{number.atid}">{number.preferredName}</a></p>
+                        </f:for>
+                    </div>
+                </f:case>
+                
+                <f:case value="pseudonym">
+                    <div class="fact pseudonym">
+                        <p class="headline"><f:translate id="slubentityfacts.pseudonym" /></p>
+                        <f:for each="{viewArray.pseudonym}" as="number">
+                            <p class="content">{number.preferredName}</p>
+                        </f:for>
+                    </div>
+                </f:case>
+                
+                <f:case value="placeOfActivity">
+                    <div class="fact placeOfActivity">
+                        <p class="headline"><f:translate id="slubentityfacts.placeOfActivity" /></p>
+                        <f:for each="{viewArray.placeOfActivity}" as="place">
+                            <p class="content"><a href="{place.atid}">{place.preferredName}</a></p>
+                        </f:for>
+                    </div>
+                </f:case>
+                
                 <f:case default="TRUE">
                     <div class="fact default">
                         <p class="headline"><f:translate id="slubentityfacts.{viewArrayValueKey}" /></p>

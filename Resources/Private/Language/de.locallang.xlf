@@ -116,6 +116,22 @@
                 <source>Type</source>
                 <target state="translated">Entität-Typ</target>
             </trans-unit>
+            <trans-unit id="slubentityfacts.type.person">
+                <source>Person</source>
+                <target state="translated">Person</target>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.type.family">
+                <source>Family</source>
+                <target state="translated">Familie</target>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.type.organisation">
+                <source>Organisation</source>
+                <target state="translated">Organisation</target>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.type.place">
+                <source>Place</source>
+                <target state="translated">Ort</target>
+            </trans-unit>
             <trans-unit id="slubentityfacts.valid">
                 <source>Valid</source>
                 <target state="translated">Generierungsdatum</target>
@@ -147,6 +163,42 @@
             <trans-unit id="slubentityfacts.id">
                 <source>ID</source>
                 <target state="translated">ID</target>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.pseudonym">
+                <source>Pseudonym</source>
+                <target state="translated">Pseudonym</target>
+            </trans-unit>
+             <trans-unit id="slubentityfacts.realIdentity">
+                <source>Real Identity</source>
+                <target state="translated">Wirklicher Name</target>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.periodOfActivity">
+                <source>Period Of Activity</source>
+                <target state="translated">Schaffensperiode</target>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.gender">
+                <source>Gender</source>
+                <target state="translated">Geschlecht</target>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.titleOfNobility">
+                <source>Title Of Nobility</source>
+                <target state="translated">Adelstitel</target>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.academicDegree">
+                <source>Academic Degree</source>
+                <target state="translated">Akademischer Titel</target>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.familialRelationship">
+                <source>Familial Relationship</source>
+                <target state="translated">Familiäre Beziehung</target>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.topic">
+                <source>Topic</source>
+                <target state="translated">Themen</target>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.relatedSubject">
+                <source>Related Subject</source>
+                <target state="translated">In Beziehung stehendes Schlagwort</target>
             </trans-unit>
         </body>
     </file>

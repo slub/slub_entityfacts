@@ -90,6 +90,18 @@
             <trans-unit id="slubentityfacts.type">
                 <source>Type</source>
             </trans-unit>
+            <trans-unit id="slubentityfacts.type.person">
+                <source>Person</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.type.family">
+                <source>Family</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.type.organisation">
+                <source>Organisation</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.type.place">
+                <source>Place</source>
+            </trans-unit>
             <trans-unit id="slubentityfacts.valid">
                 <source>Valid</source>
             </trans-unit>
@@ -113,6 +125,33 @@
             </trans-unit>
             <trans-unit id="slubentityfacts.id">
                 <source>ID</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.pseudonym">
+                <source>Pseudonym</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.realIdentity">
+                <source>Real Identity</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.periodOfActivity">
+                <source>Period Of Activity</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.gender">
+                <source>Gender</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.titleOfNobility">
+                <source>Title Of Nobility</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.academicDegree">
+                <source>Academic Degree</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.familialRelationship">
+                <source>Familial Relationship</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.topic">
+                <source>Topic</source>
+            </trans-unit>
+            <trans-unit id="slubentityfacts.relatedSubject">
+                <source>Related Subject</source>
             </trans-unit>
         </body>
     </file>
