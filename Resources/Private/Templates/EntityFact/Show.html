@@ -218,10 +218,17 @@ Otherwise your changes will be overwritten the next time you save the extension 
                     </div>
                 </f:case>
 
+                <f:case value="preferredName">
+                    <div class="fact preferredName">
+                        <p class="headline"><f:translate id="slubentityfacts.preferredName" /></p>
+                        <p class="value">{viewArray.preferredName}</p>
+                    </div>
+                </f:case>
+
                 <f:case default="TRUE">
                     <div class="fact default">
                         <p class="headline"><f:translate id="slubentityfacts.{viewArrayValueKey}" /></p>
-                        <p>{viewArrayValue}</p>
+                        <p class="value">{viewArrayValue}</p>
                     </div>
                 </f:case>
 
