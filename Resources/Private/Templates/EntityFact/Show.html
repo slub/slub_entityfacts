@@ -240,9 +240,15 @@ Otherwise your changes will be overwritten the next time you save the extension 
     <f:then>
         <div class="fact sameAs">
             <p class="headline"><f:translate id="slubentityfacts.sameAs" /></p>
+            <ul>
             <f:for each="{sameAsArray}" as="item">
-                <p class="content"><a href={item.atid}><img src="{item.collection.icon}" width="16" /> {item.atid}</a></p>
+                <li class="content">
+                  <f:link.external uri="{item.atid}" title="{item.collection.name}">
+                    <img class="icon" src="{item.collection.icon}" alt="icon of {item.collection.name}"/>{item.atid}
+                  </f:link.external>
+                </li>
             </f:for>
+            </ul>
         </div>
     </f:then>
 </f:if>

@@ -1,5 +1,16 @@
+// debug settings
+
 div.one {color: black;}
 div.fact {color: green;}
 div.default {color: orange;}
 div.four {color: #666699;}
 div.five {color: red;}
+
+.sameAs ul {
+  list-style-type: none;
+}
+
+.sameAs img.icon {
+  width: 24px;
+  margin: 0 10px;
+}
