@@ -17,4 +17,5 @@ namespace Slub\SlubEntityfacts\Domain\Model;
  */
 class EntityFact extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-    }
+
+}
