@@ -228,8 +228,10 @@ Otherwise your changes will be overwritten the next time you save the extension 
             </f:switch>
         </f:then>
         <f:else>
+          <f:if condition="{settings.debugview}">
             <p class="headline"><f:translate id="slubentityfacts.{viewArrayValueKey}" /></p>
             <p class="content"><f:translate id="slubentityfacts.noContent" /></p>
+          </f:if>
         </f:else>
     </f:if>
 </f:for>
