@@ -52,4 +52,8 @@ plugin.tx_slubentityfacts._CSS_DEFAULT_STYLE (
     }
 )
 
-
+page {
+    includeCSS {
+        slubentityfacts = EXT:slub_entityfacts/Resources/Public/Css/slub_entityfacts.css
+    }
+}
