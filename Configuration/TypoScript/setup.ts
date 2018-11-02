@@ -21,6 +21,6 @@ plugin.tx_slubentityfacts {
 
 page {
     includeCSS {
-        slubentityfacts = EXT:slub_entityfacts/Resources/Public/Css/slub_entityfacts.css
+        slubentityfacts = EXT:slub_entityfacts/Resources/Public/Css/SlubEntityfacts.css
     }
 }
