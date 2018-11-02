@@ -20,13 +20,10 @@ slubentityfacts
 		|release|
 
 	:Language:
-		en
+		de, en
 
 	:Description:
-		Plugin for showing DB Entity Facts
-
-	:Keywords:
-		comma,separated,list,of,keywords
+		Plugin for showing DNB Entity Facts
 
 	:Copyright:
 		2018
@@ -55,10 +52,5 @@ slubentityfacts
 
 	Introduction/Index
 	User/Index
-	Administrator/Index
 	Configuration/Index
-	Developer/Index
-	KnownProblems/Index
-	ToDoList/Index
-	ChangeLog/Index
 	Links
