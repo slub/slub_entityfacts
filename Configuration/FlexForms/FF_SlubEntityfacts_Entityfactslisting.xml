@@ -173,7 +173,7 @@
                                 <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
                             </config>
                         </TCEforms>
-                    </settings.entityfacts.personfacts> 
+                    </settings.entityfacts.personfacts>
                     <settings.entityfacts.organisationfacts>
                         <TCEforms>
                             <label>Welche Daten zur Körperschaft sollen angezeigt werden?</label>
@@ -250,7 +250,7 @@
                                         <numIndex index="0">Lizenz</numIndex>
                                         <numIndex index="1">license</numIndex>
                                     </numIndex>
-                                    
+
                                     <numIndex index="18" type="array">
                                         <numIndex index="0">Beginn des Bestehens</numIndex>
                                         <numIndex index="1">dateOfEstablishment</numIndex>
@@ -271,7 +271,7 @@
                                         <numIndex index="0">Oberbegriff (Instantiell)</numIndex>
                                         <numIndex index="1">isA</numIndex>
                                     </numIndex>
-                                </items>    
+                                </items>
                                 <maxitems>40</maxitems>
                                 <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
                             </config>
@@ -345,7 +345,7 @@
                                         <numIndex index="0">Lizenz</numIndex>
                                         <numIndex index="1">license</numIndex>
                                     </numIndex>
-                                </items>    
+                                </items>
                                 <maxitems>40</maxitems>
                                 <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
                             </config>
@@ -415,9 +415,17 @@
                             </config>
                         </TCEforms>
                     </settings.entityfacts.sameAsSelected>
-
+                    <settings.debugview>
+                        <TCEforms>
+                            <label>Show Debug Information</label>
+                            <config>
+                                <type>check</type>
+                                <default>0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.debugview>
                 </el>
             </ROOT>
         </sDEF>
     </sheets>
-</T3DataStructure>  
+</T3DataStructure>

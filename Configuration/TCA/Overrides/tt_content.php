@@ -1,13 +1,23 @@
 <?php
+defined('TYPO3_MODE') || die('Access denied.');
 
-//Einbindung Flexform für Plugin Entityfactslisting der Extension SlubEntityfacts
-$pluginSignature = 'slubentityfacts_entityfactslisting';
+call_user_func(
+    function($extKey)
+    {
 
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+      \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+          'Slub.SlubEntityfacts',
+          'Entityfactslisting',
+          'SLUB: DNB Entity Facts'
+      );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
-	$pluginSignature,
-	'FILE:EXT:slub_entityfacts/Configuration/FlexForms/FF_SlubEntityfacts_Entityfactslisting.xml'
+      $pluginSignature = 'slubentityfacts_entityfactslisting';
+      $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+      \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+        $pluginSignature,
+        'FILE:EXT:slub_entityfacts/Configuration/FlexForms/FF_SlubEntityfacts_Entityfactslisting.xml'
+      );
+
+    },
+    'slub_entityfacts'
 );
-?>
- 

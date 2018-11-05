@@ -1,14 +1,14 @@
-plugin.tx_slubentityfacts_entityfactslisting {
+plugin.tx_slubentityfacts {
   view {
     templateRootPaths.0 = EXT:slub_entityfacts/Resources/Private/Templates/
-    templateRootPaths.1 = {$plugin.tx_slubentityfacts_entityfactslisting.view.templateRootPath}
+    templateRootPaths.1 = {$plugin.tx_slubentityfacts.view.templateRootPath}
     partialRootPaths.0 = EXT:slub_entityfacts/Resources/Private/Partials/
-    partialRootPaths.1 = {$plugin.tx_slubentityfacts_entityfactslisting.view.partialRootPath}
+    partialRootPaths.1 = {$plugin.tx_slubentityfacts.view.partialRootPath}
     layoutRootPaths.0 = EXT:slub_entityfacts/Resources/Private/Layouts/
-    layoutRootPaths.1 = {$plugin.tx_slubentityfacts_entityfactslisting.view.layoutRootPath}
+    layoutRootPaths.1 = {$plugin.tx_slubentityfacts.view.layoutRootPath}
   }
   persistence {
-    storagePid = {$plugin.tx_slubentityfacts_entityfactslisting.persistence.storagePid}
+    storagePid = {$plugin.tx_slubentityfacts.persistence.storagePid}
     #recursive = 1
   }
   features {
@@ -19,41 +19,8 @@ plugin.tx_slubentityfacts_entityfactslisting {
   }
 }
 
-plugin.tx_slubentityfacts._CSS_DEFAULT_STYLE (
-    textarea.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
-    }
-
-    input.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
-    }
-
-    .tx-slub-entityfacts table {
-        border-collapse:separate;
-        border-spacing:10px;
-    }
-
-    .tx-slub-entityfacts table th {
-        font-weight:bold;
-    }
-
-    .tx-slub-entityfacts table td {
-        vertical-align:top;
-    }
-
-    .typo3-messages .message-error {
-        color:red;
-    }
-
-    .typo3-messages .message-ok {
-        color:green;
-    }
-)
-
 page {
     includeCSS {
-        slubentityfacts = EXT:slub_entityfacts/Resources/Public/Css/slub_entityfacts.css
+        slubentityfacts = EXT:slub_entityfacts/Resources/Public/Css/SlubEntityfacts.css
     }
 }
