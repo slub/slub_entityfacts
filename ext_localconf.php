@@ -22,7 +22,7 @@ call_user_func(
             wizards.newContentElement.wizardItems.plugins {
                 elements {
                     entityfactslisting {
-                        icon = ' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($extKey) . 'Resources/Public/Icons/user_plugin_entityfactslisting.svg
+                        icon = EXT:slub_entityfacts/Resources/Public/Icons/user_plugin_entityfactslisting.svg
                         title = LLL:EXT:slub_entityfacts/Resources/Private/Language/locallang_db.xlf:tx_slub_entityfacts_domain_model_entityfactslisting
                         description = LLL:EXT:slub_entityfacts/Resources/Private/Language/locallang_db.xlf:tx_slub_entityfacts_domain_model_entityfactslisting.description
                         tt_content_defValues {
