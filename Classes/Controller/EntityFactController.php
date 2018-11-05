@@ -41,21 +41,21 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         }
 
         //Call the API and write the decoded JSON to the array
-		$apiAnswer = file_get_contents('http://hub.culturegraph.org/entityfacts/'.$search);
+        $apiAnswer = file_get_contents('http://hub.culturegraph.org/entityfacts/'.$search);
 
-		//Replace @id for easier calling of informations (no value with "@id" expected)
-		$apiAnswerClean = str_replace('"@id"', '"atid"', $apiAnswer);
+        //Replace @id for easier calling of informations (no value with "@id" expected)
+        $apiAnswerClean = str_replace('"@id"', '"atid"', $apiAnswer);
 
-		$apiAnswerDecode = json_decode ($apiAnswerClean, true);
-
-
-		//Workaround to get rid of the'@'
-		$apiAnswerDecode['context'] = $apiAnswerDecode['@context'];
-		//$apiAnswerDecode['id'] = $apiAnswerDecode['@id'];
-		$apiAnswerDecode['type'] = $apiAnswerDecode['@type'];
+        $apiAnswerDecode = json_decode ($apiAnswerClean, true);
 
 
-		//write the user sorted selection given by Flexform into helper array
+        //Workaround to get rid of the'@'
+        $apiAnswerDecode['context'] = $apiAnswerDecode['@context'];
+        //$apiAnswerDecode['id'] = $apiAnswerDecode['@id'];
+        $apiAnswerDecode['type'] = $apiAnswerDecode['@type'];
+
+
+        //write the user sorted selection given by Flexform into helper array
         $multiSelectArray1 = explode(",",($this->settings['entityfacts'][$selection.'facts']));
 
         if ($this->settings['entityfacts'][$selection.'facts']) {
@@ -83,9 +83,9 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         }
 
 
-		$this->view->assign('sameAsArray', $sameAsArray);
-		$this->view->assign('viewArray', $viewArray);
-		//$this->view->assign('multiSelectArray', $multiSelectArray);
+        $this->view->assign('sameAsArray', $sameAsArray);
+        $this->view->assign('viewArray', $viewArray);
+        //$this->view->assign('multiSelectArray', $multiSelectArray);
         $this->view->assign('apiAnswerDecode', $apiAnswerDecode);
         //$this->view->assign('entityFact', $entityFact);
     }
