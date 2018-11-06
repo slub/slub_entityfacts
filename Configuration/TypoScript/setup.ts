@@ -1,10 +1,7 @@
 plugin.tx_slubentityfacts {
   view {
-    templateRootPaths.0 = EXT:slub_entityfacts/Resources/Private/Templates/
     templateRootPaths.1 = {$plugin.tx_slubentityfacts.view.templateRootPath}
-    partialRootPaths.0 = EXT:slub_entityfacts/Resources/Private/Partials/
     partialRootPaths.1 = {$plugin.tx_slubentityfacts.view.partialRootPath}
-    layoutRootPaths.0 = EXT:slub_entityfacts/Resources/Private/Layouts/
     layoutRootPaths.1 = {$plugin.tx_slubentityfacts.view.layoutRootPath}
   }
   persistence {
@@ -18,6 +15,11 @@ plugin.tx_slubentityfacts {
     #callDefaultActionIfActionCantBeResolved = 1
   }
 }
+
+[compatVersion = 8.7.0]
+[else]
+plugin.tx_slubentityfacts.view.templateRootPaths.1 = EXT:slub_entityfacts/Resources/Private/Templates76/
+[global]
 
 page {
     includeCSS {
