@@ -16,11 +16,6 @@ plugin.tx_slubentityfacts {
   }
 }
 
-[compatVersion = 8.7.0]
-[else]
-plugin.tx_slubentityfacts.view.templateRootPaths.1 = EXT:slub_entityfacts/Resources/Private/Templates76/
-[global]
-
 page {
     includeCSS {
         slubentityfacts = EXT:slub_entityfacts/Resources/Public/Css/SlubEntityfacts.css
