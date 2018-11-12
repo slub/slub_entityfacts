@@ -21,4 +21,4 @@ Links
 	https://github.com/slub/slub_entityfacts
 
 :Contact:
-	`sebastian.semsker@slub-dresden.de alexander.bigga@slub-dresden.de`__
+	typo3@slub-dresden.de

@@ -9,9 +9,9 @@
 ---
 conf.py:
   copyright: 2018
-  project: slubentityfacts
-  version: 0.0.1
-  release: 0.0.1
+  project: SLUB Entity Facts
+  version: 1.0.0
+  release: 1.0.0
   intersphinx_mapping:
     t3tsref:
     - http://docs.typo3.org/typo3cms/TyposcriptReference/
