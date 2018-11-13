@@ -32,7 +32,7 @@ slubentityfacts
 		Sebastian Semsker
 
 	:Email:
-		sebastian.semsker@slub-dresden.de
+		typo3@slub-dresden.de
 
 	:License:
 		This document is published under the Open Content License
