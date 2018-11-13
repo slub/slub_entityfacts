@@ -11,7 +11,7 @@
 Configuration Reference
 =======================
 
-The following documentation was tested with TYPO3 7.6.x. The extension has no further dependecies.
+The following documentation was tested with TYPO3 7.6.x - 9.5.x. The extension has no further dependecies.
 
 You can install the extension automatically via extension manager or semiautomatically via GitHub. The automatic way is straight forward(self-explaining) so in the following the GitHub process is explained. At first checkout the repository:
 
