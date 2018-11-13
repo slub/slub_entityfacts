@@ -31,10 +31,10 @@
                 <source>Predecessor</source>
             </trans-unit>
             <trans-unit id="slubentityfacts.isA">
-                <source>is A</source>
+                <source>Is A</source>
             </trans-unit>
             <trans-unit id="slubentityfacts.dateOfEstablishment">
-                <source>Date Of Establishment</source>
+                <source>Date of Establishment</source>
             </trans-unit>
             <trans-unit id="slubentityfacts.describedBy">
                 <source>Described By</source>
@@ -70,7 +70,7 @@
                 <source>Profession</source>
             </trans-unit>
             <trans-unit id="slubentityfacts.sameAs">
-                <source>Same As</source>
+                <source>Links to Other Resources</source>
             </trans-unit>
             <trans-unit id="slubentityfacts.location">
                 <source>Location</source>
@@ -79,7 +79,7 @@
                 <source>Architect</source>
             </trans-unit>
             <trans-unit id="slubentityfacts.dateOfProduction">
-                <source>Date Of Production</source>
+                <source>Date of Production</source>
             </trans-unit>
             <trans-unit id="slubentityfacts.relatedOrganisation">
                 <source>Related Organisation</source>

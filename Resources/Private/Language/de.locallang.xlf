@@ -1,205 +1,206 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="de" datatype="plaintext" original="messages" date="2018-09-17T10:31:14Z" product-name="slub_entityfacts">
-        <header/>
-        <body>
-            <trans-unit id="tx_slub_entityfacts_domain_model_entityfactslisting">
-                <source>Entity Facts listing</source>
-            </trans-unit>
-            <trans-unit id="tx_slub_entityfacts_domain_model_entityfactslisting.description">
-                <source>Plugin for showing DB Entity Facts</source>
-            </trans-unit>
-            <trans-unit id="tx_slubentityfacts_domain_model_entityfact">
-                <source>Entity Fact</source>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.relationship">
-                <source>Relationship</source>
-                <target state="translated">Beziehung</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.depiction">
-                <source>Depiction</source>
-                <target state="translated">Abbildung</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.relatedPerson">
-                <source>Related Person</source>
-                <target state="translated">Beziehungen zu Personen</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.variantName">
-                <source>Variant Name</source>
-                <target state="translated">Andere Namen</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.placeOfBusiness">
-                <source>Place of Business</source>
-                <target state="translated">Orte (Sitz)</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.predecessor">
-                <source>Predecessor</source>
-                <target state="translated">Vorgänger</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.isA">
-                <source>is A</source>
-                <target state="translated">Oberbegriff</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.dateOfEstablishment">
-                <source>Date Of Establishment</source>
-                <target state="translated">Beginn des Bestehens</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.describedBy">
-                <source>Described By</source>
-                <target state="translated">Metainformationen</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.associatedPlace">
-                <source>Associated Place</source>
-                <target state="translated">Geografischer Bezug</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.forename">
-                <source>Forename</source>
-                <target state="translated">Vorname</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.surname">
-                <source>Surname</source>
-                <target state="translated">Nachname</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.noContent">
-                <source>No Content. Please remove from selection.</source>
-                <target state="translated">Kein Inhalt vorhanden. Bitte aus der Auswahl entfernen.</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.preferredName">
-                <source>Preferred Name</source>
-                <target state="translated">Bevorzugter Name</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.dateOfBirth">
-                <source>Date of Birth</source>
-                <target state="translated">Geburtstag</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.dateOfDeath">
-                <source>Date of Death</source>
-                <target state="translated">Sterbetag</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.biographicalOrHistoricalInformation">
-                <source>Biographical Or Historical Information</source>
-                <target state="translated">Biografisch/historische Angaben</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.placeOfActivity">
-                <source>Place Of Activity</source>
-                <target state="translated">Wirkungsorte</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.professionOrOccupation">
-                <source>Profession</source>
-                <target state="translated">Berufe</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.sameAs">
-                <source>Same As</source>
-                <target state="translated">Verlinkungen auf weiterführende Webseiten</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.location">
-                <source>Location</source>
-                <target state="translated">Geografische Lage</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.architect">
-                <source>Architect</source>
-                <target state="translated">Architekt</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.dateOfProduction">
-                <source>Date Of Production</source>
-                <target state="translated">Produktionsdatum (Zeitraum)</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.relatedOrganisation">
-                <source>Related Organisation</source>
-                <target state="translated">In Beziehung stehende Organisationen</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.topic">
-                <source>Topic</source>
-                <target state="translated">Themen</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.type">
-                <source>Type</source>
-                <target state="translated">Entität-Typ</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.type.person">
-                <source>Person</source>
-                <target state="translated">Person</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.type.family">
-                <source>Family</source>
-                <target state="translated">Familie</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.type.organisation">
-                <source>Organisation</source>
-                <target state="translated">Organisation</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.type.place">
-                <source>Place</source>
-                <target state="translated">Ort</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.valid">
-                <source>Valid</source>
-                <target state="translated">Generierungsdatum</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.license">
-                <source>License</source>
-                <target state="translated">Lizenz</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.dateOfTermination">
-                <source>Date Of Termination</source>
-                <target state="translated">Ende des Bestehens</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.successor">
-                <source>Successor</source>
-                <target state="translated">Nachfolger</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.founder">
-                <source>Founder</source>
-                <target state="translated">Gründer</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.affiliation">
-                <source>Affiliation</source>
-                <target state="translated">Affiliation</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.context">
-                <source>URL of the JSON-LD-Contextfile</source>
-                <target state="translated">URL der JSON-LD-Contextdatei</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.id">
-                <source>ID</source>
-                <target state="translated">ID</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.pseudonym">
-                <source>Pseudonym</source>
-                <target state="translated">Pseudonym</target>
-            </trans-unit>
-             <trans-unit id="slubentityfacts.realIdentity">
-                <source>Real Identity</source>
-                <target state="translated">Wirklicher Name</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.periodOfActivity">
-                <source>Period Of Activity</source>
-                <target state="translated">Schaffensperiode</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.gender">
-                <source>Gender</source>
-                <target state="translated">Geschlecht</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.titleOfNobility">
-                <source>Title Of Nobility</source>
-                <target state="translated">Adelstitel</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.academicDegree">
-                <source>Academic Degree</source>
-                <target state="translated">Akademischer Titel</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.familialRelationship">
-                <source>Familial Relationship</source>
-                <target state="translated">Familiäre Beziehung</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.topic">
-                <source>Topic</source>
-                <target state="translated">Themen</target>
-            </trans-unit>
-            <trans-unit id="slubentityfacts.relatedSubject">
-                <source>Related Subject</source>
-                <target state="translated">In Beziehung stehendes Schlagwort</target>
-            </trans-unit>
-        </body>
-    </file>
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-11-13T16:27:41Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+			<trans-unit id="slubentityfacts.academicDegree" approved="yes">
+				<source><![CDATA[Academic Degree]]></source>
+				<target><![CDATA[Akademischer Titel]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.affiliation" approved="yes">
+				<source><![CDATA[Affiliation]]></source>
+				<target><![CDATA[Affiliation]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.architect" approved="yes">
+				<source><![CDATA[Architect]]></source>
+				<target><![CDATA[Architekt]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.associatedPlace" approved="yes">
+				<source><![CDATA[Associated Place]]></source>
+				<target><![CDATA[Geografischer Bezug]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.biographicalOrHistoricalInformation" approved="yes">
+				<source><![CDATA[Biographical Or Historical Information]]></source>
+				<target><![CDATA[Biografisch/historische Angaben]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.context" approved="yes">
+				<source><![CDATA[URL of the JSON-LD-Contextfile]]></source>
+				<target><![CDATA[URL der JSON-LD-Contextdatei]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.dateOfBirth" approved="yes">
+				<source><![CDATA[Date of Birth]]></source>
+				<target><![CDATA[Geburtstag]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.dateOfDeath" approved="yes">
+				<source><![CDATA[Date of Death]]></source>
+				<target><![CDATA[Sterbetag]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.dateOfEstablishment" approved="yes">
+				<source><![CDATA[Date of Establishment]]></source>
+				<target><![CDATA[Beginn des Bestehens]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.dateOfProduction" approved="yes">
+				<source><![CDATA[Date of Production]]></source>
+				<target><![CDATA[Produktionsdatum (Zeitraum)]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.dateOfTermination" approved="yes">
+				<source><![CDATA[Date Of Termination]]></source>
+				<target><![CDATA[Ende des Bestehens]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.depiction" approved="yes">
+				<source><![CDATA[Depiction]]></source>
+				<target><![CDATA[Abbildung]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.describedBy" approved="yes">
+				<source><![CDATA[Described By]]></source>
+				<target><![CDATA[Metainformationen]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.familialRelationship" approved="yes">
+				<source><![CDATA[Familial Relationship]]></source>
+				<target><![CDATA[Familiäre Beziehung]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.forename" approved="yes">
+				<source><![CDATA[Forename]]></source>
+				<target><![CDATA[Vorname]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.founder" approved="yes">
+				<source><![CDATA[Founder]]></source>
+				<target><![CDATA[Gründer]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.gender" approved="yes">
+				<source><![CDATA[Gender]]></source>
+				<target><![CDATA[Geschlecht]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.id" approved="yes">
+				<source><![CDATA[ID]]></source>
+				<target><![CDATA[ID]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.isA" approved="yes">
+				<source><![CDATA[Is A]]></source>
+				<target><![CDATA[Oberbegriff]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.license" approved="yes">
+				<source><![CDATA[License]]></source>
+				<target><![CDATA[Lizenz]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.location" approved="yes">
+				<source><![CDATA[Location]]></source>
+				<target><![CDATA[Geografische Lage]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.noContent" approved="yes">
+				<source><![CDATA[No Content. Please remove from selection.]]></source>
+				<target><![CDATA[Kein Inhalt vorhanden. Bitte aus der Auswahl entfernen.]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.periodOfActivity" approved="yes">
+				<source><![CDATA[Period Of Activity]]></source>
+				<target><![CDATA[Schaffensperiode]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.placeOfActivity" approved="yes">
+				<source><![CDATA[Place Of Activity]]></source>
+				<target><![CDATA[Wirkungsorte]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.placeOfBusiness" approved="yes">
+				<source><![CDATA[Place of Business]]></source>
+				<target><![CDATA[Orte (Sitz)]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.predecessor" approved="yes">
+				<source><![CDATA[Predecessor]]></source>
+				<target><![CDATA[Vorgänger]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.preferredName" approved="yes">
+				<source><![CDATA[Preferred Name]]></source>
+				<target><![CDATA[Bevorzugter Name]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.professionOrOccupation" approved="yes">
+				<source><![CDATA[Profession]]></source>
+				<target><![CDATA[Berufe]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.pseudonym" approved="yes">
+				<source><![CDATA[Pseudonym]]></source>
+				<target><![CDATA[Pseudonym]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.realIdentity" approved="yes">
+				<source><![CDATA[Real Identity]]></source>
+				<target><![CDATA[Wirklicher Name]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.relatedOrganisation" approved="yes">
+				<source><![CDATA[Related Organisation]]></source>
+				<target><![CDATA[In Beziehung stehende Organisationen]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.relatedPerson" approved="yes">
+				<source><![CDATA[Related Person]]></source>
+				<target><![CDATA[Beziehungen zu Personen]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.relatedSubject" approved="yes">
+				<source><![CDATA[Related Subject]]></source>
+				<target><![CDATA[In Beziehung stehendes Schlagwort]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.relationship" approved="yes">
+				<source><![CDATA[Relationship]]></source>
+				<target><![CDATA[Beziehung]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.sameAs" approved="yes">
+				<source><![CDATA[Links to Other Resources]]></source>
+				<target><![CDATA[Weiterführende Webseiten]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.successor" approved="yes">
+				<source><![CDATA[Successor]]></source>
+				<target><![CDATA[Nachfolger]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.surname" approved="yes">
+				<source><![CDATA[Surname]]></source>
+				<target><![CDATA[Nachname]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.titleOfNobility" approved="yes">
+				<source><![CDATA[Title Of Nobility]]></source>
+				<target><![CDATA[Adelstitel]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.topic" approved="yes">
+				<source><![CDATA[Topic]]></source>
+				<target><![CDATA[Themen]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.type" approved="yes">
+				<source><![CDATA[Type]]></source>
+				<target><![CDATA[Entität-Typ]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.type.family" approved="yes">
+				<source><![CDATA[Family]]></source>
+				<target><![CDATA[Familie]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.type.organisation" approved="yes">
+				<source><![CDATA[Organisation]]></source>
+				<target><![CDATA[Organisation]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.type.person" approved="yes">
+				<source><![CDATA[Person]]></source>
+				<target><![CDATA[Person]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.type.place" approved="yes">
+				<source><![CDATA[Place]]></source>
+				<target><![CDATA[Ort]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.valid" approved="yes">
+				<source><![CDATA[Valid]]></source>
+				<target><![CDATA[Generierungsdatum]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.variantName" approved="yes">
+				<source><![CDATA[Variant Name]]></source>
+				<target><![CDATA[Andere Namen]]></target>
+			</trans-unit>
+			<trans-unit id="tx_slub_entityfacts_domain_model_entityfactslisting" approved="yes">
+				<source><![CDATA[Entity Facts listing]]></source>
+				<target><![CDATA[Entity Facts listing]]></target>
+			</trans-unit>
+			<trans-unit id="tx_slub_entityfacts_domain_model_entityfactslisting.description" approved="yes">
+				<source><![CDATA[Plugin for showing DB Entity Facts]]></source>
+				<target><![CDATA[Plugin for showing DB Entity Facts]]></target>
+			</trans-unit>
+			<trans-unit id="tx_slubentityfacts_domain_model_entityfact" approved="yes">
+				<source><![CDATA[Entity Fact]]></source>
+				<target><![CDATA[Entity Fact]]></target>
+			</trans-unit>
+		</body>
+	</file>
 </xliff>
