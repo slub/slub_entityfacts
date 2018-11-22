@@ -15,7 +15,7 @@ Links
 	https://typo3.org/extensions/repository/view/slub_entityfacts
 
 :Bug Tracker:
-	https://forge.typo3.org/projects/extension-slub_entityfacts/issues
+	https://github.com/slub/slub_entityfacts/issues
 
 :Git Repository:
 	https://github.com/slub/slub_entityfacts
