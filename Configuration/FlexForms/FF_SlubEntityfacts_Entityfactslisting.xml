@@ -64,6 +64,14 @@
                                         <numIndex index="0">Biografisch/historische Angaben</numIndex>
                                         <numIndex index="1">biographicalOrHistoricalInformation</numIndex>
                                     </numIndex>
+                                    <numIndex index="4" type="array">
+                                        <numIndex index="0">Geburtsort</numIndex>
+                                        <numIndex index="1">placeOfBirth</numIndex>
+                                    </numIndex>
+                                    <numIndex index="5" type="array">
+                                        <numIndex index="0">Sterbesort</numIndex>
+                                        <numIndex index="1">placeOfDeath</numIndex>
+                                    </numIndex>
                                     <numIndex index="6" type="array">
                                         <numIndex index="0">Geburtsdatum</numIndex>
                                         <numIndex index="1">dateOfBirth</numIndex>
@@ -71,6 +79,10 @@
                                     <numIndex index="7" type="array">
                                         <numIndex index="0">Sterbedatum</numIndex>
                                         <numIndex index="1">dateOfDeath</numIndex>
+                                    </numIndex>
+                                    <numIndex index="8" type="array">
+                                        <numIndex index="0">Lebensdaten</numIndex>
+                                        <numIndex index="1">dateOfBirthAndDeath</numIndex>
                                     </numIndex>
                                     <numIndex index="9" type="array">
                                         <numIndex index="0">Abbildung</numIndex>

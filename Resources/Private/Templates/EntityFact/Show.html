@@ -218,6 +218,24 @@ Otherwise your changes will be overwritten the next time you save the extension 
                     </div>
                 </f:case>
 
+                <f:case value="placeOfBirth">
+                    <div class="fact placeOfBirth">
+                        <p class="headline"><f:translate id="slubentityfacts.placeOfBirth" /></p>
+                        <f:for each="{viewArray.placeOfBirth}" as="place">
+                            <p class="content"><a href="{place.atid}">{place.preferredName}</a></p>
+                        </f:for>
+                    </div>
+                </f:case>
+
+                <f:case value="placeOfDeath">
+                    <div class="fact placeOfDeath">
+                        <p class="headline"><f:translate id="slubentityfacts.placeOfDeath" /></p>
+                        <f:for each="{viewArray.placeOfDeath}" as="place">
+                            <p class="content"><a href="{place.atid}">{place.preferredName}</a></p>
+                        </f:for>
+                    </div>
+                </f:case>
+
                 <f:case value="preferredName">
                     <div class="fact preferredName">
                         <p class="headline"><f:translate id="slubentityfacts.preferredName" /></p>
@@ -261,6 +279,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
         </div>
     </f:then>
 </f:if>
-
+<f:debug>{settings.entityfacts.sameAs}</f:debug>
+<f:debug>{viewArray}</f:debug>
 </f:section>
 </html>
