@@ -29,28 +29,28 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
                 <f:case value="context">
                     <div class="fact context">
-                        <p class="headline"><f:translate id="slubentityfacts.context" /></p>
+                        <p class="headline"><f:if condition="{settings.debugview}"><f:translate id="slubentityfacts.context" /></f:if></p>
                         <p class="content"><a href="{viewArray.context}">{viewArray.context}</a></p>
                     </div>
                 </f:case>
 
                 <f:case value="id">
                     <div class="fact id">
-                        <p class="headline"><f:translate id="slubentityfacts.id" /></p>
+                        <p class="headline"><f:if condition="{settings.debugview}"><f:translate id="slubentityfacts.id" /></f:if></p>
                         <p class="content"><a href="{viewArray.id}">{viewArray.id}</a></p>
                     </div>
                 </f:case>
 
                 <f:case value="type">
                     <div class="fact type">
-                        <p class="headline"><f:translate id="slubentityfacts.type" /></p>
+                        <p class="headline"><f:if condition="{settings.debugview}"><f:translate id="slubentityfacts.type" /></f:if></p>
                         <p class="content"><f:translate id="slubentityfacts.type.{viewArray.type}" /></a></p>
                     </div>
                 </f:case>
 
                 <f:case value="depiction">
                     <div class="fact depiction">
-                        <p class="headline"><f:translate id="slubentityfacts.depiction" /></p>
+                        <p class="headline"><f:if condition="{settings.debugview}"><f:translate id="slubentityfacts.depiction" /></f:if></p>
                         <p class="content">
                             <a href="{viewArray.depiction.url}">
                             <img src="{viewArray.depiction.thumbnail.atid}" /></a>
@@ -116,7 +116,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
                 <f:case value="isA">
                     <div class="fact isA">
-                        <p class="headline"><f:translate id="slubentityfacts.isA" /></p>
+                        <p class="headline"><f:if condition="{settings.debugview}"><f:translate id="slubentityfacts.isA" /></f:if></p>
                             <f:for each="{viewArrayValue}" as="isA">
                                 <f:for each="{isA}" as="isAArray" key="isAArrayKey">
                                     <f:if condition="{isAArrayKey}=='@id'">
@@ -168,7 +168,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
                 <f:case value="gender">
                     <div class="fact gender">
-                        <p class="headline"><f:translate id="slubentityfacts.gender" /></p>
+                        <p class="headline"><f:if condition="{settings.debugview}"><f:translate id="slubentityfacts.gender" /></f:if></p>
                         <p class="content"><a href="{viewArray.gender.atid}">{viewArray.gender.label}</a></p>
                     </div>
                 </f:case>
@@ -238,14 +238,14 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
                 <f:case value="preferredName">
                     <div class="fact preferredName">
-                        <p class="headline"><f:translate id="slubentityfacts.preferredName" /></p>
+                        <p class="headline"><f:if condition="{settings.debugview}"><f:translate id="slubentityfacts.preferredName" /></f:if></p>
                         <p class="value">{viewArray.preferredName}</p>
                     </div>
                 </f:case>
 
                 <f:defaultCase>
                     <div class="fact default">
-                        <p class="headline"><f:translate id="slubentityfacts.{viewArrayValueKey}" /></p>
+                        <p class="headline"><f:if condition="{settings.debugview}"><f:translate id="slubentityfacts.{viewArrayValueKey}" /></f:if></p>
                         <p class="value">{viewArrayValue}</p>
                     </div>
                 </f:defaultCase>
