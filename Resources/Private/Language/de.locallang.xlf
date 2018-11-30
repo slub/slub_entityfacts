@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-11-30T12:43:06Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-11-30T12:55:24Z">
 		<header>
 			<generator>LFEditor</generator>
 		</header>
@@ -59,7 +59,7 @@
 			</trans-unit>
 			<trans-unit id="slubentityfacts.describedBy" approved="yes">
 				<source><![CDATA[Described By]]></source>
-				<target><![CDATA[Metainformationen]]></target>
+				<target><![CDATA[Quelle]]></target>
 			</trans-unit>
 			<trans-unit id="slubentityfacts.familialRelationship" approved="yes">
 				<source><![CDATA[Familial Relationship]]></source>

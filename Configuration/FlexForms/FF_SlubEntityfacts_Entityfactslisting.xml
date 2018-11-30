@@ -101,7 +101,7 @@
                                         <numIndex index="1">type</numIndex>
                                     </numIndex>
                                     <numIndex index="13" type="array">
-                                        <numIndex index="0">Metainformationen zur Entity Facts-Beschreibung</numIndex>
+                                        <numIndex index="0">Quelle/Metainformationen zur Entity Facts-Beschreibung</numIndex>
                                         <numIndex index="1">describedBy</numIndex>
                                     </numIndex>
                                     <numIndex index="14" type="array">
@@ -251,7 +251,7 @@
                                         <numIndex index="1">type</numIndex>
                                     </numIndex>
                                     <numIndex index="14" type="array">
-                                        <numIndex index="0">Metainformationen zur Entity Facts-Beschreibung</numIndex>
+                                        <numIndex index="0">Quelle/Metainformationen zur Entity Facts-Beschreibung</numIndex>
                                         <numIndex index="1">describedBy</numIndex>
                                     </numIndex>
                                     <numIndex index="15" type="array">
@@ -346,7 +346,7 @@
                                         <numIndex index="1">type</numIndex>
                                     </numIndex>
                                     <numIndex index="12" type="array">
-                                        <numIndex index="0">Metainformationen zur Entity Facts-Beschreibung</numIndex>
+                                        <numIndex index="0">Quelle/Metainformationen zur Entity Facts-Beschreibung</numIndex>
                                         <numIndex index="1">describedBy</numIndex>
                                     </numIndex>
                                     <numIndex index="13" type="array">
