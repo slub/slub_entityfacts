@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-11-30T12:55:24Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-12-03T12:45:04Z">
 		<header>
 			<generator>LFEditor</generator>
 		</header>
@@ -11,7 +11,7 @@
 			</trans-unit>
 			<trans-unit id="slubentityfacts.affiliation" approved="yes">
 				<source><![CDATA[Affiliation]]></source>
-				<target><![CDATA[Affiliation]]></target>
+				<target><![CDATA[Zugehörigkeit zu einer Institution]]></target>
 			</trans-unit>
 			<trans-unit id="slubentityfacts.architect" approved="yes">
 				<source><![CDATA[Architect]]></source>
@@ -28,6 +28,10 @@
 			<trans-unit id="slubentityfacts.context" approved="yes">
 				<source><![CDATA[URL of the JSON-LD-Contextfile]]></source>
 				<target><![CDATA[URL der JSON-LD-Contextdatei]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.coordinates" approved="yes">
+				<source><![CDATA[coordinates]]></source>
+				<target><![CDATA[Geo-Koordinaten]]></target>
 			</trans-unit>
 			<trans-unit id="slubentityfacts.dateOfBirth" approved="yes">
 				<source><![CDATA[Date of Birth]]></source>
@@ -47,7 +51,7 @@
 			</trans-unit>
 			<trans-unit id="slubentityfacts.dateOfProduction" approved="yes">
 				<source><![CDATA[Date of Production]]></source>
-				<target><![CDATA[Produktionsdatum (Zeitraum)]]></target>
+				<target><![CDATA[Produktionsdatum]]></target>
 			</trans-unit>
 			<trans-unit id="slubentityfacts.dateOfTermination" approved="yes">
 				<source><![CDATA[Date Of Termination]]></source>
@@ -77,6 +81,10 @@
 				<source><![CDATA[Gender]]></source>
 				<target><![CDATA[Geschlecht]]></target>
 			</trans-unit>
+			<trans-unit id="slubentityfacts.geometry" approved="yes">
+				<source><![CDATA[geometry]]></source>
+				<target><![CDATA[Geometrische Form]]></target>
+			</trans-unit>
 			<trans-unit id="slubentityfacts.id" approved="yes">
 				<source><![CDATA[ID]]></source>
 				<target><![CDATA[ID]]></target>
@@ -84,6 +92,10 @@
 			<trans-unit id="slubentityfacts.isA" approved="yes">
 				<source><![CDATA[Is A]]></source>
 				<target><![CDATA[Oberbegriff]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.isPartOf" approved="yes">
+				<source><![CDATA[isPartOf]]></source>
+				<target><![CDATA[Hierarchisch übergeordnete Organisation]]></target>
 			</trans-unit>
 			<trans-unit id="slubentityfacts.license" approved="yes">
 				<source><![CDATA[License]]></source>
@@ -103,7 +115,7 @@
 			</trans-unit>
 			<trans-unit id="slubentityfacts.placeOfActivity" approved="yes">
 				<source><![CDATA[Place Of Activity]]></source>
-				<target><![CDATA[Wirkungsorte]]></target>
+				<target><![CDATA[Wirkungsort(e)]]></target>
 			</trans-unit>
 			<trans-unit id="slubentityfacts.placeOfBirth" approved="yes">
 				<source><![CDATA[Place of Birth]]></source>
@@ -111,7 +123,7 @@
 			</trans-unit>
 			<trans-unit id="slubentityfacts.placeOfBusiness" approved="yes">
 				<source><![CDATA[Place of Business]]></source>
-				<target><![CDATA[Orte (Sitz)]]></target>
+				<target><![CDATA[Sitz]]></target>
 			</trans-unit>
 			<trans-unit id="slubentityfacts.placeOfDeath" approved="yes">
 				<source><![CDATA[Place of Death]]></source>
@@ -131,7 +143,7 @@
 			</trans-unit>
 			<trans-unit id="slubentityfacts.pseudonym" approved="yes">
 				<source><![CDATA[Pseudonym]]></source>
-				<target><![CDATA[Pseudonym]]></target>
+				<target><![CDATA[Pseudonym(e)]]></target>
 			</trans-unit>
 			<trans-unit id="slubentityfacts.realIdentity" approved="yes">
 				<source><![CDATA[Real Identity]]></source>

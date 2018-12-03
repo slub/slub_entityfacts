@@ -247,6 +247,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
                     </div>
                 </f:case>
 
+                <!-- Handling in dateOfBirth-->
                 <f:case value="dateOfDeath"></f:case>
 
                 <f:case value="preferredName">
@@ -255,6 +256,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
                         <p class="value">{viewArray.preferredName}</p>
                     </div>
                 </f:case>
+
+                <!-- Handling to get rid of the array-->
+                <f:case value="sameAs"></f:case>
 
                 <f:case default="TRUE">
                     <div class="fact default">

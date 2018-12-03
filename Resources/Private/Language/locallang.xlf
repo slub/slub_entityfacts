@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-11-30T12:55:24Z">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-12-03T12:45:04Z">
 		<header>
 			<generator>LFEditor</generator>
 		</header>
@@ -22,6 +22,9 @@
 			</trans-unit>
 			<trans-unit id="slubentityfacts.context">
 				<source><![CDATA[URL of the JSON-LD-Contextfile]]></source>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.coordinates">
+				<source><![CDATA[coordinates]]></source>
 			</trans-unit>
 			<trans-unit id="slubentityfacts.dateOfBirth">
 				<source><![CDATA[Date of Birth]]></source>
@@ -59,11 +62,17 @@
 			<trans-unit id="slubentityfacts.gender">
 				<source><![CDATA[Gender]]></source>
 			</trans-unit>
+			<trans-unit id="slubentityfacts.geometry">
+				<source><![CDATA[geometry]]></source>
+			</trans-unit>
 			<trans-unit id="slubentityfacts.id">
 				<source><![CDATA[ID]]></source>
 			</trans-unit>
 			<trans-unit id="slubentityfacts.isA">
 				<source><![CDATA[Is A]]></source>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.isPartOf">
+				<source><![CDATA[isPartOf]]></source>
 			</trans-unit>
 			<trans-unit id="slubentityfacts.license">
 				<source><![CDATA[License]]></source>

@@ -238,10 +238,16 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
                 <f:case value="dateOfBirth">
                     <div class="fact dateOfBirth">
-                        <p class="value">{viewArrayValue} - {viewArray.dateOfDeath}</p>
+                        <p class="headline"><f:if condition="{settings.debugview}"><f:translate id="slubentityfacts.dateOfBirth" /></f:if></p>
+                        <p class="value">{viewArrayValue} -
+                            <f:if condition="{viewArray.dateOfDeath}">
+                                {viewArray.dateOfDeath}
+                            </f:if>
+                        </p>
                     </div>
                 </f:case>
 
+                <!-- Handling in dateOfBirth-->
                 <f:case value="dateOfDeath"></f:case>
 
                 <f:case value="preferredName">
@@ -250,6 +256,10 @@ Otherwise your changes will be overwritten the next time you save the extension 
                         <p class="value">{viewArray.preferredName}</p>
                     </div>
                 </f:case>
+
+                <!-- Handling to get rid of the array-->
+                <f:case value="sameAs"></f:case>
+
 
                 <f:defaultCase>
                     <div class="fact default">

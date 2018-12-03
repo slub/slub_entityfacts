@@ -262,7 +262,10 @@
                                         <numIndex index="0">Lizenz</numIndex>
                                         <numIndex index="1">license</numIndex>
                                     </numIndex>
-
+                                    <numIndex index="17" type="array">
+                                        <numIndex index="0">Hierarchisch übergeordnete Organisation</numIndex>
+                                        <numIndex index="1">isPartOf</numIndex>
+                                    </numIndex>
                                     <numIndex index="18" type="array">
                                         <numIndex index="0">Beginn des Bestehens</numIndex>
                                         <numIndex index="1">dateOfEstablishment</numIndex>
@@ -356,6 +359,14 @@
                                     <numIndex index="14" type="array">
                                         <numIndex index="0">Lizenz</numIndex>
                                         <numIndex index="1">license</numIndex>
+                                    </numIndex>
+                                    <numIndex index="15" type="array">
+                                        <numIndex index="0">Geometrische Form</numIndex>
+                                        <numIndex index="1">geometry</numIndex>
+                                    </numIndex>
+                                    <numIndex index="16" type="array">
+                                        <numIndex index="0">Geo-Koordinaten</numIndex>
+                                        <numIndex index="1">coordinates</numIndex>
                                     </numIndex>
                                 </items>
                                 <maxitems>40</maxitems>
