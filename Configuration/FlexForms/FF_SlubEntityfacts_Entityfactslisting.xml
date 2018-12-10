@@ -447,6 +447,25 @@
                             </config>
                         </TCEforms>
                     </settings.meta>
+                    <settings.ownindex>
+                        <TCEforms>
+                            <label>eigener Suchindex?</label>
+                            <config>
+                                <type>check</type>
+                                <default>0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.ownindex>
+                    <settings.entityfacts.index>
+                        <TCEforms>
+                            <label>Hier bitte Ihren eigenen Suchindex eingeben:</label>
+                            <config>
+                                <type>input</type>
+                                <size>50</size>
+                                <default>http://194.95.145.44:9200/ef/gnd/</default>
+                            </config>
+                        </TCEforms>
+                    </settings.entityfacts.index>
                     <settings.debugview>
                         <TCEforms>
                             <label>Show Debug Information</label>

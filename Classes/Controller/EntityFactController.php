@@ -41,7 +41,12 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         }
 
         //Call the API and write the decoded JSON to the array
-        $apiAnswer = file_get_contents('http://hub.culturegraph.org/entityfacts/'.$search);
+        if ($this->settings['ownindex']) {
+            $apiAnswer = file_get_contents($this->settings['entityfacts']['index'].$search);
+        }
+        else {
+            $apiAnswer = file_get_contents('http://hub.culturegraph.org/entityfacts/'.$search);
+        }
 
         //Replace @id for easier calling of informations (no value with "@id" expected)
         $apiAnswerClean = str_replace('"@id"', '"atid"', $apiAnswer);
@@ -53,6 +58,7 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         $apiAnswerDecode['context'] = $apiAnswerDecode['@context'];
         //$apiAnswerDecode['id'] = $apiAnswerDecode['@id'];
         $apiAnswerDecode['type'] = $apiAnswerDecode['@type'];
+var_dump($apiAnswerDecode);
 
 
         //write the user sorted selection given by Flexform into helper array
