@@ -141,21 +141,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
                     </div>
                 </f:case>
 
-                <f:case value="describedBy">
-                    <div class="fact describedBy">
-                        <p class="headline"><f:translate id="slubentityfacts.describedBy" /></p>
-                            <f:for each="{viewArrayValue}" as="describedBy" key="describedByKey">
-                                <f:if condition="{describedByKey}!='valid'">
-                                    <f:then>
-                                        <p class="content"><a href="{describedBy}">{describedBy}</a></p>
-                                    </f:then>
-                                    <f:else>
-                                        <p class="content">{describedBy}</p>
-                                    </f:else>
-                                </f:if>
-                            </f:for>
-                    </div>
-                </f:case>
+                <f:case value="describedBy"></f:case>
 
                 <f:case value="associatedPlace">
                     <div class="fact associatedPlace">
@@ -298,6 +284,22 @@ Otherwise your changes will be overwritten the next time you save the extension 
             </f:if>
         </div>
     </f:then>
+</f:if>
+
+<f:if condition="{settings.meta}">
+    <div class="fact describedBy">
+        <p class="headline"><f:translate id="slubentityfacts.describedBy" /></p>
+            <f:for each="{viewArray.describedBy}" as="describedBy" key="describedByKey">
+                <f:if condition="{describedByKey}!='valid'">
+                    <f:then>
+                        <p class="content"><a href="{describedBy}">{describedBy}</a></p>
+                    </f:then>
+                    <f:else>
+                        <p class="content">{describedBy}</p>
+                    </f:else>
+                </f:if>
+            </f:for>
+    </div>
 </f:if>
 
 </f:section>

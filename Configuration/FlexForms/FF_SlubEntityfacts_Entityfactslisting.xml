@@ -438,6 +438,15 @@
                             </config>
                         </TCEforms>
                     </settings.entityfacts.sameAsSelected>
+                    <settings.meta>
+                        <TCEforms>
+                            <label>Quelle/Metainformationen</label>
+                            <config>
+                                <type>check</type>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </settings.meta>
                     <settings.debugview>
                         <TCEforms>
                             <label>Show Debug Information</label>
