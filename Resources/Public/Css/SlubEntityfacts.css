@@ -11,3 +11,17 @@
   font-size: 150%;
   font-weight: bold;
 }
+
+.sameAs li.content{
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+}
+
+.describedBy p.content{
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+}

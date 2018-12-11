@@ -58,7 +58,6 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         $apiAnswerDecode['context'] = $apiAnswerDecode['@context'];
         //$apiAnswerDecode['id'] = $apiAnswerDecode['@id'];
         $apiAnswerDecode['type'] = $apiAnswerDecode['@type'];
-var_dump($apiAnswerDecode);
 
 
         //write the user sorted selection given by Flexform into helper array
