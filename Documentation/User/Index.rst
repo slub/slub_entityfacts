@@ -17,7 +17,7 @@ To use this plugin create a new content element and add the "Entity Facts listin
 plugin on your page. You can now edit and configure the plugin in the backend.
 
 To show any data in the frontend you need a GND ID of your desired entity. You
-may show only on entity in one plugin.
+may show only one entity in one plugin.
 
 There are several properties available to be selected. The order of the
 values/items in the frontend will be the same as configured in the backend flexform.

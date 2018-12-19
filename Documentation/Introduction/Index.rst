@@ -39,3 +39,9 @@ Screenshots
    :alt: Backend View
 
    View of the backend settings
+
+.. figure:: ../Images/Screenshot_SLUB_EntityFacts_FE.png
+   :height: 500px
+   :alt: Frontend View
+
+   View of the possible frontend
