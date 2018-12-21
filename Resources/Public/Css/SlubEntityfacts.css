@@ -1,25 +1,25 @@
-.sameAs ul {
+div.tx-slub-entityfacts div.sameAs ul {
   list-style-type: none;
 }
 
-.sameAs img.icon {
+div.tx-slub-entityfacts div.sameAs img.icon {
   width: 24px;
   margin: 0 10px;
 }
 
-.preferredName p.value {
+div.tx-slub-entityfacts div.preferredName p.value {
   font-size: 150%;
   font-weight: bold;
 }
 
-.sameAs li.content{
+div.tx-slub-entityfacts div.sameAs li.content{
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
     text-overflow: ellipsis;
 }
 
-.describedBy p.content{
+div.tx-slub-entityfacts div.describedBy p.content{
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
