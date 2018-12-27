@@ -47,6 +47,9 @@
 			<trans-unit id="slubentityfacts.depiction">
 				<source><![CDATA[Depiction]]></source>
 			</trans-unit>
+      <trans-unit id="slubentityfacts.visit_depiction">
+				<source><![CDATA[Visit source url of depiction.]]></source>
+			</trans-unit>
 			<trans-unit id="slubentityfacts.describedBy">
 				<source><![CDATA[Described By]]></source>
 			</trans-unit>
@@ -157,6 +160,9 @@
 			</trans-unit>
 			<trans-unit id="slubentityfacts.valid">
 				<source><![CDATA[Valid]]></source>
+			</trans-unit>
+      <trans-unit id="slubentityfacts.timestamp">
+				<source><![CDATA[Timestamp]]></source>
 			</trans-unit>
 			<trans-unit id="slubentityfacts.variantName">
 				<source><![CDATA[Variant Name]]></source>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-12-03T12:45:04Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-12-27T12:53:40Z">
 		<header>
 			<generator>LFEditor</generator>
 		</header>
@@ -177,6 +177,10 @@
 				<source><![CDATA[Surname]]></source>
 				<target><![CDATA[Nachname]]></target>
 			</trans-unit>
+			<trans-unit id="slubentityfacts.timestamp" approved="yes">
+				<source><![CDATA[Timestamp]]></source>
+				<target><![CDATA[Aktualisierung]]></target>
+			</trans-unit>
 			<trans-unit id="slubentityfacts.titleOfNobility" approved="yes">
 				<source><![CDATA[Title Of Nobility]]></source>
 				<target><![CDATA[Adelstitel]]></target>
@@ -212,6 +216,10 @@
 			<trans-unit id="slubentityfacts.variantName" approved="yes">
 				<source><![CDATA[Variant Name]]></source>
 				<target><![CDATA[Andere Namen]]></target>
+			</trans-unit>
+			<trans-unit id="slubentityfacts.visit_depiction" approved="yes">
+				<source><![CDATA[Visit source url of depiction.]]></source>
+				<target><![CDATA[Zur Quelle der Abbildung.]]></target>
 			</trans-unit>
 			<trans-unit id="tx_slub_entityfacts_domain_model_entityfactslisting" approved="yes">
 				<source><![CDATA[Entity Facts listing]]></source>
