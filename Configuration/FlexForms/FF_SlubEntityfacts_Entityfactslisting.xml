@@ -378,10 +378,10 @@
                         <TCEforms>
                         <label>Verlinkungen auf weiterführende Webseiten einbinden</label>
                         <onChange>reload</onChange>
-                            <config>
-                                <type>check</type>
-                                <default>0</default>
-                            </config>
+                        <config>
+                            <type>check</type>
+                            <default>0</default>
+                        </config>
                         </TCEforms>
                     </settings.entityfacts.sameAs>
                     <settings.entityfacts.sameAsSelected>
@@ -450,6 +450,7 @@
                     <settings.ownindex>
                         <TCEforms>
                             <label>eigener Suchindex?</label>
+                            <onChange>reload</onChange>
                             <config>
                                 <type>check</type>
                                 <default>0</default>
@@ -459,6 +460,7 @@
                     <settings.entityfacts.index>
                         <TCEforms>
                             <label>Hier bitte Ihren eigenen Suchindex eingeben:</label>
+                            <displayCond>FIELD:settings.ownindex:=:1</displayCond>
                             <config>
                                 <type>input</type>
                                 <size>50</size>
