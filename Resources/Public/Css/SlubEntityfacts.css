@@ -12,14 +12,14 @@ div.tx-slub-entityfacts div.preferredName p.value {
   font-weight: bold;
 }
 
-div.tx-slub-entityfacts div.sameAs li.content{
+div.tx-slub-entityfacts div.sameAs li.facts-content {
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
     text-overflow: ellipsis;
 }
 
-div.tx-slub-entityfacts div.describedBy p.content{
+div.tx-slub-entityfacts div.describedBy p.facts-content {
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
