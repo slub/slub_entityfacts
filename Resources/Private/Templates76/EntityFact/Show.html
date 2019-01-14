@@ -287,9 +287,14 @@ Otherwise your changes will be overwritten the next time you save the extension 
                 <ul>
                 <f:for each="{sameAsArray}" as="item">
                     <li class="facts-content">
-                        <f:link.external uri="{item.atid}" title="{item.atid} {item.collection.publisher}">
+                        <f:link.external uri="{item.atid}" title="{item.atid} ({item.collection.publisher})">
                             <f:if condition="{item.collection.icon}">
-                                <img class="icon" src="{item.collection.icon}" alt="icon of {item.collection.name}"/>
+                                <f:then>
+                                    <img class="icon" src="{item.collection.icon}" alt="icon of {item.collection.name}"/>
+                                </f:then>
+                                <f:else>
+                                    <span class="icon"></span>
+                                </f:else>
                             </f:if>
                             {item.collection.name}
                         </f:link.external>
