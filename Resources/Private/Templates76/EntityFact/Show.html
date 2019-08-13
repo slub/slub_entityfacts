@@ -290,7 +290,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
                         <f:link.external uri="{item.atid}" title="{item.atid} ({item.collection.publisher})">
                             <f:if condition="{item.collection.icon}">
                                 <f:then>
-                                    <img class="icon" src="{item.collection.icon}" alt="icon of {item.collection.name}"/>
+                                    <img class="icon" src="{item.collection.icon}" alt="icon of {item.collection.name}" onerror="this.onerror=null; this.src='typo3conf/ext/slub_entityfacts/Resources/Public/Icons/39-Globe_256x256_35386.png'; this.alt='Kein Icon vorhanden.'" />
                                 </f:then>
                                 <f:else>
                                     <span class="icon"></span>

@@ -73,7 +73,7 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             $viewArray = $apiAnswerDecode;
         }
 
-        $viewArray[describedBy] = $apiAnswerDecode[describedBy];
+        $viewArray['describedBy'] = $apiAnswerDecode['describedBy'];
 
         //write the user sorted selection given by Flexform into another helper array (special customer request to select specific entities from sameAs)
         $multiSelectArray2 = explode(",",($this->settings['entityfacts']['sameAsSelected']));
