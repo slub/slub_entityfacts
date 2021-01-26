@@ -386,56 +386,16 @@
                     </settings.entityfacts.sameAs>
                     <settings.entityfacts.sameAsSelected>
                         <TCEforms>
-                        <label>Auswahl der weiterführenden Links</label>
-                        <displayCond>FIELD:settings.entityfacts.sameAs:=:1</displayCond>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectMultipleSideBySide</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                    <numIndex index="0">Gemeinsame Normdatei (GND) im Katalog der Deutschen Nationalbibliothek</numIndex>
-                                    <numIndex index="1">DNB</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                    <numIndex index="0">Wikipedia (Deutsch)</numIndex>
-                                    <numIndex index="1">dewiki</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                    <numIndex index="0">Wikipedia (English)</numIndex>
-                                    <numIndex index="1">enwiki</numIndex>
-                                    </numIndex>
-                                    <numIndex index="3" type="array">
-                                    <numIndex index="0">Wikisource</numIndex>
-                                    <numIndex index="1">WIKISOURCE</numIndex>
-                                    </numIndex>
-                                    <numIndex index="4" type="array">
-                                    <numIndex index="0">Kalliope Verbundkatalog</numIndex>
-                                    <numIndex index="1">DE-611</numIndex>
-                                    </numIndex>
-                                    <numIndex index="5" type="array">
-                                    <numIndex index="0">Bibliothèque nationale de France</numIndex>
-                                    <numIndex index="1">BNF</numIndex>
-                                    </numIndex>
-                                    <numIndex index="6" type="array">
-                                    <numIndex index="0">NACO Authority File</numIndex>
-                                    <numIndex index="1">LC</numIndex>
-                                    </numIndex>
-                                    <numIndex index="7" type="array">
-                                    <numIndex index="0">Virtual International Authority File (VIAF)</numIndex>
-                                    <numIndex index="1">VIAF</numIndex>
-                                    </numIndex>
-                                    <numIndex index="8" type="array">
-                                    <numIndex index="0">International Standard Name Identifier (ISNI)</numIndex>
-                                    <numIndex index="1">ISNI</numIndex>
-                                    </numIndex>
-                                    <numIndex index="9" type="array">
-                                    <numIndex index="0">Wikidata</numIndex>
-                                    <numIndex index="1">WIKIDATA</numIndex>
-                                    </numIndex>
-                                </items>
-                                <maxitems>40</maxitems>
-                                <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
-                            </config>
+                            <label>Auswahl der weiterführenden Links</label>
+                            <displayCond>FIELD:settings.entityfacts.sameAs:=:1</displayCond>
+                                <config>
+                                    <type>select</type>
+                                    <renderType>selectMultipleSideBySide</renderType>
+                                    <itemsProcFunc>Slub\SlubEntityfacts\Backend\ItemsProcFunc->user_sameAsSelected</itemsProcFunc>
+                                    <items></items>
+                                    <maxitems>40</maxitems>
+                                    <enableMultiSelectFilterTextfield>true</enableMultiSelectFilterTextfield>
+                                </config>
                         </TCEforms>
                     </settings.entityfacts.sameAsSelected>
                     <settings.meta>
