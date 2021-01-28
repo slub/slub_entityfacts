@@ -23,15 +23,13 @@ class  ItemsProcFunc
     $search = $config['row']['settings.entityfacts.personality'];
 
     //api commmunication and decoding
-    $apiAnswer = file_get_contents('http://hub.culturegraph.org/entityfacts/'.$search);
+    $apiAnswer = file_get_contents('http://hub.culturegraph.org/entityfacts/' . $search);
     $apiAnswerDecode = json_decode ($apiAnswer, true);
 
     
     //constructing the wanted array
-    foreach ($apiAnswerDecode["sameAs"] as $item)
-    {
-      $newItems[] = 
-      [$item['collection']['name'],$item['collection']['abbr']];
+    foreach ($apiAnswerDecode['sameAs'] as $item) {
+      $newItems[] = [$item['collection']['name'],$item['collection']['abbr']];
     }
     $config['items'] = $newItems;
   }
