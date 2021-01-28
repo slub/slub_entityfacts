@@ -28,7 +28,7 @@ class  ItemsProcFunc
 
     
     //constructing the wanted array
-    foreach ($apiAnswerDecode["sameAs"] as $item) 
+    foreach ($apiAnswerDecode["sameAs"] as $item)
     {
       $newItems[] = 
       [$item['collection']['name'],$item['collection']['abbr']];
