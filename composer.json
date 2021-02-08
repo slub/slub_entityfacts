@@ -18,6 +18,11 @@
       "name": "Alexander Bigga",
       "email": "alexander.bigga@slub-dresden.de",
       "role": "Developer"
+    },
+    {
+      "name": "Tobias Kreße",
+      "email": "tobias.kresse@slub-dresden.de",
+      "role": "Developer"
     }
   ],
   "license": "GPL-3.0-or-later",
