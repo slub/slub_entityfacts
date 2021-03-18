@@ -77,9 +77,9 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
         //write the user sorted selection given by Flexform into another helper array (special customer request to select specific entities from sameAs)
         $multiSelectArray2 = explode(",",($this->settings['entityfacts']['sameAsSelected']));
-
+        
         $sameAsArray = [];
-
+        
         //Same function like the first array but with additional customisation
         foreach ($multiSelectArray2 as $item) {
             foreach ($apiAnswerDecode['sameAs'] as $sameAs) {
@@ -89,6 +89,13 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             }
         }
 
+        //add in default Icon if needed
+        foreach ($sameAsArray as $key => &$item) {
+            if(!$item['collection']['icon'])
+            {
+                $item['collection']['icon'] = "./typo3conf/ext/slub_entityfacts/Resources/Public/Icons/default_external_link.png";
+            }
+        }
 
         $this->view->assign('sameAsArray', $sameAsArray);
         $this->view->assign('viewArray', $viewArray);
