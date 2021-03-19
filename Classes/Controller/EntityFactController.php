@@ -77,9 +77,9 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
         //write the user sorted selection given by Flexform into another helper array (special customer request to select specific entities from sameAs)
         $multiSelectArray2 = explode(",",($this->settings['entityfacts']['sameAsSelected']));
-        
+
         $sameAsArray = [];
-        
+
         //Same function like the first array but with additional customisation
         foreach ($multiSelectArray2 as $item) {
             foreach ($apiAnswerDecode['sameAs'] as $sameAs) {
