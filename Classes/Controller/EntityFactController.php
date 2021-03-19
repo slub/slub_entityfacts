@@ -91,8 +91,7 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
         //add in default Icon if needed
         foreach ($sameAsArray as $key => &$item) {
-            if(!$item['collection']['icon'])
-            {
+            if(!$item['collection']['icon']) {
                 $item['collection']['icon'] = "./typo3conf/ext/slub_entityfacts/Resources/Public/Icons/default_external_link.png";
             }
         }
