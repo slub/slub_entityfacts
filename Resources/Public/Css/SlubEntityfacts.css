@@ -1,28 +1,22 @@
-div.tx-slub-entityfacts div.sameAs ul {
-  list-style-type: none;
+div.tx-slub-entityfacts ul {
+    list-style-type: none;
 }
 
-div.tx-slub-entityfacts div.sameAs img.icon {
-  width: 24px;
-  margin: 0 10px;
+div.tx-slub-entityfacts dl dd h3 {
+    font-size: 150%;
+    font-weight: bold;
 }
 
-div.tx-slub-entityfacts div.sameAs span.icon {
-  margin: 0 22px;
+div.tx-slub-entityfacts img.icon {
+    width: 24px;
+    margin: 0 10px;
 }
 
-div.tx-slub-entityfacts div.preferredName p.value {
-  font-size: 150%;
-  font-weight: bold;
+div.tx-slub-entityfacts span.icon {
+    margin: 0 22px;
 }
 
-div.tx-slub-entityfacts div.sameAs li.facts-content {
-    white-space: nowrap;
-    overflow: hidden;
-    width: 100%;
-    text-overflow: ellipsis;
-}
-
+div.tx-slub-entityfacts ul li.facts-content,
 div.tx-slub-entityfacts div.describedBy p.facts-content {
     white-space: nowrap;
     overflow: hidden;
