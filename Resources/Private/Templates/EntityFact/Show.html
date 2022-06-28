@@ -20,21 +20,21 @@
                         </f:case>
 
                         <f:case value="context">
-                            <dt class="item-title {f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
                                 <f:translate id="slubentityfacts.context"/>
                             </dt>
                             <dd><a href="{viewArray.context}">{viewArray.context}</a></dd>
                         </f:case>
 
                         <f:case value="id">
-                            <dt class="item-title {f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
                                 <f:translate id="slubentityfacts.id"/>
                             </dt>
                             <dd><a href="{viewArray.id}">{viewArray.id}</a></dd>
                         </f:case>
 
                         <f:case value="type">
-                            <dt class="item-title {f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
                                 <f:translate id="slubentityfacts.type"/>
                             </dt>
                             <dd>
@@ -43,10 +43,10 @@
                         </f:case>
 
                         <f:case value="depiction">
-                            <dt class="item-title {f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
                                 <f:translate id="slubentityfacts.depiction"/>
                             </dt>
-                            <dd>
+                            <dd class="depiction">
                                 <a href="{viewArray.depiction.url}" title="<f:translate id='slubentityfacts.visit_depiction' />">
                                     <img alt="<f:translate id='slubentityfacts.depiction' /> {viewArray.preferredName}" src="{viewArray.depiction.thumbnail.atid}"/>
                                 </a>
@@ -110,7 +110,7 @@
                         </f:case>
 
                         <f:case value="isA">
-                            <dt class="item-title {f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
                                 <f:translate id="slubentityfacts.isA"/>
                             </dt>
                             <f:for as="isA" each="{viewArrayValue}">
@@ -232,21 +232,22 @@
                             </dd>
                         </f:case>
 
-                        <f:comment><!-- Handling in dateOfBirth--></f:comment>
-                        <f:case value="dateOfDeath"/>
-
                         <f:case value="preferredName">
-                            <dt class="item-title {f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
                                 <f:translate id="slubentityfacts.preferredName"/>
                             </dt>
                             <dd><h3>{viewArray.preferredName}</h3></dd>
                         </f:case>
 
-                        <f:comment><!-- Handling to get rid of the array--></f:comment>
-                        <f:case value="sameAs"/>
+                        <f:case value="biographicalOrHistoricalInformation">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                                <f:translate id="slubentityfacts.{viewArrayValueKey}"/>
+                            </dt>
+                            <dd class="biographical">{viewArrayValue}</dd>
+                        </f:case>
 
                         <f:defaultCase>
-                            <dt class="item-title {f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
                                 <f:translate id="slubentityfacts.{viewArrayValueKey}"/>
                             </dt>
                             <dd>{viewArrayValue}</dd>
@@ -274,16 +275,17 @@
                 <h4>
                     <f:translate id="slubentityfacts.sameAs"/>
                 </h4>
-                <ul>
+                <ul class="link-collection">
                     <f:for as="item" each="{sameAsArray}">
-                        <li class="facts-content">
-                            <f:link.external title="{item.atid} ({item.collection.publisher})" uri="{item.atid}">
+                        <li class="link-item">
+                            <f:link.external title="{item.collection.publisher}" uri="{item.atid}" target="_blank">
                                 <f:if condition="{item.collection.icon}">
                                     <f:then>
-                                        <img alt="icon of {item.collection.name}" class="icon" src="{item.collection.icon}"/>{item.collection.name}
+                                        <img alt="icon of {item.collection.name}" class="icon" src="{item.collection.icon}"/>
+                                        <span class="label visually-hidden">{item.collection.name}</span>
                                     </f:then>
                                     <f:else>
-                                        <span class="icon"></span>{item.collection.name}
+                                        <span class="label">{item.collection.abbr}</span>
                                     </f:else>
                                 </f:if>
                             </f:link.external>
@@ -295,16 +297,14 @@
     </f:if>
 
     <f:if condition="{settings.meta}">
-        <h4>
-            <f:translate id="slubentityfacts.describedBy"/>
-        </h4>
-        <dd><a href="{viewArray.describedBy.atid}" title="">{viewArray.describedBy.atid}</a></dd>
-        <p class="facts-content">
-            {f:translate(id:'slubentityfacts.license')}: <a href="{viewArray.describedBy.license}" title="<f:translate id='slubentityfacts.license' />">{viewArray.describedBy.license}</a></p>
-        <p class="facts-content">
-            {f:translate(id:'slubentityfacts.timestamp')}: {viewArray.describedBy.valid -> f:format.date(format:'d.m.Y H:m:s')}
-        </p>
-
+        <dl class="meta-information">
+            <dt><f:translate id="slubentityfacts.describedBy"/></dt>
+            <dd><a href="{viewArray.describedBy.atid}" title="{f:translate(id: 'slubentityfacts.describedBy')}">{viewArray.describedBy.atid}</a></dd>
+            <dt><f:translate id="slubentityfacts.license" /></dt>
+            <dd><a href="{viewArray.describedBy.license}" title="{f:translate(id: 'slubentityfacts.license')}">{viewArray.describedBy.license}</a></dd>
+            <dt>{f:translate(id:'slubentityfacts.timestamp')}</dt>
+            <dd>{viewArray.describedBy.valid -> f:format.date(format:'d.m.Y H:m:s')}</dd>
+        </dl>
     </f:if>
 
 </f:section>
