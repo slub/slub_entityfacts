@@ -23,10 +23,8 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      *
      * @return void
      */
-    public function showAction()
+    public function showAction(): void
     {
-        //$entityFacts = $this->entityFactRepository->findAll();
-
         //Get the nine chars long entity facts id from Flexform that the user wants to call
         $search = $this->settings['entityfacts']['personality'];
 
@@ -34,7 +32,6 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         $selection = $this->settings['entityfacts']['selection'];
 
         $arguments = $this->request->getArguments();
-        //print_r($arguments);
 
         if ($arguments['search']){
             $search = $arguments['search'];
@@ -48,7 +45,7 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             $apiAnswer = file_get_contents('http://hub.culturegraph.org/entityfacts/'.$search);
         }
 
-        //Replace @id for easier calling of informations (no value with "@id" expected)
+        //Replace @id for easier calling of information (no value with "@id" expected)
         $apiAnswerClean = str_replace('"@id"', '"atid"', $apiAnswer);
 
         $apiAnswerDecode = json_decode ($apiAnswerClean, true);
@@ -98,8 +95,6 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
         $this->view->assign('sameAsArray', $sameAsArray);
         $this->view->assign('viewArray', $viewArray);
-        //$this->view->assign('multiSelectArray', $multiSelectArray);
         $this->view->assign('apiAnswerDecode', $apiAnswerDecode);
-        //$this->view->assign('entityFact', $entityFact);
     }
 }
