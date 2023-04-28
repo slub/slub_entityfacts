@@ -45,7 +45,7 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
             $apiAnswer = file_get_contents($this->settings['entityfacts']['index'].$search);
         }
         else {
-            $apiAnswer = file_get_contents('http://hub.culturegraph.org/entityfacts/'.$search);
+            $apiAnswer = file_get_contents('https://hub.culturegraph.org/entityfacts/'.$search);
         }
 
         //Replace @id for easier calling of informations (no value with "@id" expected)
