@@ -1,318 +1,312 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
+<html data-namespace-typo3-fluid="true" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
-This Template is responsible for displaying a single view for a domain object
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        Show.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:layout name="Default"/>
 
 <f:section name="main">
 
-<f:for each="{viewArray}" as="viewArrayValue" key="viewArrayValueKey">
-    <f:if condition="{viewArrayValue}">
-        <f:then>
-            <f:switch expression="{viewArrayValueKey}">
-                <f:case value="relationship">
-                    <div class="fact relationship">
-                        <p class="headline"><f:translate id="slubentityfacts.relationship" /></p>
-                            <f:for each="{viewArrayValue}" as="relationship">
-                                <p class="facts-content">{relationship}</p>
+    <h3>SLUB Entity Facts.</h3>
+    <dl>
+        <f:for as="viewArrayValue" each="{viewArray}" key="viewArrayValueKey">
+            <f:if condition="{viewArrayValue}">
+                <f:then>
+                    <f:switch expression="{viewArrayValueKey}">
+                        <f:case value="relationship">
+                            <dt class="item-title">
+                                <f:translate id="slubentityfacts.relationship"/>
+                            </dt>
+                            <f:for as="relationship" each="{viewArrayValue}">
+                                <dd>{relationship}</dd>
                             </f:for>
-                    </div>
-                </f:case>
+                        </f:case>
 
-                <f:case value="context">
-                    <div class="fact context">
-                        <f:if condition="{settings.debugview}">
-                            <p class="headline"><f:translate id="slubentityfacts.context" /></p>
-                        </f:if>
-                        <p class="facts-content"><a href="{viewArray.context}">{viewArray.context}</a></p>
-                    </div>
-                </f:case>
+                        <f:case value="context">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                                <f:translate id="slubentityfacts.context"/>
+                            </dt>
+                            <dd><a href="{viewArray.context}">{viewArray.context}</a></dd>
+                        </f:case>
 
-                <f:case value="id">
-                    <div class="fact id">
-                        <f:if condition="{settings.debugview}">
-                            <p class="headline"><f:translate id="slubentityfacts.id" /></p>
-                        </f:if>
-                        <p class="facts-content"><a href="{viewArray.id}">{viewArray.id}</a></p>
-                    </div>
-                </f:case>
+                        <f:case value="id">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                                <f:translate id="slubentityfacts.id"/>
+                            </dt>
+                            <dd><a href="{viewArray.id}">{viewArray.id}</a></dd>
+                        </f:case>
 
-                <f:case value="type">
-                    <div class="fact type">
-                        <f:if condition="{settings.debugview}">
-                            <p class="headline"><f:translate id="slubentityfacts.type" /></p>
-                        </f:if>
-                        <p class="facts-content"><f:translate id="slubentityfacts.type.{viewArray.type}" /></a></p>
-                    </div>
-                </f:case>
+                        <f:case value="type">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                                <f:translate id="slubentityfacts.type"/>
+                            </dt>
+                            <dd>
+                                <f:translate id="slubentityfacts.type.{viewArray.type}"/>
+                            </dd>
+                        </f:case>
 
-                <f:case value="depiction">
-                    <div class="fact depiction">
-                        <f:if condition="{settings.debugview}">
-                            <p class="headline"><f:translate id="slubentityfacts.depiction" /></p>
-                        </f:if>
-                        <p class="facts-content">
-                            <a href="{viewArray.depiction.url}" title="<f:translate id='slubentityfacts.visit_depiction' />">
-                                <img alt="<f:translate id='slubentityfacts.depiction' /> {viewArray.preferredName}" src="{viewArray.depiction.thumbnail.atid}" />
-                            </a>
-                        </p>
-                    </div>
-                </f:case>
+                        <f:case value="depiction">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                                <f:translate id="slubentityfacts.depiction"/>
+                            </dt>
+                            <dd class="depiction">
+                                <a href="{viewArray.depiction.url}" title="<f:translate id='slubentityfacts.visit_depiction' />">
+                                    <img alt="<f:translate id='slubentityfacts.depiction' /> {viewArray.preferredName}" src="{viewArray.depiction.thumbnail.atid}"/>
+                                </a>
+                            </dd>
+                        </f:case>
 
-                <f:case value="relatedPerson">
-                    <div class="fact relatedPerson">
-                        <p class="headline"><f:translate id="slubentityfacts.relatedPerson" /></p>
-                        <f:for each="{viewArray.relatedPerson}" as="newRelatedPerson" key="newRelatedPersonKey">
-                            <p class="facts-content">
-                                <a href="{newRelatedPerson.atid}">{newRelatedPerson.preferredName} ({newRelatedPerson.relationship})</a>
-                            </p>
-                        </f:for>
-                    </div>
-                </f:case>
-
-                <f:case value="variantName">
-                    <div class="fact variantName">
-                        <p class="headline"><f:translate id="slubentityfacts.variantName" /></p>
-                            <f:for each="{viewArrayValue}" as="variantName">
-                                <p class="facts-content">{variantName}</p>
+                        <f:case value="relatedPerson">
+                            <dt class="item-title">
+                                <f:translate id="slubentityfacts.relatedPerson"/>
+                            </dt>
+                            <f:for as="newRelatedPerson" each="{viewArray.relatedPerson}" key="newRelatedPersonKey">
+                                <dd>
+                                    <a href="{newRelatedPerson.atid}">{newRelatedPerson.preferredName} ({newRelatedPerson.relationship})</a>
+                                </dd>
                             </f:for>
-                    </div>
-                </f:case>
+                        </f:case>
 
-                <f:case value="placeOfBusiness">
-                    <div class="fact placeOfBusiness">
-                        <p class="headline"><f:translate id="slubentityfacts.placeOfBusiness" /></p>
-                            <f:for each="{viewArrayValue}" as="placeOfBusiness">
-                                <f:for each="{placeOfBusiness}" as="placeOfBusinessArray" key="placeOfBusinessArrayKey">
+                        <f:case value="variantName">
+                            <dt class="item-title">
+                                <f:translate id="slubentityfacts.variantName"/>
+                            </dt>
+                            <f:for as="variantName" each="{viewArrayValue}">
+                                <dd>{variantName}</dd>
+                            </f:for>
+                        </f:case>
+
+                        <f:case value="placeOfBusiness">
+                            <dt class="item-title">
+                                <f:translate id="slubentityfacts.placeOfBusiness"/>
+                            </dt>
+                            <f:for as="placeOfBusiness" each="{viewArrayValue}">
+                                <f:for as="placeOfBusinessArray" each="{placeOfBusiness}" key="placeOfBusinessArrayKey">
                                     <f:if condition="{placeOfBusinessArrayKey}=='@id'">
                                         <f:then>
-                                            <p class="facts-content"><a href="{placeOfBusinessArray}">{placeOfBusinessArray}</a></p>
+                                            <dd><a href="{placeOfBusinessArray}">{placeOfBusinessArray}</a></dd>
                                         </f:then>
                                         <f:else>
-                                            <p class="facts-content">{placeOfBusinessArray}</p>
+                                            <dd>{placeOfBusinessArray}</dd>
                                         </f:else>
                                     </f:if>
                                 </f:for>
                             </f:for>
-                    </div>
-                </f:case>
+                        </f:case>
 
-                <f:case value="predecessor">
-                    <div class="fact predecessor">
-                        <p class="headline"><f:translate id="slubentityfacts.predecessor" /></p>
-                            <f:for each="{viewArrayValue}" as="predecessor">
-                                <f:for each="{predecessor}" as="predecessorArray" key="predecessorArrayKey">
+                        <f:case value="predecessor">
+                            <dt class="item-title">
+                                <f:translate id="slubentityfacts.predecessor"/>
+                            </dt>
+                            <f:for as="predecessor" each="{viewArrayValue}">
+                                <f:for as="predecessorArray" each="{predecessor}" key="predecessorArrayKey">
                                     <f:if condition="{predecessorArrayKey}=='@id'">
                                         <f:then>
-                                            <p class="facts-content"><a href="{predecessorArray}">{predecessorArray}</a></p>
+                                            <dd><a href="{predecessorArray}">{predecessorArray}</a></dd>
                                         </f:then>
                                         <f:else>
-                                            <p class="facts-content">{predecessorArray}</p>
+                                            <dd>{predecessorArray}</dd>
                                         </f:else>
                                     </f:if>
                                 </f:for>
                             </f:for>
-                    </div>
-                </f:case>
+                        </f:case>
 
-                <f:case value="isA">
-                    <div class="fact isA">
-                        <f:if condition="{settings.debugview}">
-                            <p class="headline"><f:translate id="slubentityfacts.isA" /></p>
-                        </f:if>
-                        <f:for each="{viewArrayValue}" as="isA">
-                            <f:for each="{isA}" as="isAArray" key="isAArrayKey">
-                                <f:if condition="{isAArrayKey}=='@id'">
+                        <f:case value="isA">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                                <f:translate id="slubentityfacts.isA"/>
+                            </dt>
+                            <f:for as="isA" each="{viewArrayValue}">
+                                <f:for as="isAArray" each="{isA}" key="isAArrayKey">
+                                    <f:if condition="{isAArrayKey}=='@id'">
+                                        <f:then>
+                                            <dd><a href="{isAArray}">{isAArray}</a></dd>
+                                        </f:then>
+                                        <f:else>
+                                            <dd>{isAArray}</dd>
+                                        </f:else>
+                                    </f:if>
+                                </f:for>
+                            </f:for>
+                        </f:case>
+
+                        <f:case value="dateOfEstablishment">
+                            <dt class="item-title">
+                                <f:translate id="slubentityfacts.dateOfEstablishment"/>
+                            </dt>
+                            <f:for as="dateOfEstablishment" each="{viewArrayValue}">
+                                <dd>{dateOfEstablishment}</dd>
+                            </f:for>
+                        </f:case>
+
+                        <f:case value="describedBy"/>
+
+                        <f:case value="associatedPlace">
+                            <dt class="item-title">
+                                <f:translate id="slubentityfacts.associatedPlace"/>
+                            </dt>
+                            <f:for as="associatedPlace" each="{viewArrayValue}">
+                                <dd><a href="{associatedPlace.atid}">{associatedPlace.preferredName}</a></dd>
+                            </f:for>
+                        </f:case>
+
+                        <f:case value="gender">
+                            <dt class="item-title">
+                                <f:if condition="{settings.debugview}">
+                                    <f:translate id="slubentityfacts.gender"/>
+                                </f:if>
+                            </dt>
+                            <dd><a href="{viewArray.gender.atid}">{viewArray.gender.label}</a></dd>
+                        </f:case>
+
+                        <f:case value="familialRelationship">
+                            <dt class="item-title">
+                                <f:translate id="slubentityfacts.familialRelationship"/>
+                            </dt>
+                            <f:for as="member" each="{viewArray.familialRelationship}">
+                                <dd><a href="{member.atid}">{member.preferredName} ({member.relationship})</a></dd>
+                            </f:for>
+                        </f:case>
+
+                        <f:case value="professionOrOccupation">
+                            <dt class="item-title">
+                                <f:translate id="slubentityfacts.professionOrOccupation"/>
+                            </dt>
+                            <f:for as="profession" each="{viewArray.professionOrOccupation}">
+                                <dd><a href="{profession.atid}">{profession.preferredName}</a></dd>
+                            </f:for>
+                        </f:case>
+
+                        <f:case value="affiliation">
+                            <dt class="item-title">
+                                <f:translate id="slubentityfacts.affiliation"/>
+                            </dt>
+                            <f:for as="number" each="{viewArray.affiliation}">
+                                <dd><a href="{number.atid}">{number.preferredName}</a></dd>
+                            </f:for>
+                        </f:case>
+
+                        <f:case value="pseudonym">
+                            <dt class="item-title">
+                                <f:translate id="slubentityfacts.pseudonym"/>
+                            </dt>
+                            <f:for as="number" each="{viewArray.pseudonym}">
+                                <dd>{number.preferredName}</dd>
+                            </f:for>
+                        </f:case>
+
+                        <f:case value="placeOfActivity">
+                            <dt class="item-title">
+                                <f:translate id="slubentityfacts.placeOfActivity"/>
+                            </dt>
+                            <f:for as="place" each="{viewArray.placeOfActivity}">
+                                <dd><a href="{place.atid}">{place.preferredName}</a></dd>
+                            </f:for>
+                        </f:case>
+
+                        <f:case value="placeOfBirth">
+                            <dt class="item-title">
+                                <f:translate id="slubentityfacts.placeOfBirth"/>
+                            </dt>
+                            <f:for as="place" each="{viewArray.placeOfBirth}">
+                                <dd><a href="{place.atid}">{place.preferredName}</a></dd>
+                            </f:for>
+                        </f:case>
+
+                        <f:case value="placeOfDeath">
+                            <dt class="item-title">
+                                <f:translate id="slubentityfacts.placeOfDeath"/>
+                            </dt>
+                            <f:for as="place" each="{viewArray.placeOfDeath}">
+                                <dd><a href="{place.atid}">{place.preferredName}</a></dd>
+                            </f:for>
+                        </f:case>
+
+                        <f:case value="dateOfBirth">
+                            <dt class="item-title">
+                                <f:if condition="{settings.debugview}">
+                                    <f:translate id="slubentityfacts.dateOfBirth"/>
+                                </f:if>
+                            </dt>
+                            <dd>&ast; {viewArrayValue} &hyphen;
+                                <f:if condition="{viewArray.dateOfDeath}">
+                                    &dagger; {viewArray.dateOfDeath}
+                                </f:if>
+                            </dd>
+                        </f:case>
+
+                        <f:case value="preferredName">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                                <f:translate id="slubentityfacts.preferredName"/>
+                            </dt>
+                            <dd><h3>{viewArray.preferredName}</h3></dd>
+                        </f:case>
+
+                        <f:case value="biographicalOrHistoricalInformation">
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                                <f:translate id="slubentityfacts.{viewArrayValueKey}"/>
+                            </dt>
+                            <dd class="biographical">{viewArrayValue}</dd>
+                        </f:case>
+
+                        <f:defaultCase>
+                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                                <f:translate id="slubentityfacts.{viewArrayValueKey}"/>
+                            </dt>
+                            <dd>{viewArrayValue}</dd>
+                        </f:defaultCase>
+
+                    </f:switch>
+                </f:then>
+                <f:else>
+                    <f:if condition="{settings.debugview}">
+                        <dt class="item-title">
+                            <f:translate id="slubentityfacts.{viewArrayValueKey}"/>
+                        </dt>
+                        <dd>
+                            <f:translate id="slubentityfacts.noContent"/>
+                        </dd>
+                    </f:if>
+                </f:else>
+            </f:if>
+        </f:for>
+    </dl>
+
+    <f:if condition="{settings.entityfacts.sameAs}=='1'">
+        <f:then>
+            <f:if condition="{sameAsArray}">
+                <h4>
+                    <f:translate id="slubentityfacts.sameAs"/>
+                </h4>
+                <ul class="link-collection">
+                    <f:for as="item" each="{sameAsArray}">
+                        <li class="link-item">
+                            <f:link.external title="{item.collection.publisher}" uri="{item.atid}" target="_blank">
+                                <f:if condition="{item.collection.icon}">
                                     <f:then>
-                                        <p class="facts-content"><a href="{isAArray}">{isAArray}</a></p>
+                                        <img alt="icon of {item.collection.name}" class="icon" src="{item.collection.icon}"/>
+                                        <span class="label visually-hidden">{item.collection.name}</span>
                                     </f:then>
                                     <f:else>
-                                        <p class="facts-content">{isAArray}</p>
+                                        <span class="label">{item.collection.abbr}</span>
                                     </f:else>
                                 </f:if>
-                            </f:for>
-                        </f:for>
-                    </div>
-                </f:case>
-
-                <f:case value="dateOfEstablishment">
-                    <div class="fact dateOfEstablishment">
-                        <p class="headline"><f:translate id="slubentityfacts.dateOfEstablishment" /></p>
-                            <f:for each="{viewArrayValue}" as="dateOfEstablishment">
-                                <p class="facts-content">{dateOfEstablishment}</p>
-                            </f:for>
-                    </div>
-                </f:case>
-
-                <f:case value="describedBy"></f:case>
-
-                <f:case value="associatedPlace">
-                    <div class="fact associatedPlace">
-                        <p class="headline"><f:translate id="slubentityfacts.associatedPlace" /></p>
-                            <f:for each="{viewArrayValue}" as="associatedPlace">
-                               <p class="facts-content"><a href="{associatedPlace.atid}">{associatedPlace.preferredName}</a></p>
-                            </f:for>
-                    </div>
-                </f:case>
-
-                <f:case value="gender">
-                    <div class="fact gender">
-                        <p class="headline"><f:if condition="{settings.debugview}"><f:translate id="slubentityfacts.gender" /></f:if></p>
-                        <p class="facts-content"><a href="{viewArray.gender.atid}">{viewArray.gender.label}</a></p>
-                    </div>
-                </f:case>
-
-                <f:case value="familialRelationship">
-                    <div class="fact familialRelationship">
-                        <p class="headline"><f:translate id="slubentityfacts.familialRelationship" /></p>
-                        <f:for each="{viewArray.familialRelationship}" as="member">
-                            <p class="facts-content"><a href="{member.atid}">{member.preferredName} ({member.relationship})</a></p>
-                        </f:for>
-                    </div>
-                </f:case>
-
-                <f:case value="professionOrOccupation">
-                    <div class="fact professionOrOccupation">
-                        <p class="headline"><f:translate id="slubentityfacts.professionOrOccupation" /></p>
-                        <f:for each="{viewArray.professionOrOccupation}" as="profession">
-                            <p class="facts-content"><a href="{profession.atid}">{profession.preferredName}</a></p>
-                        </f:for>
-                    </div>
-                </f:case>
-
-                <f:case value="affiliation">
-                    <div class="fact affiliation">
-                        <p class="headline"><f:translate id="slubentityfacts.affiliation" /></p>
-                        <f:for each="{viewArray.affiliation}" as="number">
-                            <p class="facts-content"><a href="{number.atid}">{number.preferredName}</a></p>
-                        </f:for>
-                    </div>
-                </f:case>
-
-                <f:case value="pseudonym">
-                    <div class="fact pseudonym">
-                        <p class="headline"><f:translate id="slubentityfacts.pseudonym" /></p>
-                        <f:for each="{viewArray.pseudonym}" as="number">
-                            <p class="facts-content">{number.preferredName}</p>
-                        </f:for>
-                    </div>
-                </f:case>
-
-                <f:case value="placeOfActivity">
-                    <div class="fact placeOfActivity">
-                        <p class="headline"><f:translate id="slubentityfacts.placeOfActivity" /></p>
-                        <f:for each="{viewArray.placeOfActivity}" as="place">
-                            <p class="facts-content"><a href="{place.atid}">{place.preferredName}</a></p>
-                        </f:for>
-                    </div>
-                </f:case>
-
-                <f:case value="placeOfBirth">
-                    <div class="fact placeOfBirth">
-                        <p class="headline"><f:translate id="slubentityfacts.placeOfBirth" /></p>
-                        <f:for each="{viewArray.placeOfBirth}" as="place">
-                            <p class="facts-content"><a href="{place.atid}">{place.preferredName}</a></p>
-                        </f:for>
-                    </div>
-                </f:case>
-
-                <f:case value="placeOfDeath">
-                    <div class="fact placeOfDeath">
-                        <p class="headline"><f:translate id="slubentityfacts.placeOfDeath" /></p>
-                        <f:for each="{viewArray.placeOfDeath}" as="place">
-                            <p class="facts-content"><a href="{place.atid}">{place.preferredName}</a></p>
-                        </f:for>
-                    </div>
-                </f:case>
-
-                <f:case value="dateOfBirth">
-                    <div class="fact dateOfBirth">
-                        <p class="headline"><f:if condition="{settings.debugview}"><f:translate id="slubentityfacts.dateOfBirth" /></f:if></p>
-                        <p class="value">&ast; {viewArrayValue} &hyphen;
-                            <f:if condition="{viewArray.dateOfDeath}">
-                                &dagger; {viewArray.dateOfDeath}
-                            </f:if>
-                        </p>
-                    </div>
-                </f:case>
-
-                <!-- Handling in dateOfBirth-->
-                <f:case value="dateOfDeath"></f:case>
-
-                <f:case value="preferredName">
-                    <div class="fact preferredName">
-                        <f:if condition="{settings.debugview}">
-                            <p class="headline"><f:translate id="slubentityfacts.preferredName" /></p>
-                        </f:if>
-                        <p class="value">{viewArray.preferredName}</p>
-                    </div>
-                </f:case>
-
-                <!-- Handling to get rid of the array-->
-                <f:case value="sameAs"></f:case>
-
-                <f:defaultCase>
-                    <div class="fact default">
-                      <f:if condition="{settings.debugview}">
-                          <p class="headline"><f:translate id="slubentityfacts.{viewArrayValueKey}" /></p>
-                      </f:if>
-                        <p class="value">{viewArrayValue}</p>
-                    </div>
-                </f:defaultCase>
-
-            </f:switch>
-        </f:then>
-        <f:else>
-          <f:if condition="{settings.debugview}">
-            <p class="headline"><f:translate id="slubentityfacts.{viewArrayValueKey}" /></p>
-            <p class="facts-content"><f:translate id="slubentityfacts.noContent" /></p>
-          </f:if>
-        </f:else>
-    </f:if>
-</f:for>
-
-<f:if condition="{settings.entityfacts.sameAs}=='1'">
-    <f:then>
-        <div class="fact sameAs">
-            <f:if condition="{sameAsArray}">
-                <h4><f:translate id="slubentityfacts.sameAs" /></h4>
-                <ul>
-                <f:for each="{sameAsArray}" as="item">
-                    <li class="facts-content">
-                      <f:link.external uri="{item.atid}" title="{item.atid} ({item.collection.publisher})">
-                          <f:if condition="{item.collection.icon}">
-                              <f:then>
-                                  <img class="icon" src="{item.collection.icon}" alt="icon of {item.collection.name}" onerror="this.onerror=null; this.src='/typo3conf/ext/slub_entityfacts/Resources/Public/Icons/39-Globe_256x256_35386.png'; this.alt='Kein Icon vorhanden.'" />{item.collection.name}
-                              </f:then>
-                              <f:else>
-                                  <span class="icon"></span>{item.collection.name}
-                              </f:else>
-                          </f:if>
-                      </f:link.external>
-                    </li>
-                </f:for>
+                            </f:link.external>
+                        </li>
+                    </f:for>
                 </ul>
             </f:if>
-        </div>
-    </f:then>
-</f:if>
+        </f:then>
+    </f:if>
 
-<f:if condition="{settings.meta}">
-    <div class="fact describedBy">
-        <h4><f:translate id="slubentityfacts.describedBy" /></h4>
-        <p class="facts-content"><a href="{viewArray.describedBy.atid}" title="">{viewArray.describedBy.atid}</a></p>
-        <p class="facts-content"><f:translate id="slubentityfacts.license" />: <a href="{viewArray.describedBy.license}" title="<f:translate id='slubentityfacts.license' />">{viewArray.describedBy.license}</a></p>
-        <p class="facts-content"><f:translate id="slubentityfacts.timestamp" />: {viewArray.describedBy.valid -> f:format.date(format:'d.m.Y H:m:s')}</p>
-    </div>
-</f:if>
+    <f:if condition="{settings.meta}">
+        <dl class="meta-information">
+            <dt><f:translate id="slubentityfacts.describedBy"/></dt>
+            <dd><a href="{viewArray.describedBy.atid}" title="{f:translate(id: 'slubentityfacts.describedBy')}">{viewArray.describedBy.atid}</a></dd>
+            <dt><f:translate id="slubentityfacts.license" /></dt>
+            <dd><a href="{viewArray.describedBy.license}" title="{f:translate(id: 'slubentityfacts.license')}">{viewArray.describedBy.license}</a></dd>
+            <dt>{f:translate(id:'slubentityfacts.timestamp')}</dt>
+            <dd>{viewArray.describedBy.valid -> f:format.date(format:'d.m.Y H:m:s')}</dd>
+        </dl>
+    </f:if>
 
 </f:section>
+
 </html>
