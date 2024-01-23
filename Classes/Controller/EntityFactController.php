@@ -1,6 +1,8 @@
 <?php
 namespace Slub\SlubEntityfacts\Controller;
 
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use Psr\Http\Message\ResponseInterface;
 /***
  *
  * This file is part of the "slubentityfacts" Extension for TYPO3 CMS.
@@ -11,11 +13,10 @@ namespace Slub\SlubEntityfacts\Controller;
  *  (c) 2018 Sebastian Semsker <sebastian.semsker@slub-dresden.de>, SLUB Dresden
  *
  ***/
-
 /**
  * EntityFactController
  */
-class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class EntityFactController extends ActionController
 {
 
     /**
@@ -23,7 +24,7 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
      *
      * @return void
      */
-    public function showAction(): void
+    public function showAction(): ResponseInterface
     {
         //Get the nine chars long entity facts id from Flexform that the user wants to call
         $search = $this->settings['entityfacts']['personality'];
@@ -96,5 +97,6 @@ class EntityFactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         $this->view->assign('sameAsArray', $sameAsArray);
         $this->view->assign('viewArray', $viewArray);
         $this->view->assign('apiAnswerDecode', $apiAnswerDecode);
+        return $this->htmlResponse();
     }
 }

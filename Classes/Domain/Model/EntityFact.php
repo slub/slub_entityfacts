@@ -1,6 +1,7 @@
 <?php
 namespace Slub\SlubEntityfacts\Domain\Model;
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 /***
  *
  * This file is part of the "slubentityfacts" Extension for TYPO3 CMS.
@@ -11,11 +12,10 @@ namespace Slub\SlubEntityfacts\Domain\Model;
  *  (c) 2018 Sebastian Semsker <sebastian.semsker@slub-dresden.de>, SLUB Dresden
  *
  ***/
-
 /**
  * EntityFact
  */
-class EntityFact extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class EntityFact extends AbstractEntity
 {
 
 }
