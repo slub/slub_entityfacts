@@ -69,7 +69,7 @@
                                         <numIndex index="1">placeOfBirth</numIndex>
                                     </numIndex>
                                     <numIndex index="5" type="array">
-                                        <numIndex index="0">Sterbesort</numIndex>
+                                        <numIndex index="0">Sterbeort</numIndex>
                                         <numIndex index="1">placeOfDeath</numIndex>
                                     </numIndex>
                                     <numIndex index="6" type="array">

@@ -2,7 +2,7 @@
 defined('TYPO3_MODE') || die('Access denied.');
 
 call_user_func(
-    function($extKey)
+    static function()
     {
 
       \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
@@ -18,6 +18,5 @@ call_user_func(
         'FILE:EXT:slub_entityfacts/Configuration/FlexForms/FF_SlubEntityfacts_Entityfactslisting.xml'
       );
 
-    },
-    'slub_entityfacts'
+    }
 );
