@@ -27,7 +27,12 @@
   ],
   "license": "GPL-3.0-or-later",
   "require": {
-    "typo3/cms-core": "~7.6.23|~8.7.10|~9.5.1"
+    "typo3/cms-core": "~10.4|~11.5"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "slub_entityfacts"
+    }
   },
   "autoload": {
     "psr-4": {

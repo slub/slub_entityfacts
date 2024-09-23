@@ -17,14 +17,10 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Sebastian Semsker',
     'author_email' => 'typo3@slub-dresden.de',
     'state' => 'stable',
-    'internal' => '',
-    'uploadfolder' => '0',
-    'createDirs' => '',
-    'clearCacheOnLoad' => 0,
     'version' => '1.2.2',
     'constraints' => [
         'depends' => [
-            'typo3' => '7.6.0-9.5.99',
+            'typo3' => '10.4.0-11.5.99',
         ],
         'conflicts' => [],
         'suggests' => [],
