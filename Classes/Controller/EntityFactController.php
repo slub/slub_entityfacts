@@ -80,9 +80,11 @@ class EntityFactController extends ActionController
 
         //Same function like the first array but with additional customisation
         foreach ($multiSelectArray2 as $item) {
-            foreach ($apiAnswerDecode['sameAs'] as $sameAs) {
-                if ($sameAs['collection']['abbr'] == $item || empty($this->settings['entityfacts']['sameAsSelected'])) {
-                    $sameAsArray[ $sameAs['collection']['abbr'] ] = $sameAs;
+            if($apiAnswerDecode['sameAs']) {
+                foreach ($apiAnswerDecode['sameAs'] as $sameAs) {
+                    if ($sameAs['collection']['abbr'] == $item || empty($this->settings['entityfacts']['sameAsSelected'])) {
+                        $sameAsArray[ $sameAs['collection']['abbr'] ] = $sameAs;
+                    }
                 }
             }
         }
