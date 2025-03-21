@@ -247,10 +247,12 @@
                         </f:case>
 
                         <f:defaultCase>
-                            <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
-                                <f:translate id="slubentityfacts.{viewArrayValueKey}"/>
-                            </dt>
-                            <dd>{viewArrayValue}</dd>
+                            <f:if condition="{settings.debugview}">
+                                <dt class="item-title{f:if(condition: '!{settings.debugview}', then: ' visually-hidden')}">
+                                    <f:translate id="slubentityfacts.{viewArrayValueKey}"/>
+                                </dt>
+                                <dd>{viewArrayValue}</dd>
+                            </f:if>
                         </f:defaultCase>
 
                     </f:switch>
